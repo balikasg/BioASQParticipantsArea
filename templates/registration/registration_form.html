@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+Please provide the following information for your registration. Indicate the tasks you intend to participate and if you want to receive announcements and information about the BioASQ challenge.
+<form method="post" action="."> 
+  {% csrf_token %}
+  {{ form.as_p }}
+
+
+  <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LfOBd4SAAAAAKJMafi8I7-wMtr6M65wtCVKhD71"></script>
+  <noscript>  
+            <iframe src="http://api.recaptcha.net/noscript?k=6LfOBd4SAAAAAKJMafi8I7-wMtr6M65wtCVKhD71"  
+            height="300" width="500" frameborder="0"></iframe><br>  
+            <textarea name="recaptcha_challenge_field" rows="3" cols="40">  
+            </textarea>  
+            <input type="hidden" name="recaptcha_response_field"   
+            value="manual_challenge">  
+            </noscript>
+ 
+  <input type="submit" value="{% trans 'Submit' %}" />
+</form>
+{% endblock %}

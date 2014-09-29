@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block content %}
+<h1>Task 1A</h1>
+<h3>Description</h3>
+<p>Large‐scale semantic indexing will be evaluated on the whole of PubMed. In 
+particular, participants will be asked to classify incoming documents before 
+the human curators do: 
+<ul>
+	<li>BioASQ will distribute new unclassified PubMed documents.</li>
+	<li>Participants will have a limited response time to attach MeSH terms.</li>
+</ul>
+</p>
+
+
+<h3>Training set data</h3>
+<p>You can download the training set <em>in raw text</em> from <a href="http://www.gopubmed.org/web/bioasq/pmc/pubmedWithMajorMeshFile">here</a>.</p>
+<p>You can download the training set <em>in vectorized description</em> from <a href="http://www.gopubmed.org/web/bioasq/pmc/pubmedWithMajorMeshFileVectorized">here</a>.</p>
+
+
+<h3>MeSH Headings</h3>
+
+
+<p>You can download the MeSH hierarchies along the indexing that will be used from <a href="http://www.gopubmed.org/web/bioasq/mesh/ontologyfile">here</a> </p>
+
+<h3>Available test sets</h3>
+{% if tests%}
+	<p> Currently, {{tests|length}} test{{tests|pluralize}} available. You can download the active Tests by clinking on them.
+		{% for test in tests %}
+		<ul>
+			<li><a href="{{ test.test_id }}">Test {{ test.test_id }}</a>, {% if test.is_active %} is available. It is  {% else %} is not available. 
+			It was {% endif %}  active from {{ test.started}} until {{test.finished}}</li>
+		</ul>
+		{% endfor %}
+	</p>
+		
+{% else %}
+<p>There are no available tests. Please try later.</p>
+{% endif %}
+
+
+{% if errors %}
+		{% for error in errors %}
+		<p style="color: red;">{{ error }} </p> 
+		{% endfor %}
+{% endif %}
+
+
+<h3>Upload your results</h3>
+{% if current_test %}
+<p>You can select a file from your computer, that contains the test results and upload it by clicking the Upload button below. The results will be considered for the Test {{ current_test.test_id }}, which will be available until {{ current_test.finished}}. <br/>
+
+
+
+
+{% if error %}
+        
+        {% for er in error %}
+        <em>{{ er }}</em> <br />   {% endfor %}
+        
+        {% endif %}
+        
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+            <p>
+                {{ form.docfile.errors }}
+                {{ form.docfile }}
+            </p>
+            <p>{{form.system_name.label_tag}} {{form.system_name}}</p>
+            <p><input id="upload" type="submit" value="Upload" /></p>
+        </form>
+
+{% else %}
+<p>There are no available tests to upload results.</p>
+{% endif%}
+
+{% endblock %}
+
+
+{% block footer %}
+
+
+{% endblock%}

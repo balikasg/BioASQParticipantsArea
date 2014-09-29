@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<body id="oracleMain">
+<h3>Get data for Task A</h3>
+Here you can find the datasets of BioASQ task A, "Large-scale online biomedical semantic indexing", that have expired.
+The datasets are available for downloading by selecting them from the drop-down menu and clinking "Get data".
+
+<form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+		{{ form.as_p }}
+	<input type="submit" style="position:relative; left: 450px;" value="Get data" />
+        
+</form>
+
+<h3>Get data for Task B</h3>
+The full dataset of the first year and the released test sets of the challenge are available <a href="/Tasks/2b/trainingDataset/" style="color:blue"> here</a>.
+
+</body>
+{% endblock %}
+

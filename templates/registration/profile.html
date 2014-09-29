@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<p>{{user.username}}, <br />
+Below, you can see the profile details you can change.</p>
+<h3>Add a system to your account</h3>
+{% if systems %}
+	<p>Currently, the following systems are registered in your name. By completing the following form you can add a system in your account. <em>Maximum number of systems allowed: 5</em></p>
+System name - System description
+	{%for system in systems%}
+	
+	<ul>
+		<li>{{ system.system }}  -  {{system.system_description}} </li> 
+	</ul>
+	{% endfor %}
+	</form>
+	
+
+	{% else %}	
+	<p>Currently, there are no systems registered in your account. By completing the following form you can add a system in your account. <em>Maximum number of systems allowed: 5</em></p>
+	{%endif%}
+<p>System name: Unique identifier of your system that will be used while uploading test results. Displayed only to you.<br />
+System description: Unique name that will be the identifier of your system and will displayed to the public.  </p>
+<form action="/add_system/" method="post">
+	{% csrf_token %}
+		{{formSystem.as_p}}
+	   <input type="submit" value="Add system">
+</form>
+
+<hr />
+<h3>Email Account</h3>
+<p>Below, you can change the e-mail account you provided during registration.</p>
+<form method="post" action="/changeEmail/">
+  {% csrf_token %}
+  {{ formEmail.as_p }}
+
+  <input type="submit" value="{% trans 'Change Email' %}" />
+</form>
+
+
+<hr />
+
+<h3>Task Participation</h3>
+<p>Below, you can modify the information about the tasks you are going to participate in. You can also (de)select the option of receiveing BioASQ announcements.</p>
+<form method="post" action="/changetasks/">
+  {% csrf_token %}
+  {{ formProfile.as_p }}
+
+  <input type="submit" value="{% trans 'Save Changes' %}" />
+</form>
+
+
+<hr />
+
+
+
+
+
+
+
+{% endblock %}

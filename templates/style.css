@@ -1,0 +1,365 @@
+#form1{position:relative;
+left:45%;}
+
+
+
+table.oracleSubmitForm tbody tr{border-bottom: 0px solid black;}
+a{text-decoration:none; 
+color:blue;
+}
+
+table.oracleSubmitForm{
+border-collapse:collapse;
+border: none;
+border-bottom: 0px;
+table-layout: fixed;
+}
+
+td.hun{width: 15%}
+td.hun1{width: 35%}
+td.hun2{width: 50%}
+td.R{text-align:right;
+}
+table.oracleSubmitForm tbody tr:hover{color: #333333;}
+
+
+table.uploads{
+width:60%;
+}
+
+
+table.train tbody tr:hover{color:black}
+
+
+table.uploads td{text-align:center;}
+table.uploads tbody tr:hover{color:black}
+
+
+table.tablesorter1bb tr.noimage .header{background-image: none;
+border: 2px solid black;}
+
+
+table.tablesorter1bb  thead tr .header, table.tablesorter1b thead tr .header, table.tablesorter thead tr .header {
+        text-align:center;
+        background-image: url(bg.gif);
+        background-repeat: no-repeat;
+        background-position: center right;
+        cursor: pointer;
+}
+
+
+table.tablesorter thead tr .header {
+        text-align:center;
+        background-image: url(bg.gif);
+        background-repeat: no-repeat;
+        background-position: center right;
+        cursor: pointer;
+}
+
+
+
+
+table.tablesorter1bb{
+width:100%;
+text-align:center;
+
+}
+table.tablesorter td, table.tablesorter2 td{text-align:center;}
+
+table.tablesorter1b tr{text-align:center;}
+table.tablesorter1b{
+width:85%;
+text-align:center;
+margin-left: 5em;
+}
+
+
+body#oracleMain a#oracle,
+body#oracleResults a#oracle,
+body#faq1A a#faq,
+body#forums a#forum,
+body#contact_form a#contact,
+body#results1A a#results,
+body#results1ba a#results,
+body#results1bb a#results,
+body#genInfo1A a#genInfo,
+body#genInfo1B a#genInfo,
+body#task1ba a#tasks,
+body#task1bb a#tasks,
+body#task1A a#tasks{background:#cc0000; color:#fff;}
+
+
+
+#upload{position:relative;
+left:60%;}
+
+em{color:red; font-style:normal;}
+
+img.reg_form{display:block;
+height:600px;
+margin-left:30%;
+}
+
+img.displayed{display:block;
+padding-top:20px;
+padding-bottom:20px;
+width:650px;
+margin:auto;}
+
+#post-info{
+width: 150px;}
+
+#post-content{
+border-left: 1px solid black;
+padding-left: 10px;}
+
+#post-related{
+padding-top:15px;}
+
+table.train{border-collapse:collapse;
+border: 1px solid black;
+width:100%;
+margin:auto;
+}
+
+table.train td, table.train th {border: 1px solid black;
+padding-left:5px;
+}
+
+tbody tr:hover{color:red;}
+
+table{
+width:100%;
+}
+
+table
+{
+border-collapse:collapse;
+}
+td{padding-top:0.5em;
+padding-bottom:0.5em;
+padding-right:0.666666em;}
+
+thead tr{border-bottom: 2px solid black;}
+tbody tr{border-bottom: 1px solid black;}
+
+
+#header img{
+padding: 5px 15px; 
+float: left;
+
+}
+
+a:hover{color:red}
+
+#footer img{ text-align:center;
+height: 60px;}
+
+#slogan{
+color: #333333;
+padding-top: 0px;}
+
+
+ul.errorlist{
+        margin: 0;
+        padding: 0;
+}
+
+.errorlist li{
+        color: red;
+        display: block;
+        font-size: 16px;    
+}
+
+.table topic-list{
+background-color: silver;
+}
+
+body{
+background-color: #e8e8e8;}
+
+
+
+label{
+width: 15em;
+float:left;
+text-align: right;
+display: block;
+margin-right: 0.5em;
+
+}
+.submit input
+{
+margin-left: 20px;
+}
+
+
+
+
+#header, #content, #footer{
+font-family: 'Droid Sans', arial, serif;
+background-color:white;
+width: 900px;
+margin: auto;
+text-align: justify;
+padding-left: 20px;
+padding-right: 20px;
+color:#333333;
+font-size:14px;
+line-height: 1.5em;
+}
+
+#header {margin-bottom: 0px;
+border-top:2px solid red;}
+#content {padding-bottom: 40px;
+margin-bottom: 0px; }
+
+#footer{
+margin-top:0px;
+font-size:75%;
+text-align:center;}
+
+h1{color:black;
+font-size:24px;
+letter-spacing:1px;
+font-weight:normal;
+}
+
+h2{ 
+color: black;
+letter-spacing:1px;
+font-size:18px;
+font-weight:normal;
+}
+
+h3{color:black;
+letter-spacing:1px;
+font-weight:normal;}
+
+
+
+
+.main_menu
+{
+	padding-top: 5px;
+	margin:auto;
+	height:60px;
+	line-height:50px;
+	color:#333333;
+	position:relative;
+	font-family:'Droid Sans', arial, serif;
+	font-size:16px;
+	letter-spacing:1px;
+	border-collapse:collapse;
+}
+
+.main_menu a:hover{background: #cc0000; color:#FFF;}
+.main_menu ul
+{
+	padding:0px;
+	margin:0;
+	list-style:none;
+}
+.main_menu ul li
+{
+	padding:0;
+	margin:0;
+	
+	float:left;
+	background:#FFF;
+}
+.main_menu ul li a
+{
+	color:#333333;
+	display:block;
+	text-decoration:none;
+	padding:0 25px;
+}
+main_menu ul li a:hover
+{
+	background:#cc0000;
+	color:#333333;
+}
+.main_menu ul li ul
+{
+	 display: none;
+	 width: auto;
+	 position:absolute;
+	 top:50px;
+	 padding:0px;
+	 margin:0px;
+}
+.main_menu ul li:hover ul
+{
+	 display: block;
+	 position: absolute;
+	 margin: 0;
+	 padding: 0;
+}
+.main_menu ul li:hover li
+{
+ 	float: none;
+ 	list-style:none;
+	margin:0px;
+}
+.main_menu ul li:hover li
+{
+	background:#fff;
+	letter-spacing:1px;
+	border:1px solid #000000;
+	border-top:none;	
+}
+
+
+
+.main_menu ul li:hover li:first-child
+{
+	border-top:1px solid #000000;
+	
+}
+
+.main_menu ul li:hover li a
+{
+    color: #333333;
+    background: #cc00000;
+	padding:0 20px;
+	display:block;
+	width:210px;
+}
+.main_menu ul li li a:hover
+{
+ 	color:#FFF;
+ 	background:#cc0000;
+}
+
+
+.Task1aButton {
+	-moz-box-shadow:inset 0px 0px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #f29c93;
+	box-shadow:inset 0px 0px 0px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cc0000), color-stop(1, #ce0100) );
+	background:-moz-linear-gradient( center top, #cc0000 5%, #ce0100 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF', endColorstr='FFF');
+	background-color:#cc0000;
+	-moz-border-radius:21px;
+	-webkit-border-radius:21px;
+	border-radius:21px;
+	border:-1px solid #cc0000;
+	display:inline-block;
+	color:#ffffff;
+	font-family: 'Droid Sans', arial, serif;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 26px;
+	text-decoration:none;
+	
+}.Task1aButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #cc0000) );
+	background:-moz-linear-gradient( center top, #ce0100 5%, #cc0000 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#cc0000');
+	background-color:#FFF;
+	color: #FFF;
+}.Task1aButton:active {
+	position:relative;
+	top:1px;
+}

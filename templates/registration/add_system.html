@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block content %}
+<h1>Add a new system</h1>
+
+{% if systems %}
+	<p>{{user.username}}, <br /> Currently, the following systems are registered in your name. By completing the following form you can add a system in your account.</p>
+	{%for system in systems%}
+	<ul>
+		<li>{{ system.system }}-{{system.system_description}}
+	</ul>
+	{% endfor %}
+{% else %}	
+<p>{{user.username}}, <br /> Currently, there are no systems registered in your account. By completing the following form you can add a system in your account.</p>
+{%endif%}
+Please fill in a "System name" that will be your private identifier and a "System description" which will be the name that your system will be publically available
+in the "Results" section. Each, must be less than 20 characters.
+<form action="" method="post">
+	{% csrf_token %}
+		{{form.as_p}}
+	   <input type="submit" value="Add system">
+</form>
+{%if message %}
+<p><em>{{message}}</em></p>
+{%endif%}
+{% endblock %}

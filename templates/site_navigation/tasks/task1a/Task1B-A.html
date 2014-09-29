@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<body id="task1ba">
+
+<h1>Task 2b-Phase A</h1>
+
+<p><em>Guidelines for participating in this track can be found <a href="/general_information/Task2b/" style="color:blue"> here</a> </em></p>
+<h3>Available test sets</h3>
+{% if tests%}
+	<p> Currently,<em> {{tests|length }}   test sets</em> are  available. 
+
+			{% for test in tests %}
+			<ul>
+
+			{% if test.test_id == 0 %} 
+			{% elif test.test_id == -1 %}	
+			<li>"Dry Run" test set, available <a href="/Tasks/1b/phaseA/dryRun/" style="color:blue">here</a>. Active for uploads from {{ test.started}} until {{test.finished}}</li>
+			{% else %}      
+				<li>Test batch {{test.test_id|add:"-3"}}, available <a href="/Tasks/2b/phaseA/{{ test.test_id }}/" style="color:blue">here</a>. Active for uploads from {{ test.started}} until {{test.finished}}</li>				
+			{% endif %}
+			</ul>
+			{% endfor %}
+	</p>
+
+{% else %}
+	<p>* No active tests *</p>
+{% endif %}
+
+
+{% if errors %}
+                {% for error in errors %}
+                <p style="color: red;">{{ error }} </p>
+                {% endfor %}
+{% endif %}
+
+
+<h3>Submit your results</h3>
+{% if current_test  %}
+	<p>Select a file that contains the test results and submit it using the form below. Submitting is open until:  {{ current_test.finished}}. <br/>
+	<i>Warning</i>: Selecting a system for which you have already uploaded results will replace the previous results. <br /><br />
+
+	{% if error %}
+
+			{% for er in error %}
+			<em>{{ er }}</em> <br />   {% endfor %}
+
+    {% endif %}
+
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<p>{{ form.non_field_errors }}</p>
+		<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+		<p>
+			{{ form.docfile.errors }}
+			{{ form.docfile }}
+		</p>
+		<p>{{form.system_name.label_tag}} {{form.system_name}}</p>
+		<p><input id="upload" type="submit" value="Upload" /></p>
+	</form>
+<center><p style="font-size:17px;  border:1px dashed; display: inline; padding:4px;"><em>Attention:</em> The process of uploading results may take several minutes.</p></center>
+{% else %}
+	<p>* No active tests for uploads *</p>
+{% endif%}
+
+
+
+
+<h3> Download the results you have submitted</h3>
+In the following table you can find information and links for the results you have submitted.
+
+{% if attempts %}
+        <center>
+        <table class="uploads">
+                <!-- Table header -->
+                        <thead>
+                                <tr>
+                                        <th>Test set</th>
+                                        <th>System Name</th>
+                                        <th>Download link</th>
+                                        <th>Date/Time</th>
+                                </tr>
+                        </thead>
+
+                        <tbody>
+                                {% for at in attempts %}
+                                        <tr>
+                                                        <td>{{at.test_id}}</td>
+                                                        <td>{{at.system}}</td>
+                                                        <td><a href="/Tasks/1b/phaseA/results/{{at.test_id}}/{{at.system}}/" style="color:blue">{{at.test_id}}-{{at.system}}.json</a></td>
+                                                        <td>{{at.datatime}}</td>
+                                        </tr>
+                                {% endfor %}
+                        </tbody>
+        </table>
+        </center>
+{% else %}
+<p>* You have not submitted any results for the BioASQ Task 2b Phase A test sets yet *</p>
+{% endif %}
+
+
+
+</body>
+{% endblock %}
+
+
+
+
+
+{% block footer %}
+
+
+
+
+
+{% endblock%}

@@ -1,0 +1,29 @@
+{% extends 'pybb/base.html' %}
+
+{% block pybb_crumbs %}Home{% endblock %}
+
+{% block content %} 
+<body id="forums">
+{% for cat in cats %}
+<h3>{{ cat }}</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Forums</th>
+            <th>Topics</th>
+            <th>Posts</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for forum in cat.forums.all %}
+        <tr>
+            <td><a href="{{ forum.pk }}" style="text-decoration:none; text-align:center">{{ forum }}</a></td>
+            <td>{{ forum.topic_count }}</td>
+            <td>{{ forum.post_count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+</body>
+{% endblock %}

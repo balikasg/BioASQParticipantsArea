@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<p>Below you can modify the information about {{ message }} you have provided during registration.</p>
+<form method="post" action=".">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <input type="submit" value="{% trans 'Make changes' %}" />
+</form>
+{% endblock %}

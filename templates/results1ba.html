@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<body id="results1ba">
+<h1> Task 1b: Test Results of Phase A</h1>
+The test results are presented in seperate tables for each type of annotation. The "System Description" of each system is used.<br /> 
+When the revised golden annotations become available the evaluation measures will be calculated and the tables will be filled with the corresponding values. <br />
+The evaluation measures that are used in Phase A and Phase B of Task 1B are presented <a href="http://bioasq.lip6.fr/Tasks/1b/eval_meas/" style="text-decoration:none; color:blue">here </a>.
+
+
+{% for test in tests %}
+    <a onclick ="javascript:ShowHide({{ test.test_id }})" href="javascript:;" style="text-decoration:none">
+    <h2>Test batch {{test.test_id}}</h2> </a>
+    <div class="mid1" id="{{ test.test_id }}" style="DISPLAY: none">      
+	<h3>Documents</h3>
+        <table class="tablesorter1b">
+                <thead>
+                        <tr>
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th> 
+                                <th>F-Measure</th> 
+                                <th>MAP</th> 
+                                <th>GMAP</th> 
+                        </tr>
+                </thead>
+                <tbody>
+{% for eval in evaluation %}
+                                {% if eval.testset == test %}
+                                        {% if not eval.mp_con == -1 %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>{{eval.mp_art|floatformat:4}}</td>
+                                                        <td>{{eval.mr_art|floatformat:4}}</td>
+                                                        <td>{{eval.f_art|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_art|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_art|floatformat:4}}</td>
+                                                </tr>
+                                        {% else %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+                </tbody>
+        </table>
+
+
+
+<h3>Snippets</h3>
+        <table class="tablesorter1b">
+                <thead>         
+                        <tr>    
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                                <th>MAP</th>  
+                                <th>GMAP</th>
+                        </tr>
+                </thead>        
+                <tbody>
+{% for eval in evaluation %}
+                               {% if eval.testset == test %} 
+                                        {% if not eval.mp_con == -1 %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+							<td>{{eval.mp_snip|floatformat:4}}</td>
+                                                        <td>{{eval.mr_snip|floatformat:4}}</td>
+                                                        <td>{{eval.f_snip|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_snip|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_snip|floatformat:4}}</td>	
+                                                </tr>
+                                        {% else %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+                </tbody>
+        </table>
+
+
+
+<h3>Concepts</h3>
+        <table class="tablesorter1b">
+                <thead>         
+                        <tr>    
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                                <th>MAP</th>  
+                                <th>GMAP</th>
+                        </tr>
+                </thead>        
+                <tbody>
+{% for eval in evaluation %}
+                                {% if eval.testset == test %}
+                                        {% if not eval.mp_con  == -1 %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+							<td>{{eval.mp_con|floatformat:4}}</td>
+                                                        <td>{{eval.mr_con|floatformat:4}}</td>
+                                                        <td>{{eval.f_con|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_con|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_con|floatformat:4}}</td>
+                                                </tr>
+                                        {% else %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+                </tbody>
+        </table>
+
+
+
+<h3>RDF Triples</h3>
+        <table class="tablesorter1b">
+                <thead>         
+                        <tr>    
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                                <th>MAP</th>  
+                                <th>GMAP</th>
+                        </tr>
+                </thead>        
+                <tbody>
+{% for eval in evaluation %}
+                                {% if eval.testset == test %}
+                                        {% if not eval.mp_con == -1 %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+							<td>{{eval.mp_trip|floatformat:4}}</td>
+                                                        <td>{{eval.mr_trip|floatformat:4}}</td>
+                                                        <td>{{eval.f_trip|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_trip|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_trip|floatformat:4}}</td>
+                                                </tr>
+                                        {% else %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+                </tbody>
+        </table>
+</div>
+{% endfor %}
+</body>
+{% endblock  %}

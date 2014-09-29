@@ -1,0 +1,316 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<body id="genInfo1B"> 
+<h2>Task 2B Guidelines</h2>
+
+<em> * Task 2b will begin on Wednesday, March 5, 2014. *</em><br />
+<em>* Instructions on how to download and/or search the designated resources of the Task 
+are available <a href="/Tasks/b/resources/" style="text-decoration:none; color:blue"> here</a>. * </em>
+
+<br /><br />For a comprehensive description of the BioASQ tasks please visit <a href="http://bioasq.org/participate/challenges" style="text-decoration:none; color:blue"> bioasq.org</a>. <br /><br />
+
+Task 2B will use benchmark datasets containing development and test questions, in English, along with gold standard (reference) answers. 
+The benchmark datasets are being constructed by a team of biomedical experts from around Europe. Consult <a href="http://bioasq.lip6.fr/d3_4/" style="text-decoration:none; color:blue"> BioASQ Deliverable 3.4 </a> for more information 
+on the construction of the benchmark datasets.<br /><br />
+
+
+<ul>
+<li><i>Phase A:</i> BioASQ will release questions from the benchmark datasets. 
+The participating systems will have to respond with relevant <i>concepts</i> (from designated terminologies and ontologies), relevant <i>articles</i> (in English, from designated 
+article repositories), relevant <i>snippets </i> (from the relevant articles), and relevant <i>RDF triples</i> (from designated ontologies).</li>
+<li><i>Phase B:</i> BioASQ will release questions and gold (correct) relevant concepts, articles, snippets, and RDF triples from the benchmark datasets. 
+The participating systems will have to respond with <i>exact answers</i> (e.g., named entities in the case of factoid questions) and <i>ideal answers</i> (paragraph-sized summaries),
+ both in English.</li>
+</ul>
+Systems may participate in any of the two or, ideally, both phases.<br />
+The rest of the guidelines is organised in sections. You can expand a section by clicking on it.
+
+<a onclick ="javascript:ShowHide('typesQuestions')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Types of questions</h3></a>
+<div class="mid" id="typesQuestions" style="DISPLAY: none">
+The benchmark datasets contain four types of questions:
+<ol>
+<li><b>Yes/no questions:</b> These are questions that, strictly speaking, require "yes" or "no" answers, though of course in practice longer answers will often be desirable. 
+For example, "Do CpG islands colocalise with transcription start sites?" is a yes/no question.</li>
+<li><b>Factoid questions:</b> These are questions that, strictly speaking, require a particular entity name (e.g., of a disease, drug, or gene), a number, 
+or a similar short expression as an answer, though again a longer answer may be desirable in practice. 
+For example, "Which virus is best known as the cause of infectious mononucleosis?" is a factoid question.</li>
+<li><b>List questions:</b> These are questions that, strictly speaking, require a list of entity names (e.g., a list of gene names), numbers, or similar short expressions 
+as an answer; again, in practice additional information may be desirable. For example, "Which are the Raf kinase inhibitors?" is a list question.</li>
+<li><b>Summary questions:</b> These are questions that do not belong in any of the previous categories and can only be answered by producing a short text 
+summarizing the most prominent relevant information. For example, "What is the treatment of infectious mononucleosis?" is a summary question.</li>
+</ol>
+</div>
+
+
+
+
+<a onclick ="javascript:ShowHide('answersA')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Required Answers in Phase A</h3></a>
+<div class="mid" id="answersA" style="DISPLAY: none">
+In Phase A of Task 2b, the participants will be provided with English questions q<sub>1</sub>, q<sub>2</sub>,...,q<sub>n</sub>. For each question q<sub>i</sub>,
+ each participating system will be required to return any (ideally all) of the following lists:
+ <ul>
+<li><b>A list of relevant concepts</b> c<sub>i,1</sub>, c<sub>i,2</sub>, c<sub>i,3</sub>,...  from the designated terminologies and ontologies. 
+The list should be ordered by decreasing confidence, i.e., c<sub>i,1</sub>   should be the concept 
+that the system considers to be the most relevant to the question q<sub>1</sub>, c<sub>i,2</sub> should be the concept that the system considers to be the second most relevant etc. 
+A single concept list will be returned per question and participating system, and the list may contain concepts from multiple designated terminologies and ontologies. 
+The returned concept list will actually contain unique concept <i>identifiers</i> (obtained from the terminologies and ontologies), rather than terms (words or phrases). </li>
+
+<li><b>A list of relevant articles</b> (documents) d<sub>i,1</sub>, d<sub>i,2</sub>, d<sub>i,3</sub>,...   from the designated article repositories. 
+Again, the list should be ordered by decreasing confidence, i.e., d<sub>i,1</sub>,  should be the article that the system considers to be the most relevant to the 
+question q<sub>1</sub>,, d<sub>i,2</sub>,  should be the article that the system considers to be the second most relevant etc. 
+A single article list will be returned per question and participating system, and the list may contain articles from multiple designated repositories. The returned article list
+will actually contain unique article <i>identifiers</i> (obtained from the repositories).</li> 
+
+<li><b>A list of relevant text snippets</b> s<sub>i,1</sub>, s<sub>i,2</sub>, s<sub>i,3</sub>,...  from the returned articles. 
+Again, the list should be ordered by decreasing confidence. A single snippet list will be returned per question and participanting system, and the list may contain any number (or no) 
+snippets from any of the returned articles d<sub>i,1</sub>, d<sub>i,2</sub>, d<sub>i,3</sub>,...  Each snippet will be represented by the unique identifier of the article 
+it comes from, the identifier of the section the snippet starts in, the offset of the first character of the snippet in the section the snippet starts in, the identifier of the section the snippet ends in, and the offset of the last character of the snippet in the section the snippet ends in. The snippets themselves will also have to be 
+returned (as strings).
+</li>
+
+<li><b>A list of relevant RDF triples</b> t<sub>i,1</sub>, t<sub>i,2</sub>, t<sub>i,3</sub>,...  from the designated ontologies. 
+Again, the list should be ordered by decreasing confidence. A single triple list will be returned per question and participating system, and the list may contain any number (or no) triples from multiple designated ontologies. 
+</li>
+</ul>
+Each participating system will be allowed to return at most 100 
+concepts, 100 articles, 100 snippets, and 1000 RDF triples per question.
+</div>
+
+
+<a onclick ="javascript:ShowHide('answersB')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Required Answers in Phase B</h3></a>
+<div class="mid" id="answersB" style="DISPLAY: none">
+
+In Phase B, the participants will be provided with the same questions q<sub>1</sub>, q<sub>2</sub>,...,q<sub>n</sub> as in Phase A, but this time they will 
+also be given gold (correct) lists of concepts, articles, snippets, and triples of each question. The "gold" lists will contain concepts, articles, snippets, 
+and triples identified by biomedical experts as relevant and providing 
+enough information to answer the questions. 
+For each question, each participating system may return an <i>ideal answer</i>, i.e., a paragraph-sized summary of relevant information. 
+In the case of yes/no, factoid, and list questions, the systems may also return <i>exact answers</i>; for summary questions, no exact answers will be
+returned. The participants will be told the type of each question. A 
+participating system may return only "exact" answers, or only "ideal" 
+answers, or (ideally) both "exact" and "ideal" answers.
+
+
+
+
+<h4>Exact Answers</h4>
+<ul>
+<li>For each <i>yes/no question</i>, the exact answer of each participating system will have to be either "yes" or "no". </li>
+<li>For each <i>factoid question</i>, each participating system will have to return a list of <i>up to 5 entity names</i> (e.g., up to 5 names of drugs), numbers, 
+or similar short expressions, ordered by decreasing confidence.</li>
+<li>For each <i>list question</i>, each participating system will have to return a single list of entity names, numbers, or similar short expressions, jointly taken to 
+constitute a single answer (e.g., the most common symptoms of a disease). The returned list will have to contain no more than 100 entries of no more than 100 characters each.</li>
+<li>No exact answers will be returned for <i>summary questions</i>.</li>
+</ul>
+
+
+<h4>Ideal Answers</h4>
+For each question (yes/no, factoid, list, summary), each participating 
+system of Phase B may also return an <i>ideal answer</i>, i.e., a single 
+paragraph-sized text ideally summarizing the most relevant information 
+from concepts, articles, snippets, and triples retrieved in Phase A. 
+Each returned "ideal" answer is intended to approximate a short text 
+that a biomedical expert would write to answer the corresponding 
+question (e.g., including prominent supportive information), whereas the 
+"exact" answers are only "yes"/"no" responses, entity names or similar 
+short expressions, or lists of entity names and similar short 
+expressions; and there are no "exact" answers in the case of summary 
+questions. The maximum allowed length of each "ideal" answer is 200 words.
+<br /><br />
+ 
+<em>Attention:</em>
+<ul> <li> The gold lists that will be provided to the participants of Phase B will 
+contain the relevant concepts, articles, snippets, and triples that the 
+biomedical experts who prepared the questions managed to identify.</li>
+<li>There will be enough  information in the provided gold lists (all
+     four lists together, e.g., not necessarily in any single list) to
+     find the "exact" answer and to formulate an "ideal" answer.
+     However, there may be (and most probably, will be) additional
+     correct (relevant) concepts, articles, snippets, and triples,
+     which will not be included in the provided gold lists.</li>
+<li>When producing the "exact" and "ideal" answers in Phase B, the
+     participating systems are allowed to use both the provided gold
+     lists and any other resource (e.g., the concepts, articles,
+     snippets, and triples they retrieved in Phase A, in addition to
+     the gold provided lists).</li>
+<li>Before announcing the official results of Phase B, biomedical experts 
+will examine the lists of concepts, articles, snippets, and triples 
+returned by the participating systems, as well as the "exact" and 
+"ideal" answers of the participating systems, in order to enhance the 
+gold lists of concepts, articles, snippets, triples, and the gold 
+"exact" and "ideal" answers that will be used as references for 
+evaluation purposes, as discussed <a href="http://bioasq.lip6.fr/Tasks/b/eval_meas/" style="text-decoration:none; color:blue">here </a>.</li></ul>
+</div>
+
+<a onclick ="javascript:ShowHide('devData')" href="javascript:;" style="text-decoration:none" >
+<h3 id="developmentDataset">+ Development Dataset</h3></a>
+<div class="mid" id="devData" style="DISPLAY: none"> 
+ 
+ A development ("dry-run") dataset for Phases A and B of Task 2b can be downloaded from 
+ <a href="/Tasks/2b/trainingDataset/"> here</a>. 
+ The development dataset consists of 310 questions, along with their gold concepts, articles, snippets, RDF triples, "exact" answers, and "ideal" answers in JSON format, 
+ explained below. <br />
+ <em>Attention:</em>
+ <ul><li>Only registered users can download the development dataset.</li>
+ <li>The participants are allowed to use any resources they wish to train their systems.</li></ul>
+</div> 
+ 
+
+<a onclick ="javascript:ShowHide('devv')" href="javascript:;" style="text-decoration:none" >
+<h3 id="developmentDataset">+ Test dataset and evaluation process</h3></a>
+<div class="mid" id="devv" style="DISPLAY: none">
+
+The test dataset will be released in <em>five batches</em>, each containing approximately 100 questions.
+For each batch, first only the questions of 
+ the batch will be released, and the participants will have to submit their answers for Phase A (concepts, articles, snippets, RDF triples) within 24 hours; 
+ then the gold concepts, articles, snippets, and RDF triples for the questions of the batch will also be provided, and the participants will again have 24 hours to 
+ submit their answers for Phase B ("exact" and "ideal" answers). The batches will be released according to the following schedule:
+ <ul>
+ <li>Wednesday March 5, 2014, 11:00 CEST: Questions of batch 1 released. Phase A answers (concepts, articles, snippets, RDF triples) of batch 1 due within 24 hours.</li>
+ <li>Thursday March 6, 2014, 12:00 CEST: Gold concepts, articles, snippets, RDF triples of batch 1 released. Phase B answers (“exact” and “ideal”) of batch 1 due within 24 hours.</li>
+ <li>Wednesday March 19, 2014, 11:00 CEST: Questions of batch 2 released. Phase A answers of batch 2 due within 24 hours.</li>
+ <li>Thursday March 20, 2014, 12:00 CEST: Gold concepts, articles, snippets, RDF triples of batch 2 released. Phase B answers of batch 2 due within 24 hours.</li>
+ <li>Wednesday April 2, 2014, 11:00 CEST: Questions of batch 3 released. Phase A answers of batch 3 due within 24 hours.</li>
+ <li>Thursday April 3, 2014, 12:00 CEST: Gold concepts, articles, snippets, RDF triples of batch 3 released. Phase B answers of batch 3 due within 24 hours.</li>
+ <li>Wednesday April 16, 2014, 11:00 CEST: Questions of batch 3 released. Phase A answers of batch 3 due within 24 hours.</li>
+ <li>Thursday April 17, 2014, 12:00 CEST: Gold concepts, articles, snippets, RDF triples of batch 3 released. Phase B answers of batch 3 due within 24 hours.</li>
+ <li>Wednesday April 30, 2014, 11:00 CEST: Questions of batch 3 released. Phase A answers of batch 3 due within 24 hours.</li>
+ <li>Thursday May 1, 2014, 12:00 CEST: Gold concepts, articles, snippets, RDF triples of batch 3 released. Phase B answers of batch 3 due within 24 hours.</li>
+ </ul>
+ 
+ 
+The evaluation measures that will be used in Phase A and Phase B are presented <a href="http://bioasq.lip6.fr/Tasks/b/eval_meas/" style="text-decoration:none; color:blue">here </a>.
+</div>
+
+
+<a onclick ="javascript:ShowHide('resA')" href="javascript:;" style="text-decoration:none" >
+<h3 id="developmentDataset">+ Designated resources for Phase A</h3></a>
+<div class="mid" id="resA" style="DISPLAY: none">
+In Phase A, <i>relevant concepts and concept identifiers</i> are to be retrieved from the following terminologies and ontologies:
+<ul>
+	<li>the <a href="http://www.ncbi.nlm.nih.gov/mesh" style="text-decoration:none; color:blue">Medical Subject Headings (MeSH)</a></li>
+	<li>the <a href="http://www.geneontology.org/" style="text-decoration:none; color:blue">Gene Ontology (GO)</a></li>
+	<li>the <a href="http://www.uniprot.org/" style="text-decoration:none; color:blue">Universal Protein Resource (UniProt, SwissProt subset)</a></li>
+	<li>the <a href="http://www.biosemantics.org/index.php?page=Jochem" style="text-decoration:none; color:blue">Joint Chemical Dictionary (Jochem)</a></li>
+	<li>the <a href="http://disease-ontology.org/" style="text-decoration:none; color:blue">Disease Ontology (DO)</a></li>
+</ul>
+<i>Relevant articles</i> are to be retrieved from <a href="http://www.ncbi.nlm.nih.gov/pubmed" style="text-decoration:none; color:blue"> PubMed</a>, 
+excluding articles published after March 14<sup>th</sup>, 2013. Their unique identifiers are their URLs in PubMed (e.g., "http://www.ncbi.nlm.nih.gov/pubmed/23687640"). <br /><br />
+<i>The relevant snippets</i> will have to be parts of relevant articles. <br /><br />
+
+<i>The relevant RDF triples</i> will have to come from the Linked Life Data platform, provided by the 
+<a href="http://linkedlifedata.com/" style="text-decoration:none; color:blue">Linked Life Data project</a>. 
+The LinkedLifeData platform is a data warehouse that syndicates large volumes of heterogeneous biomedical knowledge in a common data model. 
+The platform uses an extension of the RDF model that is able to track the provenance of each individual fact in the repository and thus update the information. 
+It contains currently more than 8 billion statements, with almost 2 billion entities involved. The statements are extracted from 26 biomedical resources, 
+such as PubMed, UMLS, DrugBank, Diseasome, and Gene Ontology. <br /><br />
+
+Instructions on how to download the designated resources and/or how to 
+use tools that the organizers provide to search the designated resources
+are available <a href="/Tasks/b/resources/" style="text-decoration:none; color:blue"> here</a>.
+</div>
+
+<a onclick ="javascript:ShowHide('formatData')" href="javascript:;" style="text-decoration:none" >
+<h3 id="developmentDataset">+ JSON format of the datasets</h3></a>
+<div class="mid" id="formatData" style="DISPLAY: none">
+ 
+The development and test datasets use the following JSON format:
+<br />
+<pre>
+{"questions":[
+{
+"type":"factoid", 
+"body":"Is Rheumatoid Arthritis more common in men or women?", 
+"id":"5118dd1305c10fae750000010", 
+"ideal_answer": "Disease patterns in RA vary between the sexes; the condition is 
+more commonly seen in women, who exhibit a more aggressive disease and a poorer 
+long-term outcome.", 
+"exact_answer": ["Women"], 
+"documents": ["http://www.ncbi.nlm.nih.gov/pubmed/12723987",...], 
+"snippets":[
+{"document": "http://www.ncbi.nlm.nih.gov/pubmed/22853635",
+"text": "The expression and clinical course of RA are influenced by gender. In 
+developed countries the prevalence of RA is 0,5 to 1.0%, with a male:female ratio of 1:3.",
+"offsetInBeginSection": 559,
+"offsetInEndSection": 718,
+"beginSection": "sections.0"
+"endSection": "sections.0"}, ...],
+"concepts":["http://www.diseaseontology.org/api/metadata/DOID:7148", ...],
+"triples": [{"s": "http://linkedlifedata.com/resource/umls/id/C2827401",
+"p": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+"o": "http://linkedlifedata.com/resource/umls/label/A17680439"},...]
+}, ...]}
+</pre>
+
+In the case of <i>factoid questions</i>, the <code>"exact_answer"</code> field is a list. The list contains the name of the entity (or number, or other similar short expression)  seeked by the question; if the seeked entity has multiple names (synonyms), the list should ideally contain  all of them.<br />
+
+In the case of <i>list questions</i>, the <code>"exact_answer"</code> field is a list of lists.  Each element of the outmost list is a list corresponding to one of the entities (or numbers, or other similar short expressions)  seeked by the question. If any of the seeked entities has multiple names (synonyms), the corresponding inner list should ideally  contain all the names. In the following example:
+<pre>"exact_answer": [["pneumonia"], ["influenza", "grippe"], ["bronchitis"]]</pre>
+the exact  answer to the list question contains three entities and the second entity has two names, i.e, "influenza" and "grippe".
+<br />
+<br />
+<b>Full text documents returned from PubMedCentral</b> (PMC) are split into sections. Systems may select snippets from all sections,<em> but not the abstract</em>. The first section of a document is  <code>"sections.0"</code>, the  second section is "sections.1" etc. A snippet  that spans across  more than one sections will have different <code>"beginSection"</code> and <code>"endSection"</code> values, representing the sections where the snippet begins and ends respectively. It is also possible for a snippet to be part of (or the entire)  title of an article. In this case, the <code>"beginSection"</code> and <code>"endSection"</code> values are <code>"title"</code>. A snippet may <i>not</i> come from both the title and sections. For example, the PMC document with PMID 12723987 is split into 7 sections: 
+<pre>
+['IntroductionThe association between smoking and rheumatoid arthritis (RA) [...]',
+'Patients and methodCases and controlsCases were patients drawn from the Central [...]',
+'ResultsThe mean age of the patients was 62 years (range 19–96 years) and 71% were female; [...]',
+'DiscussionIn the present study we confirmed the earlier observation [...]',
+...
+]
+</pre>
+A snippet that starts at the 7th character of the 3rd section and ends at the 89th character of the same section would be represented as follows: 
+<pre>
+{	"beginSection": "sections.2",
+	"endSection": "sections.2",
+	"offsetInBeginSection": 7, 
+	"offsetInEndSection": 89, 
+	"document": "http://www.ncbi.nlm.nih.gov/pubmed/12723987", 
+	"text": "The mean age of the patients was 62 years (range 19\u201396 years) and 71% were female;"}
+</pre>
+
+Note that the first character of a section has the offset 0 (zero). 
+<br /><br />
+In <b>abstract-only documents</b> returned from PubMed, where only the abstract and titles are available, the <code>"beginSection"</code> and <code>"endSection"</code> are both <code>"sections.0"</code> (if the snippet comes from the abstract) or they are both <code>"title"</code> (if the snippet comes from the title). A 
+snippet may <i>not</i> come from both the title and the abstract. <br /><br />
+When submitting results, participants will use the same JSON format. The <code>"text"</code> field in the elements of the snippet list is <i>also required</i>.
+</div>
+
+<a onclick ="javascript:ShowHide('sys')" href="javascript:;" style="text-decoration:none" >
+<h3 id="developmentDataset">+ Systems</h3></a>
+<div class="mid" id="sys" style="DISPLAY: none">
+Each participant (e.g., organization, research group) will be allowed to participate in Task 2b with a maximum of 5 systems. 
+To declare the systems you are participating with, log in, go to <a href="http://bioasq.lip6.fr/profile/" style="text-decoration:none; color:blue">"Edit Profile"</a>, and then click on the "Add System" button. 
+The system name you will fill in the form will be the identifier of your system and it will be used in the "Results" section.<br />
+<em>Attention:</em> Trying to upload results without selecting a system will cause an error and the results will not be saved.
+</div>
+
+<a onclick ="javascript:ShowHide('cl')" href="javascript:;" style="text-decoration:none" >
+<h3 id="developmentDataset">+ Cluster</h3></a>
+<div class="mid" id="cl" style="DISPLAY: none">
+A large computer cluster has been made available to BioASQ. The participants will be able to run their code on the cluster for both Task 1A and Task 2b, 
+if they wish to. Alternatively, the participants will be able to communicate with the BioASQ servers (e.g., to obtain test batches and submit their responses) using web services.
+ Further information regarding the services will be announced shortly. Using the cluster requires integrating your code in the Eclipse project skeleton available  
+ <a href="http://bioasq.lip6.fr/cluster/" style="text-decoration:none; color:blue">here</a>. The e-mail address  where the zip has to be sent is cluster_admin[at]bioasq[dot]org.
+  For questions about the cluster check also the <a href="http://bioasq.lip6.fr/forum/" style="text-decoration:none; color:blue">BioASQ Discussion Forum</a>.
+</div>
+</body>
+
+
+<a onclick ="javascript:ShowHide('wordvec')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Continuous Space Word Vectors </h3></a>
+<div class="mid" id="wordvec" style="DISPLAY: none">
+The word2vec tool (https://code.google.com/p/word2vec/)  processes a large text corpus and maps the words of the corpus to vectors of a continuous space. The word vectors can then be used, for example, to estimate the relatedness of two words or to perform query expansion. We applied word2vec to a corpus of 10,876,004 English abstracts of biomedical articles from PubMed. The resulting vectors of 1,701,632 distinct words (types) are now publicly available <a href="http://bioasq.lip6.fr/tools/BioASQword2vec/"> here</a>. File size: 1.3GB (compressed), 3.5GB (uncompressed).  More information <a  href="http://bioasq.lip6.fr/info/BioASQword2vec/">here</a>.
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+

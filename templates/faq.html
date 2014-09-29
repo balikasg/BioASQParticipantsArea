@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<body id="faq1A">
+<h1>Frequently Asked Questions</h1>
+<h3>Task 2A</h3>
+<ol>
+<li style="font-style:italic;">How many articles does the training set include?</li>
+There are about 12 milion articles in the training set. In every article there is an abstract and in some of them the full text is available.<br /><br />
+<li style="font-style:italic;">Which are the classes that are going to be used during classification?</li>
+MeSH (Medical Subject Headings) is the vocabulary that is going to be used for classification.<br /><br />
+<li style="font-style:italic;">How many labels does each article usually receive?</li> 
+Usually articles receive around 10-15 labels.<br /><br />
+<li style="font-style:italic;">In what formats are the training and the test data going to be provided during the challenge?</li>
+Training and test data are going to be provided both in raw text and in 
+vectorized description. The vectorized description will be distributed 
+as a Lucene Index. Detailed description of the fields of the index and 
+the vectorization tools is provided analytically.<br /><br />
+
+<!-- <li style="font-style:italic;">What is the size of the feature space?</li>
+<br />
+<li style="font-style:italic;">What is the size of the dictionary?</li> 
+<br /> -->
+<li style="font-style:italic;">From which journals are the test articles going to be selected?</li>
+The list of the journals can be found <a href="http://bioasq.lip6.fr/journals/" style="text-decoration:none; color:blue">here</a>. <br /><br />
+
+</ol>
+</body>
+{% endblock %}

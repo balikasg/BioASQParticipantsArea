@@ -1,0 +1,1282 @@
+{
+  "questions": [
+    {
+      "body": "How could we infer functional associations from gene fusion events?", 
+      "ideal_answer": "Gene fusion is an important evolutionary process. The rosetta-stone method is used to infer gene function based on gene fusion events. Two polypeptides A and B in one organism, are likely to interact if their homologues are expressed as a single polypeptide AB in another. It is assumed that two proteins, which are found to be transcribed by a single transcript in one (or several) genomes are likely to be functionally linked. This fusion analysis (also known as \"Rosetta stone\" method) takes advantage of the study of genomic structures and sequence similarity to detect putative interacting protein pairs, which, importantly might not have been suspected based on current biochemical knowledge.", 
+      "type": "summary", 
+      "id": "511979b04eab811676000003"
+    }, 
+    {
+      "body": "Where is X-ray free electron laser used?", 
+      "ideal_answer": "X-ray free electron laser is used in molecular imaging and structural determination of biomolecules. New techniques for determining the structure of systems that cannot be crystallized and for studying the time-resolved behavior of irreversible reactions at femtosecond timescales are now available.", 
+      "type": "list", 
+      "id": "51475d5cd24251bc0500001b", 
+      "exact_answer": [
+        [
+          "studying the dynamics of time-dependent systems"
+        ], 
+        [
+          "following chemical reactions"
+        ], 
+        [
+          "material science investigations"
+        ], 
+        [
+          "study of matter in extreme conditions"
+        ], 
+        [
+          "structural biology"
+        ], 
+        [
+          "imaging of protein nanocrystals"
+        ], 
+        [
+          "structural analysis of protein nanocrystals"
+        ], 
+        [
+          "atomic-resolution diffractive imaging of single biological molecules"
+        ], 
+        [
+          "High-resolution protein structure determination"
+        ], 
+        [
+          "imaging of biological molecules from extremely small samples"
+        ], 
+        [
+          "image biological and materials science samples at high resolution"
+        ], 
+        [
+          "atomic-resolution ultrafast imaging"
+        ], 
+        [
+          "high-resolution three-dimensional structure determination of single biomolecules"
+        ]
+      ]
+    }, 
+    {
+      "body": "Give examples of next-generation sequencing applications in mutation screening?", 
+      "ideal_answer": "In a clinical setting, next-generation sequencing (NGS) approaches for the enrichment and resequencing of DNA targets may have limitations in throughput, cost, or accuracy. The strategy described is accurate and easy to incorporate into conventional workflow, and shows potential for mutation screening of clinically important gene targets in genetic disorders. (PMID: 22921312) Genetic analysis of von Willebrand disease by von Willebrand factor gene sequencing has not yet become routine practice. By pooling patient genomic DNA before polymerase chain reaction enrichment, indexing samples with barcode tags, and re-sequencing on the next-generation sequencing instrument, at least 350 patients and relatives per run can be simultaneously analyzed in a fast, inexpensive manner. (PMID: 22315491) Conventional PCR-based direct sequencing of candidate genes for a family with X-linked leucoencephalopathy with unknown aetiology failed to identify any causative mutations. Single-lane exome next-generation sequencing is sufficient to fully analyse all the transcripts of the X chromosome. This method is particularly suitable for mutation screening of X-linked recessive disorders and can avoid biases in candidate gene choice. (PMID: 21415082)", 
+      "type": "summary", 
+      "id": "5148f6f0d24251bc0500003c"
+    }, 
+    {
+      "body": "What are the computational methods for the prediction of beta-barrel transmembrane proteins?", 
+      "ideal_answer": "BETAWARE: a machine-learning tool to detect and predict transmembrane beta-barrel proteins in prokaryotes. (PMID: 23297037) BOCTOPUS: improved topology prediction of transmembrane b barrel proteins (PMID: 22247276) TMBHMM: a frequency profile based HMM for predicting the topology of transmembrane beta barrel proteins and the exposure status of transmembrane residues (PMID: 21426944) TMBETAPRED-RBF for predicting the transmembrane beta-strands from amino acid sequence (PMID: 19421989) TMB-Hunt: an amino acid composition based method to screen proteomes for beta-barrel transmembrane proteins (PMID: 15769290)", 
+      "type": "list", 
+      "id": "5149a61ed24251bc05000044", 
+      "exact_answer": [
+        [
+          "BETAWARE"
+        ], 
+        [
+          "BOCTOPUS"
+        ], 
+        [
+          "TMBHMM"
+        ], 
+        [
+          "BTMX"
+        ], 
+        [
+          "HHomp"
+        ], 
+        [
+          "TMBpro"
+        ], 
+        [
+          "TMBpro-3D"
+        ], 
+        [
+          "TMBETAPRED-RBF"
+        ], 
+        [
+          "TMB-Hunt"
+        ], 
+        [
+          "HMM-B2TMR"
+        ], 
+        [
+          "ProfTMB"
+        ], 
+        [
+          "PRED-TMBB"
+        ], 
+        [
+          "TBBPred"
+        ], 
+        [
+          "graph-theoretic model"
+        ], 
+        [
+          "machine-learning"
+        ], 
+        [
+          "frequency profile based HMM"
+        ], 
+        [
+          "Neural Network"
+        ], 
+        [
+          "Hidden Markov Models"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which are the available biomedical text mining tools for the detection of protein-protein interactions?", 
+      "ideal_answer": "PPInterFinder--a web-based text mining tool to extract human PPIs from biomedical literature. (PMID: 23325628) eFIP system for text mining of protein interaction networks of phosphorylated proteins (PMID: 23221174) PPI finder: a mining tool for human protein-protein interactions (PMID: 19234603) PIE: an online prediction system for protein-protein interactions from text. (PMID: 18508809) Once LAITOR identifies a co-occurring protein pair in an abstract, this is considered to be positively (relevant) classified. (PMID: 20122157) STRING uses Natural Language Processing [38] to search for statistically relevant co-occurrences of gene names, and also extract a subset of semantically specified interactions. (PMID: 20122157)", 
+      "type": "list", 
+      "id": "5149aafcd24251bc05000045", 
+      "exact_answer": [
+        [
+          "PPInterFinder"
+        ], 
+        [
+          "eFIP"
+        ], 
+        [
+          "Extracting Functional Impact of Phosphorylation"
+        ], 
+        [
+          "eGRAB"
+        ], 
+        [
+          "RLIMS-P"
+        ], 
+        [
+          "GeneView"
+        ], 
+        [
+          "iHop"
+        ], 
+        [
+          "PPI finder"
+        ], 
+        [
+          "Paired-PPI Finder"
+        ], 
+        [
+          "PIE"
+        ], 
+        [
+          "LAITOR"
+        ], 
+        [
+          "STRING"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which are the state-of-the-art computational tools for the prediction of gene fusion events?", 
+      "ideal_answer": "MosaicFinder: Identification of fused gene families in sequence similarity networks (PMID: 23365410) FusionDB provides a characterization of a large number of gene fusion events at hand of multiple sequence alignments. (PMID: 18025684) PLEX can be searched iteratively and also enables searches for chromosomal gene neighbors and Rosetta Stone linkages. (PMID: 15701682)", 
+      "type": "list", 
+      "id": "5149af96d24251bc05000046", 
+      "exact_answer": [
+        [
+          "MosaicFinder"
+        ], 
+        [
+          "FusionDB"
+        ], 
+        [
+          "PLEX"
+        ], 
+        [
+          "fdfBLAST"
+        ]
+      ]
+    }, 
+    {
+      "body": "Is there a difference in the rate between gene fusion and gene fission?", 
+      "ideal_answer": "We found that fusion events are approximately four times more common than fission events, and we established that, in most cases, any particular fusion or fission event only occurred once during the course of evolution. (PMID: 15680510) Rate and polarity of gene fusion and fission in Oryza sativa and Arabidopsis thaliana. Polarizing these events by outgroup comparison revealed differences in the rate of gene fission but not of gene fusion in the rice and Arabidopsis lineages. Gene fission occurred at a higher rate than gene fusion in the O. sativa lineage and was furthermore more common in rice than in Arabidopsis. (PMID: 17035354)", 
+      "type": "yesno", 
+      "id": "5149b575d24251bc05000047", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "How functional connectivity of the default mode network changes in patients with disorders of consciousness?", 
+      "ideal_answer": "Functional connectivity in the default mode network (DMN) is known to be reduced in patients with disorders of consciousness, to a different extent depending on their clinical severity. Patients showed significant impairments in all of the pathways connecting cortical regions within this network, as well as the pathway connecting the posterior cingulate cortex/precuneus with the thalamus, relative to the healthy volunteers. Moreover, the structural integrity of this pathway, as well as that of those connecting the posterior areas of the network, was correlated with the patients' behavioral signs for awareness, being higher in EMCS patients than those in the upper and lower ranges of the MCS patients, and lowest in VS patients. These results provide a possible neural substrate for the functional disconnection previously described in these patients, and reinforce the importance of the DMN in the genesis of awareness and the neural bases of its disorders. (PMID: 23034909)", 
+      "type": "summary", 
+      "id": "514a2649d24251bc0500005a"
+    }, 
+    {
+      "body": "Are psammoma bodies characteristic to meningiomas?", 
+      "ideal_answer": "Psammoma bodies (PBs) are concentric lamellated calcified structures, observed most commonly in papillary thyroid carcinoma (PTC), meningioma, and papillary serous cystadenocarcinoma of ovary but have rarely been reported in other neoplasms and nonneoplastic lesions. (PMID: 19373908)", 
+      "type": "yesno", 
+      "id": "514a4679d24251bc0500005b", 
+      "exact_answer": "no"
+    }, 
+    {
+      "body": "Which pituitary adenoma is common cause of infertility is women?", 
+      "ideal_answer": "Prolactinoma is the most common secreting pituitary adenoma. It is typically diagnosed in women of reproductive age and is common cause of infertility. (PMID: 23090264)", 
+      "type": "factoid", 
+      "id": "514a51c2d24251bc0500005c", 
+      "exact_answer": [
+        "Prolactinoma"
+      ]
+    }, 
+    {
+      "body": "Is paroxetine effective for treatment of premenstrual dysphoric disorder?", 
+      "ideal_answer": "Paroxetine CR is approved for the treatment of major depression, social anxiety disorder, panic disorder and premenstrual dysphoric disorder in adults. (PMID: 17286545) Continuous treatment with paroxetine reduced premenstrual symptoms effectively with a response rate of 85%. (PMID: 17035933)", 
+      "type": "yesno", 
+      "id": "514a59c2d24251bc0500005d", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Does cortical spreading depression appear in ischemic penumbra following ischemic stroke?", 
+      "ideal_answer": "Spontaneous spreading depolarizations (SDs) occur in the penumbra surrounding ischemic core. These SDs, often referred to as peri-infarct depolarizations, cause vasoconstriction and recruitment of the penumbra into the ischemic core in the critical first hours after focal ischemic stroke; however, the real-time spatiotemporal dynamics of SD-induced injury to synaptic circuitry in the penumbra remain unknown. (PMID: 20660268)", 
+      "type": "yesno", 
+      "id": "514b335dd24251bc05000061", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Intact macromolecular assemblies are analysed by advanced mass spectrometry. How large complexes (in molecular weight) have been studied?", 
+      "ideal_answer": "The analysis of intact protein assemblies in native-like states by mass spectrometry offers a wealth of information on their biochemical and biophysical properties. Here we show that the Orbitrap mass analyzer can be used to measure protein assemblies of molecular weights approaching one megadalton with sensitivity down to the detection of single ions. (PMID: 23064518) We confirm the existence of these subpopulations using tandem mass spectrometry of intact 30S subunits. (PMID: 16939266)", 
+      "type": "factoid", 
+      "id": "514c3fd7d24251bc05000062", 
+      "exact_answer": [
+        "Large complexes can be analyzed using Orbitrap mass analyzer and tandem mass spectrometry."
+      ]
+    }, 
+    {
+      "body": "Is there an association between c-reactive protein concentrations and outcomes of subarachnoid hemorrhage patients?", 
+      "ideal_answer": "Serum C-reactive protein levels predict neurological outcome after aneurysmal subarachnoid hemorrhage. Our aim was to evaluate the relationship between serum C-reactive protein (CRP) levels and the neurological prognosis and development of vasospasm in patients with aneurysmal subarachnoid hemorrhage (aSAH). Serum CRP levels were related to severity of aSAH. Patients with lower GCS scores and higher Hunt and Hess and Fisher grades presented statistically significant higher serum CRP levels. Patients with higher serum CRP levels had a less favorable prognosis. Increased serum CRP levels were strongly associated with worse clinical prognosis in this study. (PMID: 22392113)", 
+      "type": "yesno", 
+      "id": "514cbbf9d24251bc05000065", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Is depression associated with poor prognosis of brain tumor patients?", 
+      "ideal_answer": "The adverse impact of depression in relation to survival among cancer patients is currently a subject of great interest in research. (PMID: 15918939) In the subgroup of patients with low-grade gliomas, depressive patients had a significantly shorter survival time compared with nondepressive subjects (P = 0.031, Kaplan-Meier survival analysis). (PMID: 15918939) The results suggest that depression and decreased QOL among low-grade glioma patients is related to shorter survival at long-term follow-up. (PMID: 16960653) At all follow-ups, depressed low-grade glioma patients had a significantly shorter survival time, 3.3-5.8 years, compared to non-depressed low-grade glioma patients, 10.0-11.7 years. (PMID: 16960653)", 
+      "type": "yesno", 
+      "id": "514cc8dcd24251bc05000066", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "What is the role of anhedonia in coronary disease patients?", 
+      "ideal_answer": "Contrary to depression, categorical anhedonia (PAS >23) was an independent and significant predictor of severe cardiac events after adjusting for clinical variables. (PMID: 19932820) In established CHD, high levels of positive affect have been associated with less hospital readmissions [9], whereas low levels of positive affect, also referred to as anhedonia, increase the risk of major clinical events in patients following coronary-artery stenting [10]. (PMID: 19430927)", 
+      "type": "summary", 
+      "id": "514cd15ad24251bc05000067"
+    }, 
+    {
+      "body": "What are the generic versions of Viagra?", 
+      "ideal_answer": "Sildenfail is a vasoactive agent used to treat erectile dysfunction and reduce symptoms in patients with pulmonary arterial hypertension (PAH). Sildenafil elevates levels of the second messenger, cGMP, by inhibiting its breakdown via phosphodiesterase type 5 (PDE5). PDE5 is found in particularly high concentrations in the corpus cavernosum, erectile tissue of the penis. It is also found in the retina and vascular endothelium. Increased cGMP results in vasodilation which facilitates generation and maintenance of an erection. The vasodilatory effects of sildenafil also help reduce symptoms of PAH. (DrugBank:  DB00203)", 
+      "type": "list", 
+      "id": "5150f401d24251bc05000075", 
+      "exact_answer": [
+        [
+          "Sildenafil"
+        ], 
+        [
+          "Sildenafil Citrate"
+        ]
+      ]
+    }, 
+    {
+      "body": "Is physical performance influenced by thyroid hormone metabolism?", 
+      "ideal_answer": "Thyroid hormones are important regulators of energy metabolism and may influence energy processes during physical exercise. There are controversial results concerning thyroid hormone metabolism during strenuous exercise in adult athletes and only scant data concerning the impact of strenuous exercise on thyroid hormone metabolism in children and adolescents. Although some studies demonstrate a transient change in thyroid hormones during intense physical performance, most studies agree that these changes are of minor impact, practically reflecting the relative negative energy balance during strenuous exercise. (PMID: 16175495)", 
+      "type": "yesno", 
+      "id": "5151b8efd24251bc0500007a", 
+      "exact_answer": "no"
+    }, 
+    {
+      "body": "What is the role of the histidine rich calcium binding protein (HRC) in cardiomyopathy?", 
+      "ideal_answer": "The histidine-rich calcium binding protein (HRC) Ser96Ala polymorphism was shown to correlate with ventricular arrhythmias and sudden death only in dilated cardiomyopathy patients. (PMID: 21742996)", 
+      "type": "summary", 
+      "id": "51542de6d24251bc0500007f"
+    }, 
+    {
+      "body": "The secreted frizzled-related protein 3 (sFPR3) is altered in human cancers.", 
+      "ideal_answer": "SFRPs are down-regulated in several cancers and this is often correlated with poor prognosis, as has been shown for breast, colorectal, and a number of other cancers. (PMID: 21494614) We performed tissue microarray and found that the level of sFRP3 protein was high in normal kidney, low in primary renal cancer tissues, and high in metastatic renal cancer tissues. (PMID: 20160027)", 
+      "type": "summary", 
+      "id": "5159502dd24251bc0500009b"
+    }, 
+    {
+      "body": "Where in the cell do we find the protein Cep135?", 
+      "ideal_answer": "Cep135 is a 135-kDa, coiled-coil centrosome protein important for microtubule organization in mammalian cells (PMID: 14983524)", 
+      "type": "factoid", 
+      "id": "51596a8ad24251bc0500009e", 
+      "exact_answer": [
+        "centrosome"
+      ]
+    }, 
+    {
+      "body": "What is the aim of the Human Chromosome-centric Proteome Project (C-HPP)?", 
+      "ideal_answer": "The Chromosome-Centric Human Proteome Project (C-HPP) is an international effort for creating an annotated proteomic catalog for each chromosome. (PMID: 23312004) The chromosome-centric human proteome project aims to systematically map all human proteins, chromosome by chromosome, in a gene-centric manner through dedicated efforts from national and international teams. (PMID: 23308364) The Chromosome-centric Human Proteome Project (C-HPP) aims to systematically map the entire human proteome with the intent to enhance our understanding of human biology at the cellular level. (PMID: 23253012)", 
+      "type": "summary", 
+      "id": "515aa0abd24251bc050000a8"
+    }, 
+    {
+      "body": "What is the advantage of using long nano columns in proteomics?", 
+      "ideal_answer": "It was found that very high resolutions are attainable at long gradient times with long columns. The resolution continuously became higher as the gradient time and the column length became longer except in some special cases. (PMID: 15058572)", 
+      "type": "summary", 
+      "id": "515b1eccd24251bc050000af"
+    }, 
+    {
+      "body": "Which is the binding site motif of Sp1?", 
+      "ideal_answer": "Sp1 binds through an inverted CACCC motif. (PMID: 8063775) In an effort to identify transcription factors that bind to the CACCC element, we found that purified human Sp1, as well as Sp1 in HeLa nuclear extract, can specifically bind to a DNA probe. (PMID: 8063775)", 
+      "type": "factoid", 
+      "id": "515d692c298dcd4e5100000a", 
+      "exact_answer": [
+        "Sp1 binds through an inverted CACCC motif."
+      ]
+    }, 
+    {
+      "body": "How many genes does the human hoxD cluster contain?", 
+      "ideal_answer": "The human HOXD complex contains nine genes HOXD1, HOXD3, HOXD4, HOXD8, HOXD9, HOXD10, HOXD11, HOXD12 and HOXD13, which are clustered from 3' to 5' in an approximately 100-kb stretch on chromosome 2q31.1, with HOXD1 at the 3' end and HOXD13 the 5'. end (PMID: 22879880) Both children are heterozygous for a deletion that eliminates at least eight (HOXD3-HOXD13) of the nine genes in the HOXD cluster. (PMID: 10364522)", 
+      "type": "factoid", 
+      "id": "515db083298dcd4e51000012", 
+      "exact_answer": [
+        "The human HOXD complex contains nine genes HOXD1, HOXD3, HOXD4, HOXD8, HOXD9, HOXD10, HOXD11, HOXD12 and HOXD13."
+      ]
+    }, 
+    {
+      "body": "What is the function of TALENs?", 
+      "ideal_answer": "Transcription activator-like effector nucleases (TALENs) are programmable nucleases that join FokI endonuclease with the modular DNA-binding domain of TALEs. (PMID: 23027955) artificial transcription activator-like effector nucleases (TALENs) provide a powerful new approach for targeted zebrafish genome editing and functional genomic applications. (PMID: 23000899)", 
+      "type": "summary", 
+      "id": "515dc691298dcd4e5100001b"
+    }, 
+    {
+      "body": "What is the percentage of responders to tetrabenazine treatment for dystonia in children?", 
+      "ideal_answer": "When benzhexol treatment alone fails in adults with severe disabling axial dystonia, or in children with life-threatening generalised dystonia, combined therapy with tetrabenazine, pimozide and benzhexol may give valuable symptomatic relief. (PMID: 6502174) The most frequently helpful medications were tetrabenazine (68% of patients improved) and anticholinergics (39% improved). (PMID: 6128697)", 
+      "type": "factoid", 
+      "id": "515ddda6298dcd4e5100001f", 
+      "exact_answer": [
+        "The most frequently helpful medications were tetrabenazine (68% of patients improved) and anticholinergics (39% improved)."
+      ]
+    }, 
+    {
+      "body": "What is the effect of methotrexate in treating uveitis due to juvenile idiopathic arthritis ?", 
+      "ideal_answer": "Methotrexate for uveitis associated with juvenile idiopathic arthritis: value and requirement for additional anti-inflammatory medication. To study the value of methotrexate (MTX) and the requirement for additional anti-inflammatory drugs for the treatment of severe chronic iridocyclitis associated with juvenile idiopathic arthritis (JIA). The data suggest that MTX is very effective in controlling inflammation of uveitis in patients with JIA. (PMID: 17932849)", 
+      "type": "summary", 
+      "id": "515de127298dcd4e51000020"
+    }, 
+    {
+      "body": "List all clinical trials of the polypill.", 
+      "ideal_answer": "The 'Use of a Multidrug Pill In Reducing cardiovascular Events' (UMPIRE) trial assesses whether a polypill strategy (by combining aspirin, a statin and two blood pressure lowering agents) would improve adherence to guideline-indicated therapies and would lower both blood pressure and cholesterol, in people with established cardiovascular disease. (PMID: 23038750)", 
+      "type": "list", 
+      "id": "515de572298dcd4e51000021", 
+      "exact_answer": [
+        [
+          "Use of a Multidrug Pill In Reducing cardiovascular Events (UMPIRE)"
+        ], 
+        [
+          "GEMINI"
+        ], 
+        [
+          "Anglo-Scandinavian Cardiac Outcomes Trial (ASCOT)"
+        ], 
+        [
+          "Elevated Lipids and Hypertension (AVALON)"
+        ], 
+        [
+          "The Cluster Randomized Usual Care vs Caduet Investigation Assessing Long-term-risk (CRUCIAL trial)"
+        ], 
+        [
+          "CUSP (The Caduet(r) in an Untreated Subject Population trial)"
+        ], 
+        [
+          "TOGETHER trial"
+        ], 
+        [
+          "IMProving Adherence using Combination Therapy (IMPACT)"
+        ], 
+        [
+          "Second Indian Polycap Study (TIPS-2)"
+        ], 
+        [
+          "Indian Polycap Study (TIPS)"
+        ]
+      ]
+    }, 
+    {
+      "body": "What is the role of probiotics in gastrointestinal disease?", 
+      "ideal_answer": "The efficacy of using probiotics in the prevention and treatment of gastrointestinal diseases has received considerable attention in recent years. Probiotics, products or preparations containing sufficient amounts of viable microorganisms to alter a host's microflora communities [13], are thought to exert beneficial effects by providing protective barriers, enhancing immune responses, and clearing pathogens in the gastrointestinal tract. Meta-analyses or clinical trials on the efficacy of probiotics have been conducted for a number of common gastrointestinal diseases including Irritable Bowel Syndrome (IBS) [5], Helicobacter pylori infection (HPP) [3], Necrotizing Enterocolitis (NEC) [17], Pouchitis (Pouch) [18], Antibiotic Associated diarrhea (AAD) [19], Clostridium difficile Disease (CDD) [20], Infectious diarrhea (ID) [2], and Travellers diarrhea (TD) [2]. These studies have shown that probiotics have significant effects on the prevention (e.g. [2]) and treatment (e.g. [20]) of gastrointestinal disease. (PMID: 22529959)", 
+      "type": "summary", 
+      "id": "515de643298dcd4e51000022"
+    }, 
+    {
+      "body": "List all reported treatment options for anxiety in autism spectrum disorder.", 
+      "ideal_answer": "Mindfulness-based therapy (MBT) has been found effective in reducing anxiety and depression symptoms, however research in autism is limited. (PMID: 22964266) Steingard et al. published a case series of nine children with autism (6-12 years) treated with a low dose of sertraline (25-50 mg daily). Eighty-nine percent showed significant improvement in anxiety, irritability, and transition-induced behavioral deterioration. (PMID: 22934167)", 
+      "type": "list", 
+      "id": "515de993298dcd4e51000024", 
+      "exact_answer": [
+        [
+          "Mindfulness-based therapy (MBT)"
+        ], 
+        [
+          "low dose of sertraline (25-50 mg daily)"
+        ], 
+        [
+          "Multimodal Anxiety and Social Skills Intervention (MASSI) program"
+        ], 
+        [
+          "Coping Cat program (cognitive-behavioral therapy"
+        ], 
+        [
+          "CBT)"
+        ]
+      ]
+    }, 
+    {
+      "body": "List the endoscopic diagnoses that have been reported in children with autism", 
+      "ideal_answer": "Thirty-six children (age: 5.7 +/- 2 years, mean +/- SD) with autistic disorder underwent upper gastrointestinal endoscopy with biopsies, intestinal and pancreatic enzyme analyses, and bacterial and fungal cultures. (PMID: 10547242)", 
+      "type": "list", 
+      "id": "515deafd298dcd4e51000025", 
+      "exact_answer": [
+        [
+          "upper gastrointestinal endoscopy with biopsies"
+        ], 
+        [
+          "intestinal and pancreatic enzyme analyses"
+        ], 
+        [
+          "bacterial and fungal cultures"
+        ], 
+        [
+          "Ileocolonoscopy and biopsy"
+        ]
+      ]
+    }, 
+    {
+      "body": "Is abdominal pain a common symptom in autism?", 
+      "ideal_answer": "Many children with autism spectrum disorders (ASDs) suffer from gastrointestinal problems such as diarrhoea, constipation and abdominal pain. (PMID: 22997101) Children with autism spectrum disorders (ASD) experience high rates of anxiety, sensory processing problems, and gastrointestinal (GI) problems. (PMID: 22850932) Participants included 132 children with ASD and 81 with special educational needs (SEN) but no ASD, aged 10-14 years plus 82 typically developing (TD) children. The ASD group had significantly increased past vomiting and diarrhoea compared with the TD group and more abdominal pain than the SEN group. (PMID: 23371507)", 
+      "type": "yesno", 
+      "id": "515debe7298dcd4e51000026", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Is Vitamin D deficiency in pregnant women associated with gestational diabetes?", 
+      "ideal_answer": "Low maternal vitamin D levels in pregnancy may be associated with an increased risk of preeclampsia, gestational diabetes mellitus. (PMID: 23311886) Vitamin D deficiency among pregnant women is frequent in many populations over the world. It is associated with an increased risk of preeclampsia, gestational diabetes mellitus, and caesarean section. (PMID: 22008274)", 
+      "type": "yesno", 
+      "id": "515def40298dcd4e51000028", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "What is the indication for prophylactic use of antibiotics in COPD?", 
+      "ideal_answer": "Study patients suffered from recurrent urinary tract infections, COPD or were mechanically ventilated in intensive care units. In the first 2 populations, use of antibiotics was associated with an increase in carriage of antibiotic-resistant bacteria, but in intensive care patients the opposite was documented. (PMID: 22108462)", 
+      "type": "factoid", 
+      "id": "515df063298dcd4e51000029", 
+      "exact_answer": [
+        "an increase in carriage of antibiotic-resistant bacteria"
+      ]
+    }, 
+    {
+      "body": "What is the effect of Allopurinol on asphyxia in neonates?", 
+      "ideal_answer": "In newborn infants, allopurinol is being tested as a free radical scavenger to prevent brain damage caused by reperfusion and oxygenation after perinatal hypoxia and ischemia (birth asphyxia). (PMID: 16778717) The reported data may suggest a (neuro)protective effect of neonatal allopurinol treatment in moderately asphyxiated infants. (PMID: 22102633) A prospective randomized study in human neonates, examining the effects of ALLO in term asphyxiated neonates, showed an improvement of electrocortical brain activity and a reduction in free radical formation after neonatal ALLO administration. A more recent paper by Gunes et al [8] reports an improved neurological outcome after postnatal ALLO administration compared to a placebo in term asphyxiated neonates. (PMID: 20167117) The asphyxiated newborns treated with allopurinol had better neurologic and neurodevelopmental outcome at 12 or more months of age. (PMID: 17162192)", 
+      "type": "summary", 
+      "id": "515df1d4298dcd4e5100002b"
+    }, 
+    {
+      "body": "Are there clinical trials on stem cells in multiple sclerosis", 
+      "ideal_answer": "Human multipotent mesenchymal stem cell (MSC) therapies are currently being tested in clinical trials for Crohn's disease, multiple sclerosis, graft-versus-host disease, type 1 diabetes, bone fractures, cartilage damage, and cardiac diseases. (PMID: 23197667) Mesenchymal stem cells (MSC) promote functional recovery in experimental models of central nervous system (CNS) pathology and are currently being tested in clinical trials for stroke, multiple sclerosis and CNS injury. (PMID: 22561409)", 
+      "type": "yesno", 
+      "id": "515df5b2298dcd4e5100002c", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Does melanoma occur in people of African origin ?", 
+      "ideal_answer": "Malignant melanoma (MM) remains a pediatric rarity world-wide, but perhaps more so in black Africans. To the best of our knowledge, the current report of MM in a two-and-a-half-year-old Nigerian who had a pre-existing congenital giant hairy nevus is probably the first (in an accessible literature) in a black African child. (PMID: 15540891) Malignant melanomas in black Africans are predominantly located on the lower extremities. Thus, our findings indicate that melanomas located on the lower extremities in black Africans show several features of aggressiveness; in particular, the proliferative activity was high, and p16 alterations was frequent as evidenced by loss of protein staining. Our findings also indicated that the diagnosis is delayed among black Africans. (PMID: 11205232)", 
+      "type": "yesno", 
+      "id": "515df6f2298dcd4e5100002d", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "List co-morbidities that may occur together with \"Stiff man Syndrome\"", 
+      "ideal_answer": "Stiff-man syndrome (SMS) is a rare disorder of the central nervous system of probable autoimmune origin. Patients with SMS often have other autoimmune diseases, in particular type I (insulin-dependent) diabetes mellitus (IDDM). (PMID: 8263140) To report an association between two autoimmune conditions, Graves' disease and stiff-person (stiff-man) syndrome, and discuss the relevant literature. This case illustrates the association between TRAB-positive Graves' disease and stiff-person syndrome and the improvement of Graves' disease with immunosuppressive therapy. (PMID: 16006304) An elderly man with progressive dementia and concomitant development of stiff-man syndrome is described. He had not had stiff-man syndrome one year earlier, when he had only mild dementia. An association between stiff-man syndrome and dementia has not been previously described. (PMID: 6859058)", 
+      "type": "list", 
+      "id": "515df86a298dcd4e5100002e", 
+      "exact_answer": [
+        [
+          "Graves' disease"
+        ], 
+        [
+          "dementia"
+        ], 
+        [
+          "type I (insulin-dependent) diabetes mellitus (IDDM)"
+        ]
+      ]
+    }, 
+    {
+      "body": "Can clonidine be used to reduce agitation in children.", 
+      "ideal_answer": "Clonidine is effective in treating sevoflurane-induced postanesthesia agitation in children. (PMID: 16301230) Caudal clonidine at a lower dose (1 mg kg-1) could be effective in reducing the incidence of sevoflurane-induced emergence agitation in children undergoing urogenital and lower limb surgery without any significant adverse effects. (PMID: 21150631)", 
+      "type": "yesno", 
+      "id": "515df89e298dcd4e5100002f", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Is Bladder training an effective method to treat urge incontinence ?", 
+      "ideal_answer": "Quoted results vary from 26 to 90% and bladder training remains a valuable tool for treating urge incontinence as it weakens the urge-void response. The first-line treatments are lifestyle interventions, bladder training, pelvic floor muscle exercises and anticholinergic drugs. (PMID: 20877608)", 
+      "type": "yesno", 
+      "id": "515df98f298dcd4e51000030", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Which species may be used for the biotechnological production of itaconic acid?", 
+      "ideal_answer": "continuous itaconic acid production from sucrose with Aspergillus terreus. (PMID: 1366363) A potent itaconic acid producing strain, Aspergillus terreus SKR10, was isolated from horticulture waste. (PMID: 12146646) Enhanced itaconic acid production in Aspergillus niger. Currently, itaconic acid is produced commercially by Aspergillus terreus. Based on its high citric acid producing capability and broad applicability in industry, Aspergillus niger (A. niger) was selected as a novel itaconic acid production host strain in recent work. (PMID: 22925689) In this current study, itaconic acid fermentation was carried out with the mould fungus Ustilago maydis (U. maydis) (PMID: 22480369)", 
+      "type": "list", 
+      "id": "515ffc2b298dcd4e51000035", 
+      "exact_answer": [
+        [
+          "Aspergillus terreus"
+        ], 
+        [
+          "Aspergillus niger"
+        ], 
+        [
+          "Ustilago maydis"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which are the most commonly reported pathological states associated with the formation of DNA G-quadruplexes?", 
+      "ideal_answer": "A G-quadruplex-interactive agent, telomestatin (SOT-095), induces telomere shortening with apoptosis and enhances chemosensitivity in acute myeloid leukemia. (PMID: 15138591) FANCJ helicase defective in Fanconia anemia and breast cancer unwinds G-quadruplex DNA to defend genomic stability. (PMID: 18426915)", 
+      "type": "list", 
+      "id": "51600ab3298dcd4e51000036", 
+      "exact_answer": [
+        [
+          "leukemia"
+        ], 
+        [
+          "Fanconia anemia"
+        ], 
+        [
+          "breast cancer"
+        ], 
+        [
+          "Myocardial fibrosis"
+        ]
+      ]
+    }, 
+    {
+      "body": "Against which organisms has reverse vaccinology been used?", 
+      "ideal_answer": "The potential of this new approach is illustrated by the use of reverse vaccinology for the development of a vaccine against serogroup B meningococcus. (PMID: 11257410) Reverse vaccinology and vaccines for serogroup B Neisseria meningitidis. (PMID: 16107075) This work induced further research of other pathogens in the same way: Porphyromonas gingivalis [5], Streptococcus pneumoniae [6], Chlamydia pneumoniae [3], Bacillus anthracis [7] and group B streptococci [8] (PMID: 16848907) the concept of reverse vaccinology has also successfully been applied to other pathogens, including Bacillus anthracis [3], Porphyromonas gingivalis [4], Chlamydia pneumoniae [5], Streptococcus pneumoniae [6], Helicobacter pylori [7], and Mycobacterium tuberculosis [8] (PMID: 20671958)", 
+      "type": "list", 
+      "id": "51601071298dcd4e51000038", 
+      "exact_answer": [
+        [
+          "serogroup B meningococcus"
+        ], 
+        [
+          "serogroup B Neisseria meningitidis"
+        ], 
+        [
+          "Porphyromonas gingivalis"
+        ], 
+        [
+          "Streptococcus pneumoniae"
+        ], 
+        [
+          "Chlamydia pneumoniae"
+        ], 
+        [
+          "Bacillus anthracis"
+        ], 
+        [
+          "group B streptococci"
+        ], 
+        [
+          "Helicobacter pylori"
+        ], 
+        [
+          "Mycobacterium tuberculosis"
+        ]
+      ]
+    }, 
+    {
+      "body": "How are human accelerated regions (HAR) defined?", 
+      "ideal_answer": "several groups have searched for positive selection along the human lineage by focusing on those previously slowly evolving regions of the genome that have evolved most quickly along the human lineage. These regions, such as those in the set of Human Accelerated Regions (HARs) [7], may include some of the genetic changes that make our species biologically unique. (PMID: 20502635) We devised a ranking of regions in the human genome that show significant evolutionary acceleration. Here we report that the most dramatic of these 'human accelerated regions', HAR1, is part of a novel RNA gene (HAR1F) that is expressed specifically in Cajal-Retzius neurons in the developing human neocortex from 7 to 19 gestational weeks, a crucial period for cortical neuron specification and migration. (PMID: 16915236)", 
+      "type": "summary", 
+      "id": "51603912298dcd4e5100003b"
+    }, 
+    {
+      "body": "Which histone marks are deposited by Set7?", 
+      "ideal_answer": "SET7 performs mono-methylation on lysine-4 of H3 to exert its coactivation function. (PMID: 21963854) the loss of H4 lysine 20 methylation (PMID: 12086618)", 
+      "type": "list", 
+      "id": "5160412d298dcd4e5100003c", 
+      "exact_answer": [
+        [
+          "the loss of H4 lysine 20 methylation"
+        ], 
+        [
+          "mono-methylation"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which is the protein (antigen) targeted by anti-Vel antibodies in the Vel blood group?", 
+      "ideal_answer": "Disruption of SMIM1 causes the Vel- blood type. The protein carrying the Vel blood group antigen was biochemically purified from red blood cell membranes. Mass spectrometry-based de novo peptide sequencing identified this protein to be small integral membrane protein 1 (SMIM1), a previously uncharacterized single-pass membrane protein. Expression of SMIM1 cDNA in Vel- cultured cells generated anti-Vel cell surface reactivity, confirming that SMIM1 encoded the Vel blood group antigen. (PMID: 23505126)", 
+      "type": "factoid", 
+      "id": "516545a8298dcd4e51000056", 
+      "exact_answer": [
+        "small integral membrane protein 1 (SMIM1)"
+      ]
+    }, 
+    {
+      "body": "is intense physical activity associated with longevity ?", 
+      "ideal_answer": "We found a very significant increase in average longevity (17%) of the cyclists when compared with the general population. The age at which 50% of the general population died was 73.5 vs. 81.5 years in Tour de France participants. Our major finding is that repeated very intense exercise prolongs life span in well trained practitioners. (PMID: 21618162)", 
+      "type": "yesno", 
+      "id": "5167be1a298dcd4e5100005c", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "What is the role of thyroid hormone receptor alpha1 in insulin secretion?", 
+      "ideal_answer": "Liganded thyroid hormone receptor-alpha enhances proliferation of pancreatic beta-cells. liganded TR(alpha) plays a critical role in beta-cell replication and in expansion of the beta-cell mass during postnatal development. Thus, liganded TR(alpha) may be a target for therapeutic strategies that can induce the expansion and regeneration of beta-cells. (PMID: 20529852)", 
+      "type": "summary", 
+      "id": "516beae9298dcd4e5100006b"
+    }, 
+    {
+      "body": "What is the role of AMPK kinase in myocardial remodeling after myocardial infarction", 
+      "ideal_answer": "AMP-activated protein kinase (AMPK) is a key sensor of cellular energy. The activation of AMPK by metformin prevents cardiac remodeling after myocardial infarction (MI). (PMID: 23122726)", 
+      "type": "summary", 
+      "id": "516c0dc6298dcd4e5100006c"
+    }, 
+    {
+      "body": "Which genes does thyroid hormone receptor beta1 regulate in the liver?", 
+      "ideal_answer": "our data suggests that TRbeta1-mediated down regulation of hepatic LDLr gene may play a critical role in iodine excess-induced hypercholesterolemic effects. (PMID: 19916081) These data suggest that ChREBP mRNA expression is positively regulated by TR-beta1 and TH at the transcriptional level in mammals. This novel observation indicates that TH fine-tunes hepatic lipogenesis via regulating SREBP-1c and ChREBP gene expression reciprocally. (PMID: 19324998)", 
+      "type": "list", 
+      "id": "516c0ebc298dcd4e5100006e", 
+      "exact_answer": [
+        [
+          "LDLr"
+        ], 
+        [
+          "ChREBP"
+        ], 
+        [
+          "SREBP-1c"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which genes does thyroid hormone receptor alpha1 regulate in the liver?", 
+      "ideal_answer": "Mice expressing the mutant thyroid hormone receptor TRalpha1R384C, which has a 10-fold reduced affinity to the ligand T(3), exhibit hypermetabolism due to an overactivation of the sympathetic nervous system. To define the consequences in the liver, we analyzed hepatic metabolism and the regulation of liver genes in the mutant mice. Our results showed that hepatic phosphoenolpyruvate-carboxykinase was up-regulated and pyruvate kinase mRNA down-regulated, contrary to what observed after T(3) treatment (PMID: 19282388)", 
+      "type": "list", 
+      "id": "516c0ed3298dcd4e5100006f", 
+      "exact_answer": [
+        [
+          "phosphoenolpyruvate-carboxykinase"
+        ], 
+        [
+          "pyruvate kinase"
+        ]
+      ]
+    }, 
+    {
+      "body": "Does dronedarone affect T3 and T4 levels?", 
+      "ideal_answer": "Amiodarone resulted in increased T4, T4/T3 and rT3, whereas dronedarone did not alter the thyroid hormone profile in normal animals. (PMID: 12063079)", 
+      "type": "yesno", 
+      "id": "516d4b27298dcd4e51000077", 
+      "exact_answer": "no"
+    }, 
+    {
+      "body": "Does amiodarone affect thyroid hormone receptors in the myocardium?", 
+      "ideal_answer": "amiodarone subtype selectively downregulates the TR mRNA levels in mouse myocardium in a dose-dependent manner. (PMID: 10445678)", 
+      "type": "yesno", 
+      "id": "516d5baa298dcd4e51000078", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "How does TNF affect thyroid hormone receptors?", 
+      "ideal_answer": "Treatment of the cells with T(3) for 2 d induced the expression of thyroid hormone receptor-beta and caspase-3, and this thyroid hormone receptor-beta induction was drastically repressed by xTNF-alpha. (PMID: 18403482)", 
+      "type": "summary", 
+      "id": "516d5bc5298dcd4e51000079"
+    }, 
+    {
+      "body": "Is cancer related to global DNA hypo or hypermethylation?", 
+      "ideal_answer": "Contrary to the prevailing view that global DNA hypomethylation changes occur extremely early in all human cancers, we show that reductions in (5me)C content in the genome occur very late in prostate cancer progression, appearing at a significant extent only at the stage of metastatic disease. (PMID: 18974140) In contrast to gene hypermethylation, genomic DNA hypomethylation, including hypomethylation of repetitive elements and loss of genomic 5-methyldeoxycytidine, occurred in both early and late stages of prostate cancer. (PMID: 18667590)", 
+      "type": "factoid", 
+      "id": "516e5f10298dcd4e5100007c", 
+      "exact_answer": [
+        "global DNA hypomethylation"
+      ]
+    }, 
+    {
+      "body": "Which anticancer drugs target human topoisomerase II?", 
+      "ideal_answer": "Etoposide is effective as an anti-tumour drug by inhibiting eukaryotic DNA topoisomerase II via establishing a covalent complex with DNA. (PMID: 22490049) benzoxazoles, benzimidazoles and related fused heterocyclic compounds, which exhibited significant eukaryotic DNA topoisomerase II inhibitory activity (PMID: 22490049)", 
+      "type": "list", 
+      "id": "516e5f25298dcd4e5100007d", 
+      "exact_answer": [
+        [
+          "Etoposide"
+        ], 
+        [
+          "benzoxazoles"
+        ], 
+        [
+          "benzimidazoles"
+        ], 
+        [
+          "F14512"
+        ], 
+        [
+          "doxorubicin"
+        ], 
+        [
+          "bisdioxopiperazine"
+        ], 
+        [
+          "mitoxantrone"
+        ], 
+        [
+          "anthrapyrazoles"
+        ], 
+        [
+          "DuP 941"
+        ], 
+        [
+          "azatoxin"
+        ], 
+        [
+          "DuP 937"
+        ], 
+        [
+          "amsacrine"
+        ], 
+        [
+          "anthracycline aclarubicin"
+        ], 
+        [
+          "4'-demethylepipodophyllotoxin-9-(4,6-O-ethylidene-beta-D-glucopyra noside)"
+        ], 
+        [
+          "VP-16"
+        ], 
+        [
+          "4'-(9-acridinylamino)methanesulfon-m-anisidide"
+        ], 
+        [
+          "m-AMSA"
+        ]
+      ]
+    }, 
+    {
+      "body": "Do lincRNAs play a role in human cancer?", 
+      "ideal_answer": "lincRNAs have been increasingly acknowledged for their expressional dynamics and likely functional associations with cancers. (PMID: 23267367) We present evidence that the human lincRNA-RoR (RoR) is a strong negative regulator of p53. (PMID: 23208419)", 
+      "type": "yesno", 
+      "id": "516e5f33298dcd4e5100007e", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "What is the genetic basis of Rubinstein-Taybi syndrome?", 
+      "ideal_answer": "The Rubinstein-Taybi syndrome (RTS) is a well-defined syndrome with facial abnormalities, broad thumbs, broad big toes and mental retardation as the main clinical features. Many patients with RTS have been shown to have breakpoints in, and microdeletions of, chromosome 16p13.3. these breakpoints are restricted to a region that contains the gene for the human CREB binding protein (CBP), a nuclear protein participating as a co-activator in cyclic-AMP-regulated gene expression. (PMID: 7630403) Genetic heterogeneity in Rubinstein-Taybi syndrome: mutations in both the CBP and EP300 genes cause disease. (PMID: 15706485) The known genetic causes are point mutations or deletions of the cAMP-response element binding protein-BP (CREBBP) (50-60% of the cases) and of the homologous gene E1A-binding protein (EP300) (5%) (PMID: 23432975)", 
+      "type": "factoid", 
+      "id": "516e5f41298dcd4e5100007f", 
+      "exact_answer": [
+        "breakpoints in, and microdeletions of, chromosome 16p13.3", 
+        "disruption of the CREB-binding protein gene CBP (CREBBP)", 
+        "mutations in both the CBP and EP300 genes cause disease", 
+        "point mutations or deletions of the cAMP-response element binding protein-BP (CREBBP)  (50-60% of the cases) and of the homologous gene E1A-binding protein (EP300) (5%)"
+      ]
+    }, 
+    {
+      "body": "What is the effect of SAHA treatment in Huntington's disease?", 
+      "ideal_answer": "Suberoylanilide hydroxamic acid, a histone deacetylase inhibitor, ameliorates motor deficits in a mouse model of Huntington's disease. To further explore the therapeutic potential of HDAC inhibitors, we have conducted preclinical trials with suberoylanilide hydroxamic acid (SAHA), a potent HDAC inhibitor, in the R6/2 HD mouse model. We show that SAHA crosses the blood-brain barrier and increases histone acetylation in the brain. SAHA dramatically improved the motor impairment in R6/2 mice, clearly validating the pursuit of this class of compounds as HD therapeutics. (PMID: 12576549)", 
+      "type": "summary", 
+      "id": "516e5f4e298dcd4e51000080"
+    }, 
+    {
+      "body": "Which is the methyl donor of histone methyltransferases?", 
+      "ideal_answer": "The peptide is bound in the conventional manner; i.e., the methyl-lysine is oriented on the opposite surface of SMYD3 from the SAM/Sinefungin methyl donor, with a narrow channel connecting the two surfaces of the SET domain. (PMID: 21779408) In both types of histone methyltransferases, cofactor S-Adenosyl methionine (SAM) serves as a cofactor and methyl donor group. (Wikipedia)", 
+      "type": "factoid", 
+      "id": "516e7fda298dcd4e51000081", 
+      "exact_answer": [
+        "SAM", 
+        "cofactor S-Adenosyl methionine", 
+        "uCi S-adenosyl-L-[methyl-3H] methionine"
+      ]
+    }, 
+    {
+      "body": "By which methods can we evaluate the reliability of a phylogenetic tree?", 
+      "ideal_answer": "In contrast to other similar software, the program FreeTree (available at http://www.natur.cuni.cz/~flegr/programs/freetree or http://ijs.sgmjournals.org/content/vol51/issue3/) can also assess the robustness of the tree topology by bootstrap, jackknife or operational taxonomic unit-jackknife analysis. (PMID: 11411692)", 
+      "type": "list", 
+      "id": "516ec97f298dcd4e51000087", 
+      "exact_answer": [
+        [
+          "bootstrap"
+        ], 
+        [
+          "jackknife"
+        ], 
+        [
+          "operational taxonomic unit-jackknife analysis"
+        ], 
+        [
+          "SuperTRI"
+        ], 
+        [
+          "TIBA"
+        ], 
+        [
+          "ImOSM"
+        ], 
+        [
+          "bootstrapping analysis"
+        ]
+      ]
+    }, 
+    {
+      "body": "In which proteins is the chromodomain present?", 
+      "ideal_answer": "We isolated human mononucleosomes bound by the bromodomain-containing proteins Brd2, Brd3 and Brd4, and by the chromodomain-containing heterochromatin proteins HP1 beta and HP1 alpha. (PMID: 22897906) Chromodomain helicase DNA-binding proteins (CHD) belong to a group of highly conserved chromatin remodeling proteins that are implicated in regulation of transcription. (PMID: 22223433)", 
+      "type": "list", 
+      "id": "517137c18ed59a060a000001", 
+      "exact_answer": [
+        [
+          "Brd2"
+        ], 
+        [
+          "Brd3"
+        ], 
+        [
+          "Brd4"
+        ], 
+        [
+          "HP1 beta"
+        ], 
+        [
+          "HP1 alpha"
+        ], 
+        [
+          "Chromodomain helicase DNA-binding protein"
+        ], 
+        [
+          "CHD"
+        ]
+      ]
+    }, 
+    {
+      "body": "How does ranolazine affect kinase signaling activation in the heart?", 
+      "ideal_answer": "support of this view, CaMKII activity was also increased in hearts of transgenic mice overexpressing a gain-of-function Na(v)1.5 mutant (N(1325)S). The effects of both ATX-II and the N(1325)S mutation were reversed by either I(NaL) inhibition (with ranolazine or tetrodotoxin) or CaMKII inhibition (with KN93 or autocamtide 2-related inhibitory peptide). (PMID: 21677263)  Such changes were related to enhanced Ca(2+)/calmodulin kinase II (CaMKII) activity and increased phosphorylation of its targets. Ranolazine at therapeutic concentrations partially reversed the HCM-related cellular abnormalities via I(NaL) inhibition, with negligible effects in controls. By shortening the action potential duration in HCM cardiomyocytes, ranolazine reduced the occurrence of early and delayed afterdepolarizations. Finally, as a result of the faster kinetics of Ca(2+)(i) transients and the lower diastolic Ca(2+)(i), ranolazine accelerated the contraction-relaxation cycle of HCM trabeculae, ameliorating diastolic function. (PMID: 23271797)", 
+      "type": "summary", 
+      "id": "517138b68ed59a060a000002"
+    }, 
+    {
+      "body": "Is calcium overload involved in the development of diabetic cardiomyopathy?", 
+      "ideal_answer": "It seems that intracellular calcium overload is intimately involved in the development of diabetic cardiomyopathy; (PMID: 3850773) Diabetes-induced myocardial dysfunction has been attributed, in part, to calcium overload within individual myocytes. (PMID: 8761317)", 
+      "type": "yesno", 
+      "id": "517139098ed59a060a000004", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Which are the synonyms of prostate-specific antigen?", 
+      "ideal_answer": "Human kallikrein-related peptidase 3 (hK3), also known as prostate-specific antigen (PSA), is a 33 kDa single chain glycoprotein belonging to the kallikrein family of serine proteases. (PMID: 19079621)", 
+      "type": "list", 
+      "id": "5171651e8ed59a060a000009", 
+      "exact_answer": [
+        [
+          "Human kallikrein-related peptidase 3"
+        ], 
+        [
+          "hK3"
+        ], 
+        [
+          "prostate-specific antigen"
+        ], 
+        [
+          "PSA"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which is the vector of Louping ill virus?", 
+      "ideal_answer": "Deer are the key hosts of the vector (Ixodes ricinus) that transmits LIV to red grouse Lagopus lagopus scoticus, causing high mortality. (PMID: 22939093)", 
+      "type": "factoid", 
+      "id": "51716e808ed59a060a00000b", 
+      "exact_answer": [
+        "Ixodes ricinus"
+      ]
+    }, 
+    {
+      "body": "What is the role of  chromomethylases in plants?", 
+      "ideal_answer": "Thirdly, CHROMOMETHYLASES (CMTs), a plant-specific DNA methyltransferase family, are involved primarily in the maintenance of symmetrical CHG methylation (Lindroth et al., 2001; Papa et al., 2001). Furthermore, CMTs also play a role in de novo methylation (Cao et al., 2003; Chan et al., 2005). CMT is characterized by a chromatin-associated domain (chromodomain) embedded within the catalytic motifs I and IV of the protein (Henikoff and Comai, 1998). The presence of this plant-specific methyltransferase provides an explanation for the high levels of CHG methylation in plant genomes relative to animals. In Arabidopsis, the targeting of AtCMT3 methylation is accomplished by short interfering RNA (siRNA) pathways (Zilberman et al., 2003; Chan et al., 2004, 2006) and histone methylation H3K9, H3K27 (Jackson et al., 2002; Lindroth, 2004). (PMID: 22058406)", 
+      "type": "summary", 
+      "id": "51716fd38ed59a060a00000c"
+    }, 
+    {
+      "body": "Are chromomethylases present in animal genomes?", 
+      "ideal_answer": "The lack of CMT homologs in animal genomes could account for the observation that in contrast to plants, animals maintain primarily CG methylation. (PMID: 11459824)", 
+      "type": "yesno", 
+      "id": "5171833c8ed59a060a00000f", 
+      "exact_answer": "no"
+    }, 
+    {
+      "body": "Which is the causative agent of malaria?", 
+      "ideal_answer": "Plasmodium falciparum is the causative agent of malaria, a disease that kills almost one million persons each year, mainly in sub-Saharan Africa. (PMID: 23349974)", 
+      "type": "factoid", 
+      "id": "517194ef8ed59a060a000011", 
+      "exact_answer": [
+        "Plasmodium falciparum"
+      ]
+    }, 
+    {
+      "body": "How many TAp73 isoforms have been identified in humans?", 
+      "ideal_answer": "The Trp73 gene belongs to the p53 family of transcription factors and, like the other members, is transcribed into different isoforms [1-4]. TP73 gene contains two promoters, encoding the transcriptional domain-containing (TAp73) and the amino deleted (DNp73) isoforms [5, 6]. Furthermore alternative splicing at the 3'-end (to generate a, b, g, etc isoforms) and 5'-end (to generate D2, D3 and D2-3 isoforms) results in generation of at least 14 different transcripts, with different abilities to promote or repress apoptosis [7, 8]. (PMID: 22388545)", 
+      "type": "factoid", 
+      "id": "5173bdb38ed59a060a000020", 
+      "exact_answer": [
+        "14"
+      ]
+    }, 
+    {
+      "body": "What type of cancers and inherited diseases have been associated to mutations in the Notch pathway?", 
+      "ideal_answer": "(PMID: 17584081) Importantly, mutations of the Notch protein and components of its signaling pathway have been implicated in an array of human diseases (T-cell leukemia and other cancers, Multiple Sclerosis, CADASIL, Alagille Syndrome, Spondylocostal Dysostosis).", 
+      "type": "list", 
+      "id": "5173eb428ed59a060a000021", 
+      "exact_answer": [
+        [
+          "T-cell leukemia"
+        ], 
+        [
+          "Multiple Sclerosis"
+        ], 
+        [
+          "CADASIL"
+        ], 
+        [
+          "Alagille Syndrome"
+        ], 
+        [
+          "Spondylocostal Dysostosis"
+        ], 
+        [
+          "Holoprosencephaly"
+        ]
+      ]
+    }, 
+    {
+      "body": "Are histone deacetylase (HDAC) inhibitors good candidates to control metastasis of solid tumors?", 
+      "ideal_answer": "Treatments of different structural classes of HDACi simultaneously induced cell death and promoted cell migration and metastasis in multiple cancer cell types. Suppression of HDACi-induced PKCs leads to development of low toxic and long-term therapeutic strategies to potentially treat cancer as a chronic disease. (PMID: 22811583) Separate mTOR or HDAC inhibition slows processes related to tumor metastasis. (PMID: 21452015)", 
+      "type": "yesno", 
+      "id": "517404878ed59a060a000023", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Which are the bioinformatics tools for gene structure prediction?", 
+      "ideal_answer": "SCGPred: a score-based method for gene structure prediction by combining multiple sources of evidence. (PMID: 19329068) MetWAMer.gthXML is a special-purpose variant of the software, specifically tailored to refine gene structure predictions generated by the GenomeThreader [30] and GeneSeqer [31] programs for spliced alignment-based gene structure annotation. (PMID: 18801175) WebScipio: an online tool for the determination of gene structures using protein sequences. (PMID: 18801164)", 
+      "type": "list", 
+      "id": "51740da48ed59a060a000024", 
+      "exact_answer": [
+        [
+          "SCGPred"
+        ], 
+        [
+          "TICO"
+        ], 
+        [
+          "GLIMMER"
+        ], 
+        [
+          "GenomeThreader"
+        ], 
+        [
+          "GeneSeqer"
+        ], 
+        [
+          "WebScipio"
+        ], 
+        [
+          "DGSplicer"
+        ], 
+        [
+          "SplicePredictor"
+        ], 
+        [
+          "GeneBuilder"
+        ]
+      ]
+    }, 
+    {
+      "body": "What is the role of AMPK in diabetic cardiomyopathy?", 
+      "ideal_answer": "Metformin prevents diabetic cardiomyopathy by stimulating AMPK activity and enhancing autophagic capacity. Thus, stimulation of AMPK may represent a novel approach to treat diabetic cardiomyopathy. (PMID: 21562078) our findings demonstrate that decreased AMPK activity and the subsequent reduction in cardiac autophagy are central to the development of diabetic cardiomyopathy. (PMID: 21562078)", 
+      "type": "summary", 
+      "id": "51753a948ed59a060a000029"
+    }, 
+    {
+      "body": "What is the treatment of Riedel disease (thyroiditis)?", 
+      "ideal_answer": "Surgical treatment depends on the stage of the disease, when both lobes are involved generous wedge resection of the isthmus may be the treatment of choice to relieve tracheal compression; in earlier stages radical operation are considered. Corticosteroid treatment in Riedel's thyroiditis, as multifocal disease has been successfully used. Other drugs with antifibrosing actions have also utilised in small groups of patients with encouraging results. (PMID: 11014014)", 
+      "type": "summary", 
+      "id": "517541e08ed59a060a00002a"
+    }, 
+    {
+      "body": "What is the treatment of interferon-induced thyroiditis?", 
+      "ideal_answer": "5IFNa can commonly induce thyroiditis, which is classified as either autoimmune or non-autoimmune interferon-induced thyroiditis (IIT).6 Autoimmune IIT manifests as Hashimoto's thyroiditis, which is defined by an emerge of or worse in antithyroid antibody levels with or without hypothyroidism. In rare cases, autoimmune IIT also manifests as Graves' disease, which is defined by antithyroid antibodies with hyperthyroidism. Non-autoimmune IIT presents as destructive thyroiditis and hypothyroidism.6Hashimoto's thyroiditis is diagnosed in up to 40% of patients, and hypothyroidism can be triggered by IFNa.7 Hypothyroidism frequently escapes diagnosis due to the overlap of its symptoms with those induced by IFNa itself, such as fatigue, somnolence and depression. (PMID: 22012048)", 
+      "type": "summary", 
+      "id": "517545168ed59a060a00002b"
+    }, 
+    {
+      "body": "What are the most frequent non-canonical sequence motifs at the donor and acceptor splice sites in vertebrates?", 
+      "ideal_answer": "The terminal dinucleotides GT and AG at the 5' and 3' end of introns, respectively, are nearly universal [4-6]. However, compilation of introns with non-consensus splice sites [7,8] led to the discovery of a minute class of introns. These introns contained an extended and nearly invariant 5' splice site (ATATCCTT at +1 to +8 positions starting from the 5' junction), a more pronounced Branch Point Site (BPS, TCCTTAAC), and an AC acceptor site (PMID: 20163699) The U12 consensus sequences for the donor site, RTATCCTTT, and branch point, TTCCTTRAY, are highly conserved and distinct from the U2 consensi (9). The acceptor site is unique in that the 3'-most nucleotide of the U12 acceptor site is more tolerant of substitutions, especially in those introns that begin with AT; AT-AC, AT-AA, AT-AG and AT-AT combinations have been observed (14,15). (PMID: 17082203)", 
+      "type": "summary", 
+      "id": "517575558ed59a060a00002d"
+    }, 
+    {
+      "body": "Are long non coding RNAs as conserved in sequence as protein coding genes?", 
+      "ideal_answer": "Indeed, even well-known examples of functional mammalian lncRNAs, such as Gomafu [11], Evf-2 [12], XIST [13], Air [14], and HOTAIR [9], exhibit poor sequence conservation across species. (PMID: 20624288)", 
+      "type": "yesno", 
+      "id": "51757bbb8ed59a060a00002e", 
+      "exact_answer": "no"
+    }, 
+    {
+      "body": "Is alternative splicing of apoptotic genes playing a role in the response to DNA or mitochondrial damage?", 
+      "ideal_answer": "This analysis revealed that DNA damage resulted in changes in splicing activity that modified the splicing pattern of Fas, a key pro-apoptotic, p53-inducible death receptor. (PMID: 18571879)", 
+      "type": "yesno", 
+      "id": "5175b97a8ed59a060a00002f", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Have mutations in the Polycomb group been found in human diseases?", 
+      "ideal_answer": "Mutation in PHC1 implicates chromatin remodeling in primary microcephaly pathogenesis.  We identify a novel mutation in PHC1, a human orthologue of the Drosophila polyhomeotic member of polycomb group (PcG), which significantly decreases PHC1 protein expression, increases Geminin protein level and markedly abolishes the capacity to ubiquitinate histone H2A in patient cells. (PMID: 23418308)", 
+      "type": "yesno", 
+      "id": "5176c6d08ed59a060a000032", 
+      "exact_answer": "yes"
+    }, 
+    {
+      "body": "Which is the molecular mechanism underlying K-ras alterations in carcinomas?", 
+      "ideal_answer": "gain-of-function mutations in ras genes were the first specific genetic alterations identified in human cancer (PMID: 21779504) Mutations at codon 12 of the K-ras gene are present in 65%-100% of carcinomas of human exocrine pancreas and could be used as a potential tumor marker at the tissue level. (PMID: 8613066)", 
+      "type": "factoid", 
+      "id": "5177def18ed59a060a000034", 
+      "exact_answer": [
+        "gain-of-function mutations"
+      ]
+    }, 
+    {
+      "body": "Which is the neurodevelopmental disorder associated to mutations in the X- linked gene mecp2?", 
+      "ideal_answer": "Rett syndrome is caused by mutations in the gene coding for methyl CpG-binding protein 2 (MeCP2) (PMID: 23449173)", 
+      "type": "factoid", 
+      "id": "517818508ed59a060a000035", 
+      "exact_answer": [
+        "Rett syndrome"
+      ]
+    }, 
+    {
+      "body": "What is the main mechanism by which human papillomavirus proteins E6 and E7 contribute to cell transformation?", 
+      "ideal_answer": "The ability of high-risk HPV E6 and E7 protein to promote the degradation of p53 and pRb, respectively, has been suggested as a mechanism by which HPV oncogenes induce cellular transformation. E6 and E7 abrogate cell cycle checkpoints and induce genomic instability that leads to malignant conversion (PMID: 21643539) First, we found that human papillomavirus E6 and E7 oncogenes, which block the function of the p53 and Rb tumor suppressors, respectively, and SV40 small t antigen were required to allow mutant K-Ras(12D) growth transformation (PMID: 17332339)", 
+      "type": "summary", 
+      "id": "5178444e8ed59a060a000037"
+    }, 
+    {
+      "body": "What is a popular measure of gene expression in RNA-seq experiments?", 
+      "ideal_answer": "Measures of RNA abundance are important for many areas of biology and often obtained from high-throughput RNA sequencing methods such as Illumina sequence data. (PMID: 22872506) Sequencing-based transcript profiling The RNA levels in the three cell lines were analyzed using digital RNA-seq based on >20 million separate reads for each cell line and the RPKM values (reads per kilobase of exon model per million mapped reads) were calculated for each gene. (PMID: 21179022)", 
+      "type": "factoid", 
+      "id": "5178d6be8ed59a060a000038", 
+      "exact_answer": [
+        "Measures of RNA abundance", 
+        "Sequencing-based transcript profiling"
+      ]
+    }, 
+    {
+      "body": "The antibodies MK-3475 and CT-011 have shown promising results in treating malignancies. Which protein are they targeting?", 
+      "ideal_answer": "Presence of CT-011, an anti-PD1 antibody. (PMID: 21577144) anti-PD-1 antibodies MK-3475 (PMID: 23263823)", 
+      "type": "factoid", 
+      "id": "517901bc8ed59a060a00003b", 
+      "exact_answer": [
+        "PD-1"
+      ]
+    }, 
+    {
+      "body": "Does triiodothyronine stimulate red blood cell sodium potassium pump?", 
+      "ideal_answer": "reduction in Na+,K+ATPase activity has been demonstrated in red blood cells (RBCs), as well as an inverse correlation between this enzymatic action and free triiodothyronine (FT3) levels. (PMID: 9781620)", 
+      "type": "yesno", 
+      "id": "517a8a718ed59a060a00003e", 
+      "exact_answer": "no"
+    }, 
+    {
+      "body": "Which deiodinases are best known to be present in brain?", 
+      "ideal_answer": "In brain, the presence of type III iodothyronine deiodinase (D3) seems to be important to maintain homeostasis of T(3) levels. (PMID: 12072404)", 
+      "type": "list", 
+      "id": "517a8bab8ed59a060a000040", 
+      "exact_answer": [
+        [
+          "type III iodothyronine deiodinase"
+        ], 
+        [
+          "type III deiodinase"
+        ], 
+        [
+          "D3"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which deiodinases are present in skeletal  muscle?", 
+      "ideal_answer": "The iodothyronine deiodinases D1, D2, and D3 enable tissue-specific adaptation of thyroid hormone levels in response to various conditions, such as hypothyroidism or fasting. The possible expression of D2 mRNA in skeletal muscle is intriguing because this enzyme could play a role in systemic as well as local T3 production (PMID: 19293265) Deiodinase activities were then assayed in cell sonicates. The ratio of T3 production in cell sonicates (catalytic efficiency) was multiplied by the tissue activities reported in human liver (D1) and skeletal muscle (D2) (PMID: 16127464)", 
+      "type": "list", 
+      "id": "517a8bef8ed59a060a000041", 
+      "exact_answer": [
+        [
+          "Type 2 deiodinase"
+        ], 
+        [
+          "D2"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which viruses are best known to cause myocarditis?", 
+      "ideal_answer": "Enteroviruses have been considered to be the most common cause of acute myocarditis and possible consequence of dilated cardiomyopathy. (PMID: 18039618) Coxsackie B viruses (types 1 to 5) are the most frequent reported cause of acute viral myocarditis. (PMID: 18039618)", 
+      "type": "list", 
+      "id": "517a8c918ed59a060a000043", 
+      "exact_answer": [
+        [
+          "Enteroviruses"
+        ], 
+        [
+          "EV"
+        ], 
+        [
+          "Coxsackie B viruses (types 1 to 5)"
+        ]
+      ]
+    }, 
+    {
+      "body": "What is the treatment of acute myocarditis?", 
+      "ideal_answer": "Acute fulminant myocarditis commonly manifests itself as severe, rapidly progressive hemodynamic deterioration and circulatory collapse that may be resistant to high doses of inotropic agents and steroids and to mechanical support by intra-aortic balloon pump. the TandemHeart percutaneous ventricular assist device, can enable patients to recover in a few days. the authors report a typical case of fulminating myocarditis with electromechanical dissociation, which recovered completely after a period of circulatory assistance. (PMID: 12055771)", 
+      "type": "list", 
+      "id": "517a8cc68ed59a060a000044", 
+      "exact_answer": [
+        [
+          "high doses of inotropic agents and steroids"
+        ], 
+        [
+          "mechanical support by intra-aortic balloon pump"
+        ]
+      ]
+    }, 
+    {
+      "body": "What is the treatment of acute pericarditis?", 
+      "ideal_answer": "medical treatment may be changed in these patients with a slower tapering of the dosage of steroidal and non-steroidal antiinflammatory drugs. (PMID: 17180574) Prednisolone (20-30 mg/d) was used in addition to antituberculous chemotherapy in 11 of the 17 patients with effusive pericarditis. (PMID: 10560235)", 
+      "type": "summary", 
+      "id": "517a8ce98ed59a060a000045"
+    }, 
+    {
+      "body": "Which drugs are utilized to treat eosinophilic esophagitis?", 
+      "ideal_answer": "Aerosolized, swallowed fluticasone leads to a histologic but not a symptomatic response in adults with EoE (PMID: 22475741) Eosinophilic esophagitis (EoE) is caused by immunologic reactions to ingested/inhaled allergens. The diagnosis is considered if >or=15 eosinophils per high-powered field (eos/hpf) are detected in mucosal biopsies. Placebo-controlled studies have not been conducted to evaluate the safety and efficacy of oral viscous budesonide (OVB). (PMID: 20457157)", 
+      "type": "list", 
+      "id": "518ba4b5310faafe08000005", 
+      "exact_answer": [
+        [
+          "fluticasone"
+        ], 
+        [
+          "oral viscous budesonide"
+        ], 
+        [
+          "OVB"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which drugs are utilized to treat amiodarone-induced thyroitoxicosis?", 
+      "ideal_answer": "Two patients with amiodarone-induced thyrotoxicosis were treated successfully with potassium perchlorate and carbimazole while treatment with amiodarone was continued. (PMID: 7946779) the addition of lithium carbonate to the two other drugs resulted in a successful and safety therapy in controlling amiodarone-induced thyrotoxicosis. (PMID: 16544025) lithium is a useful and safe medication for treatment of iodine-induced thyrotoxicosis caused by amiodarone.", 
+      "type": "list", 
+      "id": "518cb4b5310faafe08000006", 
+      "exact_answer": [
+        [
+          "potassium perchlorate"
+        ], 
+        [
+          "carbimazole"
+        ], 
+        [
+          "amiodarone"
+        ], 
+        [
+          "lithium carbonate"
+        ], 
+        [
+          "lithium"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which are the best treatment options to treat Helicobacter pylori?", 
+      "ideal_answer": "Triple therapy, which has been the mainstay of treatment in many countries over the last decade, now has suboptimal results in many parts of the world. equential therapy and quadruple therapy (either bismuth-based or non-bismuth-based) are the best current options to replace initial treatment with triple therapy. (PMID: 23388847)", 
+      "type": "list", 
+      "id": "518cb5ab310faafe08000008", 
+      "exact_answer": [
+        [
+          "equential therapy"
+        ], 
+        [
+          "quadruple therapy"
+        ]
+      ]
+    }, 
+    {
+      "body": "What is the treatment of triiodothyronine toxicosis?", 
+      "ideal_answer": "Three patients met the criteria for free T3 toxicosis and three had subclinical hyperthyroidism. All six patients had either multinodular glands or a single nodule on thyroid exam. Four patients were treated with radioactive iodine or surgery, resulting in reversal of the TSH suppression in three cases. (PMID: 8154510) 6 months treatment with propranolol (160 mg/day) in eight patients with T3 (triiodothyronine) toxicosis. Serum total T3 concentrations showed a significant (p less than 0.01) and sustained fall to approximately 80% of pre-treatment values. (PMID: 7296908) Both patients responded to therapy with propylthiouracil. (PMID: 578375)", 
+      "type": "list", 
+      "id": "518cb6ab310faafe08000009", 
+      "exact_answer": [
+        [
+          "radioactive iodine"
+        ], 
+        [
+          "surgery"
+        ], 
+        [
+          "6 months treatment with propranolol (160 mg/day)"
+        ], 
+        [
+          "propylthiouracil"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which are the known human transmembrane nucleoporins?", 
+      "ideal_answer": "POM121 is involved in the fusion of inner and outer nuclear membranes in vitro. (PMID: 21727197) NDC1 is a transmembrane nucleoporin that is required for NPC assembly and nucleocytoplasmic transport. (PMID: 19703420) In the list of metazoan nucleoporins, there are only two integral membrane proteins, gp210 [4-6] and POM121 (PMID: 15613247)", 
+      "type": "list", 
+      "id": "51bdb644047fa84d1d000001", 
+      "exact_answer": [
+        [
+          "Pom121"
+        ], 
+        [
+          "NDC1"
+        ], 
+        [
+          "gp210"
+        ]
+      ]
+    }, 
+    {
+      "body": "Which are the Atg8 homologs in human?", 
+      "ideal_answer": "While Atg8p in yeast is represented by a single gene, the ATG8 family in humans contains 6 members (microtubule-associated protein-1 light chain 3A (MAP1LC3A), MAP1LC3B, MAP1LC3C, GABA(A) receptor-associated protein (GABARAP), GABARAPL1, and GABARAPL2). (PMID: 20562859)", 
+      "type": "list", 
+      "id": "51bdf045047fa84d1d000003", 
+      "exact_answer": [
+        [
+          "MAP1LC3A"
+        ], 
+        [
+          "MAP1LC3B"
+        ], 
+        [
+          "MAP1LC3C"
+        ], 
+        [
+          "GABARAP"
+        ], 
+        [
+          "GABARAPL1"
+        ], 
+        [
+          "GABARAPL2"
+        ]
+      ]
+    }, 
+    {
+      "body": "Are there any known functions for the prothymosin alpha c-terminal peptide?", 
+      "ideal_answer": "Prothymosin alpha immunoactive carboxyl-terminal peptide TKKQKTDEDD stimulates lymphocyte reactions, induces dendritic cell maturation (PMID: 18976813)", 
+      "type": "summary", 
+      "id": "51be03c4047fa84d1d000004"
+    }, 
+    {
+      "body": "Has field-programmable gate array (FPGA) technology been used to solve sequence alignment problems?", 
+      "ideal_answer": "Reconfigurable computing hardware, such as Field-Programmable Gate Arrays (FPGAs), provides one approach to the acceleration of biological sequence alignment. (PMID: 22151470)", 
+      "type": "yesno", 
+      "id": "51be1750047fa84d1d000005", 
+      "exact_answer": "yes"
+    }
+  ]
+}

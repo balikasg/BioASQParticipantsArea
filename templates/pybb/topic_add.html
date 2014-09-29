@@ -1,0 +1,17 @@
+{% extends 'pybb/base.html' %}
+
+{% block pybb_crumbs %}
+<li><a href="{{ forum.get_absolute_url }}">{{ forum }}</a></li>
+{% endblock %}
+
+{% block content %} 
+<body id="forums">
+<h3>Create a topic in {{ forum }}</h3>
+<form method="post">
+    {% csrf_token %}
+    {% include "pybb/form_field.html" with field=form.name %}
+    {% include "pybb/form_field.html" with field=form.content %}
+    <p><input type="submit" value="Submit" /></p>
+</form>
+</body>
+{% endblock %}

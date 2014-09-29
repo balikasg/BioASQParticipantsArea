@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<h2>Task 1B-Phase B Guidelines</h2>
+For a comprehensive description of the BioASQ tasks please visit <a href="http://bioasq.org/participate/challenges" style="text-decoration:none; color:blue"> bioasq.org</a>. <br />
+Phase B of Task 1B will begin on Monday 3rd of June, 2013. Each week, a new test set will be released. The
+participants after downloading the test set will be asked to report ‘exact answers’ (e.g., named entities in the case of factoid
+questions) and ‘ideal answers’ (paragraph-sized summaries) in a very limited time. 
+
+
+<h3>Training Data</h3>
+<p>The training data for both phases of Task 1B can be downloaded from <a href="http://bioasq.lip6.fr/Tasks/1Ba/" style="text-decoration:none; color:blue"> Submitting/Task 1B-Phase A</a>.
+There is a description of the training data in <a href="http://bioasq.lip6.fr/general_information/Taskb#training_data" style="text-decoration:none; color:blue"> Guidelines/Task 1B-Phase A</a>.
+</p>
+
+
+
+<h3>Evaluation</h3>
+[Wait for John's description or simply copy some from D 4.1]
+<h4>Manual Evaluation</h4>
+<h4>Evaluation Measures</h4>
+
+
+
+<h3>Test set</h3>
+Each test set will consist of annotated questions in a JSON string. The annotations will be the golden annotations of Phase A of Task 1B. 
+The format of the JSON string that will contain the questions will be the following:
+<pre>
+{[
+{"questionId":15,
+ "concepts":["index_1",...,"index_N"],
+ "articles":["PMID_1",...,"PMID_M"],
+ "snippets":{[{"PMID":"23154875", "offset":["21","68"]},..]},
+ "statements":["INDEX_1",...,"INDEX_K"],
+ "questionBody":"Do CpG Islands colocalize with transcription start sites",
+ "questionType":"decisive"},
+		 .
+		 .]}
+</pre>
+where: 
+<ul>
+<li> <code>questionId:</code> is the unique identifier of each question.</li>
+<li> <code>concepts:</code> is an array with  the concepts from the indexed ontologies that the experts have selected.</li>
+<li> <code>articles:</code> is an array with the PMIDs of the articles that the experts have selected .</li>
+<li> <code>snippets:</code> is an array. Each element has a PMID and another array that  contains two numbers; the offsets of the beginning and the ending of the 
+snippet in the article that the experts have selected.</li>
+<li> <code>statements:</code> is an array with the indexes of the statements and the RDF triples that that the experts have selected.</li>
+<li> <code>questionBody:</code> is the question as it was formulated by the biomedical experts.</li>
+<li> <code>questionType:</code> is the type of the question with possible values: <ul>
+<li> <code>"decisive"</code>, for yes/no questions.</li>
+<li> <code>"factoid"</code>, for factoid questions.</li>
+<li> <code>"list"</code>, for list questions.</li>
+<li> <code>"summary"</code>, for summary questions.</li>
+</ul>
+</li>
+</ul>
+
+Only registered users can download the test sets with one of the following ways:
+<ol>
+    <li>Using the web interface. In <a href="http://bioasq.lip6.fr/Tasks/1Bb/" style="text-decoration:none; color:blue"> Submitting/Task 1B-Phase B</a> you can find 
+    the available test sets. By clicking in the test (i.e. Test 1) you can download it as a text file. The test file will contain the json string with 
+    the questions and the golden annotations.</li>
+    <li>Using an API. By making a GET request in the URI http://bioasq.lip6.fr/tests/1Bb/test_number/ along with authentication parameters. In the position of 
+    test_number there should be a number indicating the test set that the user wants to download. 
+    In the following section "Code Snippets" you can find snippets in Python that perform this request. </li>
+</ol>
+
+[Question to be answered: <ul>
+	<li>how many questions per set?</li>
+	<li>How often? Indeed every Monday? Maybe after phase A?</li>
+	<li>Are test sets going to be available after expiration like in task 1A? Take into account George Ts. deliverable about exploitation.</li>
+</ul>]
+
+<h3>Submit Test Results</h3>
+<p>Participants of Phase B of task 1B will have to respond with: 
+<ul>
+	<li>an <code>exact answer</code></li>
+	<li>an <code>ideal answer</code></li>
+</ul>
+[TODO: ensure ordering and describe it...] <br />
+<em>ATTENTION: </em>Questions of type "summary" require only ideal answers. Exact answer will not be considered if they exist.</p>
+
+
+<br />
+<p>There are two ways that a user can submit the results of a test set:
+<ol>
+	<li>Using the web interface. In the section <a href="http://bioasq.lip6.fr/Tasks/1Ba/" style="text-decoration:none; color:blue"> Submitting/Task 1B-Phase B</a>
+	you can find a form with a "Browse" field and a system dropdown menu. 
+	After selecting the the file in your computer that contains the JSON string and selecting the name of the system that corresponds to these 
+	results you can upload them. The format of the JSON string in this case will be: 
+		<pre>
+	{[{"questionId":15, "exact_answer":"your_exact_answer", "ideal_answer": "your_ideal_answer"},..]}
+		</pre>
+	</li>
+	<li>Using the API. By making a POST request in the URi http://bioasq.lip6.fr/tests/uploadResults/test_number/ along with the JSON string. 
+	In the position of test_number there should be a number indicating the test set that the user wants to upload results for.  
+	The format of the JSON string in this case will be: 
+		<pre>
+	{"username":"your_username", "password":"your_password", "system":"your_system",
+	[{"questionId":15, "exact_answer":"your_exact_answer", "ideal_answer":"your_ideal_answer"},..]}
+		</pre>
+	</li>
+</ol>
+
+ 
+ 
+<h3>Systems</h3>
+<p>Each user will have the opportunity to participate in Task 1B  with a maximum of 5 systems. To enable this, after logging in you have to go to
+<a href="http://bioasq.lip6.fr/profile/" style="text-decoration:none; color:blue"> "Edit Profile Settings" </a>and then click on the "Add System" button. 
+The system name you will fill in the form will be the identifier of
+your system and it will be used in the "Results" section.</p>
+<p><em>ATTENTION:</em> Trying to upload results without selecting a system will result in error while the results will not be saved.</p>
+
+
+
+
+<h3>Cluster</h3>
+A large computer cluster has been made available to BioASQ. Users can run their code to the cluster
+for both Tasks of BioASQ Challenge. Information and details about the procedure can be found in <a href="http://bioasq.lip6.fr/Tasks/1a/" style="text-decoration:none; color:blue"> Submitting/Task 1A</a> section. For more specific details you can also post in the <a href="/forum/" style="text-decoration:none; color:blue">BioASQ Discussion Forum</a>.
+<h3>Code Snippets</h3>
+[Add the snippets as soon as we have the final JSON format. Snippets are really easy.]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

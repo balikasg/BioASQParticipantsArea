@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<h2>Task 1B-Phase A Guidelines</h2>
+<em>* Guidelines for Task 1B will be further elaborated with information about evaluation measures, results submission and Python snippets. * </em> <br />
+For a comprehensive description of the BioASQ tasks please visit <a href="http://bioasq.org/participate/challenges" style="text-decoration:none; color:blue">
+ bioasq.org</a>. <br />
+Phase A of Task 1B will begin on Monday 17th of June, 2013. Three test sets of about 100 questions each will be released. 
+A new test set will be available every three weeks.
+Participants, after downloading the test set will have to
+respond in <em>24 hours</em> with the annotations for the questions of the test set that their systems estimated.
+
+
+<h3 id="training_data">Training Data</h3>
+The training data for both phases of Task 1B can be downloaded from <a href="http://bioasq.lip6.fr/training1B/" style="text-decoration:none; color:blue">here</a>.
+The training data consists of 29 annotated questions in English. The questions
+have been created from biomedical experts around Europe. Four types of questions are available:
+<ol>
+        <li>Yes/no questions (decisive)</li>
+        <li>Factoid questions</li>
+        <li>List questions</li>
+        <li>Summary questions</li>
+</ol>
+
+The annotations for each question include lists of: <ul>
+<li>concepts from designated ontologies and terminologies</li>
+<li>relevant articles to the question from MEDLINE</li>
+<li>snippets from the articles</li>
+<li>RDF triples</li></ul>
+Finally, an exact and an ideal answer that will be used in Phase B of Task 1B is also included for every 
+type of question apart from summary questions. In summary questions only ideal answers exist.
+
+The training data are served as a JSON string with the following format:
+<pre>
+"questions":[
+{"type":"factoid", 
+"body":"Is Rheumatoid Arthritis more common in men or women?", 
+"id":"5118dd1305c10fae750000010", 
+"ideal_answer":"Disease patterns in RA vary between the sexes; the condition is more commonly seen in women, 
+who exhibit a more aggressive disease and a poorer long-term outcome.", 
+"exact_answer":"Women.", 
+"documents":["http://www.ncbi.nlm.nih.gov/pubmed/12723987",..], 
+"snippets":[{"document": "http://www.ncbi.nlm.nih.gov/pubmed/22853635",
+	     "text": "The expression and clinical course of RA are influenced by gender. 
+In developed countries the prevalence of RA is 0,5 to 1.0%, with a male:female ratio of 1:3.",
+       	     "beginIndex": 559,
+	     "endIndex": 718,
+	     "fieldName": "sections.0"},..]
+"concepts":["http://www.disease-ontology.org/api/metadata/DOID:7148",...],
+"statements":[{ "s": "http://linkedlifedata.com/resource/umls/id/C2827401",
+		"p": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+		"o": "http://linkedlifedata.com/resource/umls/label/A17680439"},...]
+			}]
+</pre>
+where:
+<ul>
+<li><code>type,</code> is the type of the question</li>
+<li><code>body,</code> is the body of the question</li>
+<li><code>ideal answer,</code> is the ideal answer of the question</li>
+<li><code>exact answer,</code> is the exact answer of the question, except for summary questions that don't have an exact answer</li>
+<li><code>documents,</code> is a list of relevant documents, identified by their URIs in MEDLINE</li>
+<li><code>concepts,</code> is a list of relevant concepts, identified by their URIs</li>
+<li><code>snippets,</code> is a list of relevant snippets, identified by the URIs of the 
+documents in MEDLINE they belong to, the offsets of the begin and the end of the snippet and the section where the snippets exists in the JSON.
+In the training set the actual snippet is also provided in the list, although it will not be requested in participants' results submission.</li>
+<li><code>statements,</code> is a list of statements, identified by the subject-predicate-object URIs</li>
+</ul>
+
+
+
+<em>ATTENTION: </em>
+<ul>
+        <li>Only registered users can download the training set.</li>
+        <li>Users can use unlimited resources to train their systems.</li>
+</ul>
+
+
+<h3 id="ontologies">Ontologies</h3>
+The ontology sets that are available for Task 1B are:
+<ul>
+        <li>the <a href="http://www.ncbi.nlm.nih.gov/mesh">Medical Subject Headings (MeSH)</a></li>
+        <li>the <a href="http://www.geneontology.org/>">Gene Ontology (GO)</a></li>
+        <li>the <a href="http://www.uniprot.org/">The Universal Protein Resource (UniProt)</a></li>
+        <li>the <a href="http://www.biosemantics.org/index.php?page=Jochem">Joint Chemical Dictionary (Jochem)</a></li>
+        <li>the <a href="http://disease-ontology.org/">Disease Ontology (DO)</a></li>
+</ul>
+The above mentioned sets of ontologies are available for downloading in 
+<a href="http://bioasq.lip6.fr/Tasks/1Ba/" style="text-decoration:none; color:blue"> Submitting/Task 1B-Phase A</a>.
+
+<h3 id="triples">Data Triples</h3>
+The annotations of this phase of the task requires the usage of biomedical data expressed as triples, e.g., subject-
+predicate-object structured facts, extracted from biomedical resources or bibliography. The <a href="http://linkedlifedata.com/" style="text-decoration:none; color:blue">Linked Life Data project</a> provides
+the LinkedLifeData platform. LinkedLifeData is a data warehouse
+that syndicates large volumes of heterogeneous biomedical knowledge in a common data model. The
+platform uses an extension of the RDF model that is able to track the provenance of each individual fact
+in the repository and thus update the information. It contains currently more than 8 billion statements,
+with almost 2 billion entities involved. The statements are extracted from 26 biomedical resources, such
+as PubMed, UMLS, DrugBank, Diseasome, and Gene Ontology.
+
+
+<h3>Systems</h3>
+Each user will have the opportunity to participate in Task 1B  with a maximum of 5 systems. To enable this, after logging in you have to go to
+<a href="http://bioasq.lip6.fr/profile/" style="text-decoration:none; color:blue"> "Edit Profile Settings" </a>and then click on the "Add System" button.
+The system name you will fill in the form will be the identifier of
+your system and it will be used in the "Results" section.
+<em>ATTENTION:</em> Trying to upload results without selecting a system will result in error while the results will not be saved.
+
+
+
+
+<h3>Cluster</h3>
+A large computer cluster has been made available to BioASQ. Users can run their code to the cluster
+for both Tasks of BioASQ Challenge. Information and details about the procedure can be found in <a href="http://bioasq.lip6.fr/Tasks/1a/" style="text-decoration:none; color:blue"> Submitting/Task 1A</a> section. For more specific details you can also post in the <a href="/forum/" style="text-decoration:none; color:blue">BioASQ Discussion Forum</a>.
+
+
+
+{% endblock %}
+
+
+

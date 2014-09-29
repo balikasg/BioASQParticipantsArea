@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+
+{% block content %}
+
+
+
+<body id="oracleResults">
+
+<h1> Test Results for Oracle</h1>
+Below you can find the results of the official challenge and the results of the oracle highlighted purple. In addition, you can find your results as part of the results of the oracle even if you selected "not visible" during their submission (in this case they are visible only to you).
+
+{% for test in tests %}
+    <a onclick ="javascript:ShowHide({{ test.test_id }})" href="javascript:;" style="text-decoration:none" >
+        {% if test.test_id == 1 %}
+                <h2>+ Task 1a: Dry-run test </h2>
+        {% elif test.test_id <= 7 %}
+                <h2>+ Task 1a: Test batch 1, week {{test.test_id|add:"-1"}} </h2>
+        {% elif test.test_id <= 13 %}
+                <h2>+ Task 1a: Test batch 2, week {{test.test_id|add:"-7"}} </h2>
+        {% elif test.test_id <= 19 %}
+                <h2>+ Task 1a: Test batch 3, week {{test.test_id|add:"-13"}} </h2>
+        {% elif test.test_id <= 40  %}
+                <h2>+ Task 1a: Additional test batch, week {{ test.test_id|add:"-19" }} </h2>
+        {% elif test.test_id == 41  %}
+                <h2>+ Task 2a: Dry run test </h2>
+        {% elif test.test_id <= 46  %}
+                <h2>+ Task 2a: test batch 1, Week  {{ test.test_id|add:"-41" }} </h2>
+        {% elif test.test_id <= 51  %}
+                <h2>+ Task 2a, test batch 2, Week  {{ test.test_id|add:"-46" }} </h2>
+        {% elif test.test_id <= 56  %}
+                <h2>+ Task 2a, test batch 3, Week  {{ test.test_id|add:"-51" }} </h2>
+        {% else %}
+        {% endif %}
+    </a>
+    <div class="mid" id="{{ test.test_id }}" style="DISPLAY: none">
+	<h5 style="text-align: right;">Annotated articles:{{test.number_of_abstracts_annotated}}/{{test.number_of_abstracts}}</h5>		
+
+
+	<h3>Flat Measures</h3>
+	<table class="tablesorter">
+		<!-- Table header -->
+		<thead>
+			<tr>
+				<th>System Name</th>
+				<th>MiF</th>
+				<th>EBP</th> 
+				<th>EBR</th> 
+				<th>EBF</th> 
+				<th>MaP</th> 
+				<th>MaR</th> 
+				<th>MaF</th> 
+				<th>MiP</th> 
+				<th>MiR</th> 
+				<th>Acc.</th> 
+			</tr>
+		</thead>
+		<tbody>
+			{% for eval in evaluation %}
+				{% if eval.test_id == test %}
+						<tr>
+							<td>{{eval.user.system_description}}</td>
+							<td>{{eval.micro_f|floatformat:4}}</td>
+							<td>{{eval.ebp|floatformat:4}}</td>
+							<td>{{eval.example_based_recall|floatformat:4}}</td>
+							<td>{{eval.example_based_f|floatformat:4}}</td>
+							<td>{{eval.macro_precision|floatformat:4}}</td>
+							<td>{{eval.macro_recall|floatformat:4}}</td>
+							<td>{{eval.macro_f_measure|floatformat:4}}</td>
+							<td>{{eval.micro_precision|floatformat:4}}</td>
+							<td>{{eval.micro_recall|floatformat:4}}</td>
+							<td>{{eval.accuracy|floatformat:4}}</td>
+						</tr>
+				{% endif %}
+			{% endfor %}	
+			{% for r2 in otherResults %}
+				{% if r2.test_id == test %}
+	                        <tr style="background-color: #BA9EB0">
+        	                        <td>{{ r2.user.system_description }}</td>
+                	                <td>{{ r2.micro_f|floatformat:4}}</td>
+                                	<td>{{ r2.ebp|floatformat:4}}</td>
+	                                <td>{{ r2.example_based_recall|floatformat:4}}</td>
+        	                        <td>{{ r2.example_based_f|floatformat:4}}</td>
+                	                <td>{{ r2.macro_precision|floatformat:4}}</td>
+                        	        <td>{{ r2.macro_recall|floatformat:4}}</td>
+                                	<td>{{ r2.macro_f_measure|floatformat:4}}</td>
+	                                <td>{{ r2.micro_precision|floatformat:4}}</td>
+        	                        <td>{{ r2.micro_recall|floatformat:4}}</td>
+					<td>{{ r2.accuracy|floatformat:4}}</td>
+                        	</tr>
+				{% endif %}
+                	{% endfor %}
+		</tbody>
+	</table>
+
+<br /><br />
+
+
+<h3>Hierarchical Measures</h3>
+
+	<table class="tablesorter">
+		<thead>
+			<tr>
+				<th>System Name</th>
+				<th>LCA-F</th>
+				<th>HiP</th>
+				<th>HiR</th>
+				<th>HiF</th>
+				<th>LCA-P</th>
+				<th>LCA-R</th>
+
+		</tr>
+		</thead>
+		<tbody>
+			{% for eval in evaluation %}
+				{% if eval.test_id == test %}
+
+						<tr>
+							<td>{{eval.user.system_description}}</td>
+               						<td>{{eval.lca_f|floatformat:4}}</td>
+							<td>{{eval.hierarchical_precision|floatformat:4}}</td>
+							<td>{{eval.hierarchical_recall|floatformat:4}}</td>
+							<td>{{eval.hierarchical_f|floatformat:4}}</td>
+							<td>{{eval.lca_p|floatformat:4}}</td>
+							<td>{{eval.lca_r|floatformat:4}}</td>
+						</tr>
+				{% endif %}	
+			{% endfor %}
+			{% for r2 in otherResults %}
+				{% if r2.test_id == test %}
+		                <tr style="background-color: #BA9EB0">
+        		                <td>{{ r2.user.system_description }}</td>
+                		        <td>{{ r2.lca_f|floatformat:4}}</td>
+                        		<td>{{ r2.hierarchical_precision|floatformat:4}}</td>
+		                        <td>{{ r2.hierarchical_recall|floatformat:4}}</td>
+        		                <td>{{ r2.hierarchical_f|floatformat:4}}</td>
+                		        <td>{{ r2.lca_p|floatformat:4}}</td>
+                        		<td>{{ r2.lca_r|floatformat:4}}</td>
+		                </tr>
+				{% endif %}
+        		{% endfor %}
+		</tbody>
+</table>
+<br /><br />
+</div>
+{% endfor %}
+
+</body>
+{% endblock %}

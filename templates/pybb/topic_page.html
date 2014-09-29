@@ -1,0 +1,43 @@
+{% extends 'pybb/base.html' %}
+
+{% block pybb_crumbs %}
+<li><a href="{{ topic.forum.get_absolute_url }}">{{ topic.forum }}</a></li>
+{% endblock %}
+
+{% block content %} 
+<body id="forums">
+<h3><a href="/forum/" style="color:black;">Forums</a>--><a href="{{ topic.forum.get_absolute_url }}" style="color:black;">{{ topic.forum }}</a>-->{{ topic }}</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <td>
+                <i class="icon-user"></i> {{ post.user }}
+                <div class="muted"><i class="icon-time"></i> {{ post.created|date:"d M, Y H:i" }}</div>
+            </td>
+            <td>{{ post.content|linebreaks }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url post_add %}?topic={{ topic.pk }}">
+        {% csrf_token %}
+        {% include "pybb/form_field.html" with field=post_form.content %}
+        <p>
+            <button class="btn">Reply</button>
+        </a>
+    </form>
+    {% else %}
+    <a class="btn btn-info" href="{% url pybb:post_add %}?topic={{ topic.pk }}">Reply</a>
+    {% endif %}
+</p>
+</body>
+{% endblock %}

@@ -1,0 +1,149 @@
+{% load i18n %}
+{% load url from future %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular&amp;subset=latin' rel='stylesheet'>   
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
+<!--    <link rel="shortcut icon" href="http://bioasq.org/sites/all/themes/business/favicon.ico" type="image/vnd.microsoft.icon" /> -->
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery.tablesorter.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery.chainedSelect.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery.myFun.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+        $(".tablesorter1b").tablesorter({sortList: [[4,1]]});
+	$(".tablesorter1bb").tablesorter({sortList: [[1,1]]});
+	$(".tablesorter").tablesorter({sortList: [[1,1]]});
+        });
+        </script>
+
+
+    <title>{% block title %}BioASQ Participants Area | BioASQ{% endblock %}</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39859880-1']);
+  _gaq.push(['_setDomainName', 'lip6.fr']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script language="JavaScript">
+		function ShowHide(divId)
+			{
+			if(document.getElementById(divId).style.display == 'none')
+			{
+			document.getElementById(divId).style.display='block';
+			}
+			else
+			{
+			document.getElementById(divId).style.display = 'none';
+			}
+			}
+</script>
+</head>
+
+<body>
+	
+	
+    <div id="header">
+		
+        {% block header %}
+        <img src="{{ STATIC_URL }}bioasq_logo.png" alt="BioASQ logo"/>  <p id="slogan">A challenge in large-scale<br />biomedical semantic indexing<br />and question answering</p>
+        <br />
+        <a href="{% url 'index' %}">{% trans "Home" %}</a> | 
+
+        {% if user.is_authenticated %}
+        {% trans "Logged in" %}: {{ user.username }}
+        (<a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a> | 
+        <!--<a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a>)-->
+        <a href="/profile/">{% trans "Edit Profile" %}</a>)
+        {% else %}
+        <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a> | <a href="/accounts/register/"> Register</a> 
+        
+        {% endif %}
+        
+        {% endblock %}
+    </div>
+    
+    <div id="content">
+		<div class="main_menu">
+			<ul>
+				<li> <a href="/general_information/" id="genInfo">Guidelines</a>
+					<ul>
+						   <li><a href="/general_information/general_information_registration/">Registration</a></li>
+	                                           <li><a href="/general_information/Task2a/">Task 2a</li>
+                                                   <li><a href="/general_information/Task2b/">Task 2b</a></li>
+                                             
+					</ul></li>
+				<li><a href="#" id="tasks">Submitting</a>
+					<ul>
+				<!--			<li><a href="/Tasks/1a/">Task 1a</li>					
+							<li><a href="/Tasks/1b/phaseA/">Task 1b-Phase A</a></li>
+							<li><a href="/Tasks/1b/phaseB/">Task 1b-Phase B</a></li>  -->
+							<li><a href="/Tasks/2a/">Task 2a</a></li>
+							<li><a href="/Tasks/2b/">Task 2b-Phase A</a></li>
+							<li><a href="/Tasks/2b/phaseB/">Task 2b-Phase B</a></li>
+							
+							
+					</ul></li>
+
+				<li> <a href="#" id="oracle">Oracle</a>
+                                        <ul>
+                                                <li><a href="/Tasks/A/getData/"/>Get data</li>
+                                                <li><a href="/oracle/"/>Submit results</li>
+                                                <li><a href="/oracle/results/task1a/"/>Results: Task A </li></a>
+						<li><a href="/results/b/phaseA/" />Results: Task B-Phase A</li>
+						<li><a href="/results/b/phaseB/" />Results: Task B-Phase B</li>
+                                        </ul>
+                                </li>
+
+				<li><a href="#" id="results"> Results</a>
+					<ul>
+					<!--	<li><a href="/results/" />Task 1a</li> 
+						<li><a href="/results/additional_testset_1a/" /> Task 1a-Additional batch</li> -->
+						<li><a href="/results/2a/" />Task 2a</li>
+						<li><a href="/results/2b/phaseA/" />Task 2b-Phase A</li>
+                                                <li><a href="/results/2b/phaseB/" />Task 2b-Phase B</li>
+					</ul>
+				</li>
+				<li><a href="/faq/" id="faq">FAQ</a></li>
+{%if user.is_authenticated %}
+			        <li><a href="/forum/" id="forum">Forum</a></li>   	
+{% endif %}
+				<li><a href="/contact/" id="contact">Contact Us</a></li>
+		{%if user.is_superuser %}
+				<li> <a href="#">Adm</a>
+                                        <ul>
+                                                <li><a href="/CreateTest/"/>Create Test</li>
+                                                <li><a href="/sendMessage/"/>Send Message</li></a>
+                                        </ul>
+                                </li>
+		{% endif %}
+		</div>
+<h1>BioASQ Participants Area</h1>
+    	{%block content %} {% endblock%}  
+    </div>
+
+
+    <div id="footer">
+		<p>Copyright © 2013, the BioASQ project</p>
+		<img src="{{ STATIC_URL }}fp7-logo.jpg" alt="fp7 logo"/>
+		<img src="{{ STATIC_URL }}EU-flag.jpg" alt="eu flag logo"/>
+		
+		<p>The research leading to these results has received funding from the European Commission's Seventh Framework Programme (FP7/2007-2013, ICT-2011.4.4(d), Intelligent Information Management, Targeted Competition Framework) under grant agreement n° 318652.</p>
+        {% block footer %}
+        
+        {% endblock %}
+    </div>
+</body>
+
+</html>

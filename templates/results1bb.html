@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<body id="results1bb">
+<h1> Task 1b: Test Results of Phase B</h1>
+The test results are presented in seperate tables for each type of annotation. The "System Description" of each system is used.<br />
+The evaluation measures that are used in Task 1B are presented <a href="http://bioasq.lip6.fr/Tasks/1b/eval_meas/" style="text-decoration:none; color:blue">here </a>.<br />
+
+
+{% for test in tests %}
+    <a onclick ="javascript:ShowHide({{ test.test_id }})" href="javascript:;" style="text-decoration:none">
+    <h2>Test batch {{test.test_id}}</h2> </a>
+    <div class="mid1" id="{{ test.test_id }}" style="DISPLAY: none">
+<h2>Exact Answers</h2>
+        <table class="tablesorter1bb">
+                <thead>
+                       <tr class="noimage">
+				<th style="border: none"></th>
+				<th>Yes/No</th>
+				<th colspan="3">Factoid</th>
+				<th colspan="3">List</th>
+			</tr>
+			<tr>
+                                <th>System Name</th>
+				<th>Accuracy</th>
+				<th>Strict Acc.</th>
+				<th>Lenient Acc.</th>
+				<th>MRR</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                                
+                        </tr>
+                </thead>
+                <tbody>
+{% for eval in evaluation %}
+                                {% if eval.testset == test %}
+                                        {% if not eval.acc == -1 %}
+                                                <tr>
+                                                        <td>{{eval.system.system_description}}</td>
+                                                        <td>{{eval.acc|floatformat:4}}</td>
+                                                        <td>{{eval.s_acc|floatformat:4}}</td>
+                                                        <td>{{eval.l_acc|floatformat:4}}</td>
+                                                        <td>{{eval.mrr|floatformat:4}}</td>
+                                                        <td>{{eval.prec|floatformat:4}}</td>
+							<td>{{eval.rec|floatformat:4}}</td>
+							<td>{{eval.fmeas|floatformat:4}}</td>
+                                                </tr>
+                                        {% else %}
+                                                <tr>
+                                                        <td>{{eval.system.system_description}}</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+							<td>-</td>
+							<td>-</td>
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+                </tbody>
+        </table><br /><br />
+<h2>Ideal Answers</h2>
+<table class="tablesorter1bb">
+                <thead>
+			<tr class="noimage">
+                                <th style="border: none"></th>
+                                <th colspan="2">Automatic scores</th>
+                                <th colspan="4">Manual scores</th>
+                        </tr>
+			<tr>
+				<th>System Name</th>
+                                <th>Rouge-2</th>
+                                <th>Rouge-SU4</th>
+                                <th>Readability</th>
+                                <th>Recall</th>
+                                <th>Precision</th>
+                                <th>Repetition</th>                                
+                        </tr>
+                </thead>
+                <tbody>
+{% for eval in evaluation %}    
+                                {% if eval.testset == test %}
+                                        {% if not eval.acc == -1 %}
+                                                <tr>
+                                                        <td>{{eval.system.system_description}}</td>
+                                                        <td>{{eval.r2r|floatformat:4}}</td>
+                                                        <td>{{eval.r4r|floatformat:4}}</td>
+                                                        <td>{{eval.read|floatformat:2}}</td>
+                                                        <td>{{eval.recall|floatformat:2}}</td>
+							<td>{{eval.preci|floatformat:2}}</td>
+							<td>{{eval.rep|floatformat:2}}</td>
+							
+                                                        
+                                                </tr>   
+                                        {% else %}      
+                                                <tr>    
+                                                        <td>{{eval.system.system_description}}</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+                </tbody>
+        </table>
+
+
+</div>
+	{% endfor %}
+</body>
+{% endblock  %}

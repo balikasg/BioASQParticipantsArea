@@ -1,0 +1,30 @@
+{% extends 'pybb/base.html' %}
+
+{% block pybb_crumbs %}{{ forum }}{% endblock %}
+
+{% block content %}
+<body id=forums>
+<h3><a href="/forum/" style="color:black;">{{forum.category}}</a>-->{{ forum }}</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Topic</th>
+            <th>Created</th>
+            <th>Posts</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for topic in forum.topics.all %}
+        <tr>
+            <td><a href="{{ topic.get_absolute_url }}" style="text-decoration:none">{{ topic }}</a></td>
+            <td>{{ topic.created|date:"d F, Y H:i" }}</td>
+            <td>{{ topic.post_count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>
+    <a class="btn btn-info" href="{% url topic_add %}?forum={{ forum.pk }}" style="text-decoration:none">New topic</a>
+</p>
+</body>
+{% endblock %}

@@ -1,0 +1,175 @@
+#form1{position:relative;
+left:45%;}
+
+#upload{position:relative;
+left:60%;}
+
+em{color:red; font-style:normal;}
+
+
+#post-info{
+width: 150px;}
+#post-content{
+border-left: 1px solid black;
+padding-left: 10px;}
+
+#post-related{
+padding-top:15px;}
+
+
+#header img{
+padding: 0 15px; 
+float: left;
+height: 80px;
+}
+a:hover{color:red;}
+#footer img{ text-align:center;
+height: 60px;}
+#slogan{
+color: #a0a0a0;
+padding-top: 0px;}
+
+
+ul.errorlist{
+        margin: 0;
+        padding: 0;
+}
+.errorlist li{
+        color: red;
+        display: block;
+        font-size: 16px;    
+}
+
+.table topic-list{
+background-color: silver;
+}
+
+body{
+background-color: #e8e8e8;}
+
+
+
+label{
+width: 15em;
+float:left;
+text-align: right;
+display: block;
+margin-right: 0.5em;
+
+}
+.submit input
+{
+margin-left: 20px;
+}
+
+
+
+
+#header, #content, #footer{
+font-family: 'Droid Sans', arial, serif;
+background-color:white;
+width: 900px;
+margin: auto;
+text-align: justify;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+#header {margin-bottom: 0px;
+border-top:2px solid red;}
+#content {padding-bottom: 40px;
+margin-bottom: 0px; }
+
+#footer{
+margin-top:0px;
+font-size:75%;
+text-align:center;}
+
+h1{color:black;
+
+}
+
+h2{ 
+	color: black;
+}
+
+
+
+.main_menu
+{
+	padding-top: 5px;
+	margin:auto;
+	height:30px;
+	line-height:30px;
+	color:#FFF;
+	position:relative;
+	font-family:'Droid Sans', arial, serif;
+	font-size:16px;
+}
+.main_menu ul
+{
+	padding:0px;
+	margin:0;
+	list-style:none;
+}
+.main_menu ul li
+{
+	padding:0;
+	margin:0;
+	border-right:1px solid #000000;
+	float:left;
+	background:#333333;
+}
+.main_menu ul li a
+{
+	color:#FFF;
+	display:block;
+	text-decoration:none;
+	padding:0 25px;
+}
+main_menu ul li a:hover
+{
+	background:#3ea5ea;
+	color:#000;
+}
+.main_menu ul li ul
+{
+	 display: none;
+	 width: auto;
+	 position:absolute;
+	 top:30px;
+	 padding:0px;
+	 margin:0px;
+}
+.main_menu ul li:hover ul
+{
+	 display: block;
+	 position: absolute;
+	 margin: 0;
+	 padding: 0;
+}
+.main_menu ul li:hover li
+{
+ 	float: none;
+ 	list-style:none;
+	margin:0px;
+}
+.main_menu ul li:hover li
+{
+	background:#333;
+	border-top:1px solid #000000;
+}
+.main_menu ul li:hover li a
+{
+    color: #fff;
+	padding:0 20px;
+	display:block;
+	width:170px;
+}
+.main_menu ul li li a:hover
+{
+ 	color:#000;
+}
+
+
+

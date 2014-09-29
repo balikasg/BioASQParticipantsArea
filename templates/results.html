@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+
+{% block content %}
+<body id="results1A">
+<h1>Test Results</h1>
+<p>Currently, there are no results available. As soon as a new test set will be released the "Results" section will be initialised in the following way: 
+<ul>
+<li>The evaluation function will be triggered after the expiration of the test set. The System Descriptions of the systems that uploaded results will fill in the Results sets of tables.</li>
+<li>Each test set will form set of tables, a table with the Flat Measures and another table with the Hierarchical Measures.</li>
+<li>The Results tables will be updated in a weekly basis.</li>
+<li>For the assessment of the participating systems one flat, <strong>Micro F-Measure</strong> and one hierarchical, <strong>Lowest Common Ancestor-Symmetric Difference Loss</strong> measure will be used. For completeness, we will compute more measures from each family, presented below.</li>
+</ul></p>
+<p>The flat measures that are going to be calculated are:
+<ol>
+<li>Accuracy (Acc.)</li>
+<li>Example Based Precision (EBP)</li>
+<li>Example Based Recall (EBR)</li>
+<li>Example Based F-Measure (EBF)</li>
+<li>Macro Precision (MaP)</li>
+<li>Macro Recall (MaR)</li>
+<li>Macro F-Measure (MaF)</li>
+<li>Micro Precision (MiP)</li>
+<li>Micro Recall (MiR)</li>
+<li>Micro F-Measure (MiF)</li>
+</ol>
+
+</p>
+
+<p>The Hierarchical Measures that are going to be calculated are:
+<ol>
+<li>Hierarchical Precision (H. Prec)</li>
+<li>Hierarchical Recall (H. Recall)</li>
+<li>Hierarchical F-Measure(H. F-Measure)</li>
+<li>Lowest Common Ancestor-Symmetric Difference Loss (LCA-SDL)</li>
+</ol></p>
+</body>
+
+{% endblock %}

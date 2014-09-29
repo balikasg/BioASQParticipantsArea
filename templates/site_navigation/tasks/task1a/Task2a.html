@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block content %}
+<body id="task1A">
+<h1>Task 2a</h1>
+<p><em>Task 2a has begun!<br /></em></p>
+
+<p><em>Guidelines for participating in this track can be found <a href="/general_information/Task2a/"> here</a> </em></p>
+
+{% comment %}
+<h3>Training set data</h3>
+<p>You can download the training set <em>in raw text</em> from <a href="/Tasks/2a/trainingDataset/raw/allMeSH/" style="text-decoration:none; color:blue">here</a>. Zip file size: 6.2GB/Uncompressed file size: 20.31GB</p>
+<p>A smaller part of the training set containing only the articles that come from the pre-selected journals for the challenge is available in<em> raw </em>format <a href="/Tasks/2a/trainingDataset/raw/sellectionJournals/" style="text-decoration:none; color:blue">here</a>. Zip file size: 2.5GB/Uncompressed file size: 8.3GB</p>
+
+<p>You can download the training set as a <em>Lucene index</em> from <a href="/Tasks/2a/trainingDataset/lucene/allMeSH/" style="text-decoration:none; color:blue">here</a>. Zip file size: 4.4GB/Uncompressed file size: 6.2GB</p>
+<p>Again, a smaller part containing only the articles from the pre-selected journals is available as a <em> Lucene format </em><a href="/Tasks/2a/trainingDataset/lucene/sellectionJournals/" style="text-decoration:none; color:blue">here</a>. Zip file size: 1.8GB/Uncompressed file size: 2.47GB</p>
+
+
+<p> The list of the journals containing the articles in the training set can be downloaded <a href="/journalsTraining/" style="text-decoration:none; color:blue">here</a>.</p>
+
+
+<h3>Vectorization Tools</h3>
+<p>You can download tools for vectorizing the data from <a href="/tools/" style="text-decoration:none; color:blue">here</a>. To use the tools, the lucene-core and lucene-analyzers jars must be included in the classpath. The tools produce a vectorized description as a Lucene Index.</p>
+
+{% endcomment %}
+
+<h3>Baseline results</h3>
+You can find the results of the systems MTI and  MTI First Line Index, which are  baselines for the Task 2a  in <a href="http://ii.nlm.nih.gov/BioASQ/">http://ii.nlm.nih.gov/BioASQ/</a>. 
+<h3>Available test sets</h3>
+{% if tests %}
+        <p> Currently, {{tests|length}} <em>  test sets</em> available. 
+                {% for test in tests %}
+                <ul>
+                {% if test.test_id == 41 %} <li>Dry run test set, available <a href="/data/raw/{{ test.test_id }}/" style="color:blue">in raw format</a> and <a href="/data/vectorized/{{ test.test_id }}/" style="color:blue">in vectorized format</a>. Submissions from {{ test.started}} until {{test.finished}}</li>
+
+		{% elif test.test_id <= 46 %}    <li>Test set of Test batch 1, week {{ test.test_id|add:"-41" }}, available in <a href="/data/raw/{{ test.test_id }}/" style="color:blue">raw</a>/<a href="/data/vectorized/{{ test.test_id }}/" style="color:blue">vectorized</a> format. Submissions from {{ test.started}} until {{test.finished}}</li>
+		{% elif test.test_id <= 51 %} <li>Test set of Test batch 2, week {{ test.test_id|add:"-46" }}, available in <a href="/data/raw/{{ test.test_id }}/" style="color:blue">raw</a>/<a href="/data/vectorized/{{ test.test_id }}/" style="color:blue">vectorized</a> format. Submissions from {{ test.started}} until {{test.finished}}</li>
+		{% elif test.test_id <= 56 %}  <li>Test set of Test batch 3, week {{ test.test_id|add:"-51" }}, available in <a href="/data/raw/{{ test.test_id }}/" style="color:blue">raw</a>/<a href="/data/vectorized/{{ test.test_id }}/" style="color:blue">vectorized</a> format. Submissions from {{ test.started}} until {{test.finished}}</li>
+		{% else %} <li>Additional test set of task 2a, week {{ test.test_id|add:"-56" }}, available in <a href="/data/raw/{{ test.test_id }}/" style="color:blue">raw</a>/<a href="/data/vectorized/{{ test.test_id }}/" style="color:blue">vectorized</a> format. Submissions from {{ test.started}} until {{test.finished}}</li>
+
+	
+                {% endif %}
+                </ul>
+                {% endfor %}
+        </p>
+
+{% else %}
+* Currently there are no available test sets for Task 2a *
+{% endif %}
+
+
+<h3>Submit your results</h3>
+
+{% if current_test %}
+<p>Use the form below to submit a file with results for the active test. You need to select a file and one of your systems (you can register systems <a href="/profile/" style="color:blue">here</a>). <br />
+<center><em>Warning:</em> Selecting a system for which you have already submitted results will replace the previous results.</center> 
+
+<form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+           
+            <p>{{ form.docfile.label_tag }} {{ form.docfile }}  {{form.docfile.errors}}</p>
+            <p>{{form.system_name.label_tag}} {{form.system_name}} {{form.system_name.errors}}</p>
+            <p><input id="upload" type="submit" value="Upload" /></p>
+</form>
+{% else %}
+<p>* No active tests for uploads *</p>
+{% endif %}
+
+{% if error %} {% for er in error %} <em>{{ er }}</em> <br /> {% endfor %}{% endif %}
+
+
+<h3>Download the results you have submitted</h3>
+In the following table you can find information and links for the results you have submitted.
+
+{% if attempts %}
+        <center>
+        <table class="uploads">
+                <!-- Table header -->
+                        <thead>
+                                <tr>
+                                        <th>Test set</th>
+                                        <th>System Name</th>
+                                        <th>Download link</th>
+                                        <th>Date/Time</th>
+                                </tr>
+                        </thead>
+
+                        <tbody>
+                                {% for at in attempts %}
+                                        <tr>
+                                                        <td>{{ at.test_id.test_id|add:"-41" }}</td>
+                                                        <td>{{at.system}}</td>
+                                                        <td><a href="results/{{at.test_id}}/{{at.system}}/" style="color:blue">{{ at.test_id.test_id|add:"-41"}}-{{at.system}}.json</a></td>
+                                                        <td>{{at.timestamp}}</td>
+                                        </tr>
+                                {% endfor %}
+                        </tbody>
+        </table>
+        </center>
+{% else %}
+<p>* You didn't submit any results for the BioASQ Task 2a test sets yet *</p>
+{% endif %}
+
+
+
+
+{% endblock %}
+
+
+{% block footer %}
+
+
+
+{% endblock%}

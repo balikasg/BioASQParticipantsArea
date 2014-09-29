@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<body id="oracleMain">
+
+<h1>Oracle </h1>
+
+
+<p>Use the BioASQ Oracle to improve your system, by checking its performance against past tests. There are no limits in usage frequency and evaluations are not taken into account for the prizes of the challenge.</p>
+<p>After submitting your system answers, you will have the chance to see your system's performance evaluation measures directly, as well as its row against other systems that either participated in the official BioASQ challenge (without highlight) or participated in the oracle highlighted <em style="background-color: #BA9EB0; color: black;">purple</em>. Your current system's performance will be <em style="background-color: #FFFF00; color: black;">highlighted</em> in the tables; at this point "Current submission" will be used as system name. In case you participated with other systems of yours in the particular testset and you have kept their scores they will also be displayed even if you have chosen "not visible".</p>
+
+<form action="" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<table class="oracleSubmitForm">
+<tr><td class="hun" align="right">Task:</td> <td class="hun1"i align="left">{{form.task}}{{form.task.errors}}</td><td class="hun2">{{form.task.help_text}}</td></tr>
+<tr> <td class="hun" align="right">Test:</td> <td class="hun1" align="left">{{form.test}}{{form.test.errors}}</td><td class="hun2">Specify the test set by choosing one from the drop down menu. Tests sets for Task 1A can be  downloaded from <a href="/Tasks/A/getData/"> here</a> and are those that been already used for the BioASQ challenge.</td> </tr>
+<tr><td class="hun" align="right">Your system:</td> <td class="hun1" align="left">{{form.system_name}}{{form.system_name.errors}}</td><td class="hun2">{{form.system_name.help_text}}</td></tr>
+<tr><td class="hun" align="right">Your system results:</td> <td class="hun1" align="left">{{form.docfile}}{{form.docfile.errors}}</td><td class="hun2">Select a file to upload that contains a JSON string with the answers of a test. The format of the JSON is described in the online guidelines of each task, e.g. <a href="/general_information/Task2a/"> here</a>.</td></tr>
+</table>
+<input type="submit" name="submitResults" value="Submit" />
+	</form>
+<br />
+<center><p style="font-size:17px;  border:1px dashed; display: inline; padding:4px;"><em>Attention:</em> Calculating the evaluation results takes several minutes. Please, do not refresh the content.</p></center>
+
+<br /><br />
+
+{% if message %}
+<h2>Results</h2>
+{% for m in message %}
+<em>{{m}}</em>
+{% endfor %}
+{% endif %}
+<br />
+
+{% if ok %}
+
+Please, take a look at the results below and fill the following form:
+<form action="" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<table class="oracleSubmitForm">
+<tr><td class="hun" align="right">Keep my results visible:</td> <td style="width: 15%" align="center">{{ oracleSelect.is_visible}}</td><td style="width: 70%"> {{oracleSelect.is_visible.help_text}}</td></tr>
+<tr><td class="hun" align="right">Save my score:</td><td class="width: 15%" align="center">{{oracleSelect.keep_score}}</td><td style="width: 70%">{{oracleSelect.keep_score.help_text}}</td></tr>
+<tr style="display:none"><td>{{oracleSelect.hid}}</td></tr>
+</table>
+<input type="submit" name="saveResults" style="float: right" value="Submit" />
+</form>
+
+{% endif %}
+
+{% if other %}
+	<h4>Flat Measures</h4>
+	<table class="tablesorter">
+	<thead>
+				<tr>
+						<th>System</th>
+						<th>MiF</th>
+						<th>Acc.</th>
+						<th>EBP</th>
+						<th>EBR</th>
+						<th>EBF</th>
+						<th>MaP</th>
+						<th>MaR</th>
+						<th>MaF</th>
+						<th>MiP</th>
+						<th>MiR</th>
+				</tr>
+                </thead>
+                <tbody>
+		{% for r in other %}
+			{% if r.user.system == 'ORACLE' %}
+				<tr style="background-color: #FFFF00">
+			{% else %}
+				<tr>
+			{% endif %}
+					<td>{{ r.user.system_description }}</td>
+					<td>{{ r.micro_f|floatformat:4}}</td>
+					<td>{{ r.accuracy|floatformat:4}}</td>
+					<td>{{ r.ebp|floatformat:4}}</td>
+					<td>{{ r.example_based_recall|floatformat:4}}</td>
+					<td>{{ r.example_based_f|floatformat:4}}</td>
+					<td>{{ r.macro_precision|floatformat:4}}</td>
+					<td>{{ r.macro_recall|floatformat:4}}</td>
+					<td>{{ r.macro_f_measure|floatformat:4}}</td>
+					<td>{{ r.micro_precision|floatformat:4}}</td>
+					<td>{{ r.micro_recall|floatformat:4}}</td>
+			</tr>
+		{% endfor %}
+		{% for r2 in oracleResults %}
+			<tr style="background-color: #BA9EB0">
+				<td>{{ r2.user.system_description }}</td>
+                                <td>{{ r2.micro_f|floatformat:4}}</td>
+                                <td>{{ r2.accuracy|floatformat:4}}</td>
+                                <td>{{ r2.ebp|floatformat:4}}</td>
+                                <td>{{ r2.example_based_recall|floatformat:4}}</td>
+                                <td>{{ r2.example_based_f|floatformat:4}}</td>
+                                <td>{{ r2.macro_precision|floatformat:4}}</td>
+                                <td>{{ r2.macro_recall|floatformat:4}}</td>
+                                <td>{{ r2.macro_f_measure|floatformat:4}}</td>
+                                <td>{{ r2.micro_precision|floatformat:4}}</td>
+                                <td>{{ r2.micro_recall|floatformat:4}}</td>
+			</tr>
+		{% endfor %}
+                </tbody>
+</table>
+
+<h4>Hierarchical Measures</h4>
+<table class="tablesorter">
+	<thead>
+		<tr>
+				<th>System</th>
+				<th>LCA-F</th>
+				<th>HiP</th>
+				<th>HiR</th>
+				<th>HiF</th>
+				<th>LCA-P</th>
+				<th>LCA-R</th>
+		</tr>
+    </thead>
+    <tbody>
+	{% for r in other %}
+		{% if r.user.system == 'ORACLE' %}
+                      <tr style="background-color: #FFFF00">
+                {% else %}
+                      <tr>
+                {% endif %}
+			<td>{{ r.user.system_description }}</td>
+			<td>{{ r.lca_f|floatformat:4}}</td>
+			<td>{{ r.hierarchical_precision|floatformat:4}}</td>
+			<td>{{ r.hierarchical_recall|floatformat:4}}</td>
+			<td>{{ r.hierarchical_f|floatformat:4}}</td>
+			<td>{{ r.lca_p|floatformat:4}}</td>
+			<td>{{ r.lca_r|floatformat:4}}</td>
+		</tr>
+	{% endfor %}
+	{% for r2 in oracleResults %}
+		<tr style="background-color: #BA9EB0">
+			<td>{{ r2.user.system_description }}</td>
+                        <td>{{ r2.lca_f|floatformat:4}}</td>
+                        <td>{{ r2.hierarchical_precision|floatformat:4}}</td>
+                        <td>{{ r2.hierarchical_recall|floatformat:4}}</td>
+                        <td>{{ r2.hierarchical_f|floatformat:4}}</td>
+                        <td>{{ r2.lca_p|floatformat:4}}</td>
+                        <td>{{ r2.lca_r|floatformat:4}}</td>
+		</tr>
+	{% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if taskB %}
+	<h3>Documents</h3>
+        <table class="tablesorter1b">
+                <thead>
+                        <tr>
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th> 
+                                <th>F-Measure</th> 
+                                <th>MAP</th> 
+                                <th>GMAP</th> 
+                        </tr>
+                </thead>
+                <tbody>
+{% for eval in taskB %}
+	{% if eval.user.system == 'ORACLE' %}
+                        <tr style="background-color: #FFFF00">
+        {% else %}
+                        </tr>
+        {% endif %}
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>{{eval.mp_art|floatformat:4}}</td>
+                                                        <td>{{eval.mr_art|floatformat:4}}</td>
+                                                        <td>{{eval.f_art|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_art|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_art|floatformat:4}}</td>
+                                                </tr>
+{% endfor %}
+{% for p in taskBoracle %}
+	<tr style="background-color: #BA9EB0">
+                                                        <td>{{p.user.system_description}}</td>
+                                                        <td>{{p.mp_art|floatformat:4}}</td>
+                                                        <td>{{p.mr_art|floatformat:4}}</td>
+                                                        <td>{{p.f_art|floatformat:4}}</td>
+                                                        <td>{{p.MAP_art|floatformat:4}}</td>
+                                                        <td>{{p.GMAP_art|floatformat:4}}</td>
+                                                </tr>	
+{% endfor %}	
+                </tbody>
+        </table>
+
+
+
+<h3>Snippets</h3>
+        <table class="tablesorter1b">
+                <thead>         
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                                <th>MAP</th>  
+                                <th>GMAP</th>
+                        </tr>
+                </thead>        
+                <tbody>
+{% for eval in taskB %}
+	{% if eval.user.system == 'ORACLE' %}
+                      <tr style="background-color: #FFFF00">
+                {% else %}
+                      <tr>
+                {% endif %}
+                                                        <td>{{eval.user.system_description}}</td>
+							<td>{{eval.mp_snip|floatformat:4}}</td>
+                                                        <td>{{eval.mr_snip|floatformat:4}}</td>
+                                                        <td>{{eval.f_snip|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_snip|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_snip|floatformat:4}}</td>	
+                                                </tr>
+                        {% endfor %}
+{% for p in taskBoracle %}
+        <tr style="background-color: #BA9EB0">
+                                                        <td>{{p.user.system_description}}</td>
+                                                        <td>{{p.mp_snip|floatformat:4}}</td>
+                                                        <td>{{p.mr_snip|floatformat:4}}</td>
+                                                        <td>{{p.f_snip|floatformat:4}}</td>
+                                                        <td>{{p.MAP_snip|floatformat:4}}</td>
+                                                        <td>{{p.GMAP_snip|floatformat:4}}</td>
+                                                </tr>
+                        {% endfor %}
+
+
+
+
+                </tbody>
+        </table>
+
+
+
+<h3>Concepts</h3>
+        <table class="tablesorter1b">
+                <thead>         
+                        <tr>    
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                                <th>MAP</th>  
+                                <th>GMAP</th>
+                        </tr>
+                </thead>        
+                <tbody>
+{% for eval in taskB %}
+	{% if eval.user.system == 'ORACLE' %}
+                        <tr style="background-color: #FFFF00">
+        {% else %}
+                        <tr>
+        {% endif %}
+                                                        <td>{{eval.user.system_description}}</td>
+							<td>{{eval.mp_con|floatformat:4}}</td>
+                                                        <td>{{eval.mr_con|floatformat:4}}</td>
+                                                        <td>{{eval.f_con|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_con|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_con|floatformat:4}}</td>
+                                                </tr>
+                        {% endfor %}
+{% for p in taskBoracle %}
+        <tr style="background-color: #BA9EB0">
+			<td>{{eval.user.system_description}}</td>
+                                                        <td>{{p.mp_con|floatformat:4}}</td>
+                                                        <td>{{p.mr_con|floatformat:4}}</td>
+                                                        <td>{{p.f_con|floatformat:4}}</td>
+                                                        <td>{{p.MAP_con|floatformat:4}}</td>
+                                                        <td>{{p.GMAP_con|floatformat:4}}</td>
+                                                </tr>
+                        {% endfor %}
+                </tbody>
+        </table>
+
+
+
+<h3>RDF Triples</h3>
+        <table class="tablesorter1b">
+                <thead>         
+                        <tr>    
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                                <th>MAP</th>  
+                                <th>GMAP</th>
+                        </tr>
+                </thead>        
+                <tbody>
+{% for eval in taskB %}
+{% if eval.user.system == 'ORACLE' %}
+                        <tr style="background-color: #FFFF00">
+        {% else %}
+                        <tr>
+        {% endif %}
+                                                        <td>{{eval.user.system_description}}</td>
+							<td>{{eval.mp_trip|floatformat:4}}</td>
+                                                        <td>{{eval.mr_trip|floatformat:4}}</td>
+                                                        <td>{{eval.f_trip|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_trip|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_trip|floatformat:4}}</td>
+                                                </tr>
+                        {% endfor %}
+{% for p in taskBoracle %}
+        <tr style="background-color: #BA9EB0">
+                                                        <td>{{p.user.system_description}}</td>
+                                                        <td>{{p.mp_trip|floatformat:4}}</td>
+                                                        <td>{{p.mr_trip|floatformat:4}}</td>
+                                                        <td>{{p.f_trip|floatformat:4}}</td>
+                                                        <td>{{p.MAP_trip|floatformat:4}}</td>
+                                                        <td>{{p.GMAP_trip|floatformat:4}}</td>
+                                                </tr>
+                        {% endfor %}
+                </tbody>
+        </table>
+{% endif %}
+
+
+
+
+{% if taskBB %}
+
+<h2>Exact Answers</h2>
+        <table class="tablesorter1bb">
+                <thead>
+                       <tr class="noimage">
+                                <th style="border: none"></th>
+                                <th>Yes/No</th>
+                                <th colspan="3">Factoid</th>
+                                <th colspan="3">List</th>
+                        </tr>
+                        <tr>
+                                <th>System Name</th>
+                                <th>Accuracy</th>
+                                <th>Strict Acc.</th>
+                                <th>Lenient Acc.</th>
+                                <th>MRR</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th>
+                                <th>F-Measure</th>
+                        </tr>
+                </thead>
+</tbody>
+	{% for eval in taskBB %}
+                {% if eval.system.system == 'ORACLE' %}
+                                <tr style="background-color: #FFFF00">
+                {% else %}      
+                                <tr>
+                {% endif %}
+                                                        <td>{{eval.system.system_description}}</td>
+                {% if eval.acc %}                       <td>{{eval.acc|floatformat:4}}</td> {% else %} <td> - </td> {% endif %}
+                {% if eval.s_acc %}                     <td>{{eval.s_acc|floatformat:4}}</td>
+                                                        <td>{{eval.l_acc|floatformat:4}}</td>
+                                                        <td>{{eval.mrr|floatformat:4}}</td> {% else %} <td> - </td><td> - </td><td> - </td> {% endif %}
+                {% if eval.prec %}                      <td>{{eval.prec|floatformat:4}}</td> 
+                                                        <td>{{eval.rec|floatformat:4}}</td>
+                                                        <td>{{eval.fmeas|floatformat:4}}</td> {% else %} <td> - </td><td> - </td><td> - </td> {% endif %}
+                                                </tr>
+        {% endfor %}
+        {% for eval in taskBBoracle %}
+                                <tr style="background-color: #BA9EB0">
+                                                        <td>{{eval.system.system_description}}</td>
+                                                        <td>{{eval.acc|floatformat:4}}</td>
+                                                        <td>{{eval.s_acc|floatformat:4}}</td>
+                                                        <td>{{eval.l_acc|floatformat:4}}</td>
+                                                        <td>{{eval.mrr|floatformat:4}}</td>
+                                                        <td>{{eval.prec|floatformat:4}}</td>
+                                                        <td>{{eval.rec|floatformat:4}}</td>
+                                                        <td>{{eval.fmeas|floatformat:4}}</td>
+                                                </tr>
+        {% endfor %}
+</tbody>
+</table>
+
+<h2>Ideal Answers</h2>
+<table class="tablesorter1bb">
+                <thead>
+                        <tr class="noimage">
+                                <th style="border: none"></th>
+                                <th colspan="2">Automatic scores</th>
+                        </tr>
+                        <tr>
+                                <th>System Name</th>
+                                <th>Rouge-2</th>
+                                <th>Rouge-SU4</th>
+                        </tr>
+                </thead>
+                <tbody>
+	{% for eval in taskBB %}
+        	{% if eval.system.system == 'ORACLE' %}
+                        <tr style="background-color: #FFFF00">
+	        {% else %}
+                        <tr>
+        	{% endif %}
+                                                        <td>{{eval.system.system_description}}</td>
+                                                        <td>{{eval.r2r|floatformat:4}}</td>
+                                                        <td>{{eval.r4r|floatformat:4}}</td>
+                                                </tr>
+	{% endfor %}
+        {% for eval in taskBBoracle %}
+                        <tr style="background-color: #BA9EB0">
+                                                        <td>{{eval.system.system_description}}</td>
+                                                        <td>{{eval.r2r|floatformat:4}}</td>
+                                                        <td>{{eval.r4r|floatformat:4}}</td>
+                                                </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endif %}
+
+
+
+
+</body>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>Contact form</h1>
+General information and details about the project, as well as contact information of the project coordinators, can be found in <a href="http://bioasq.org" style="text-decoration:none; color:blue">http://bioasq.org</a> website. <br /> For questions about the platform you can fill in the following form or participate in the discussion about the challenge in the <a href="/forum/" style="text-decoration:none; color:blue">forum.</a>
+<form method="post" action=".">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <script type="text/javascript"  src="http://www.google.com/recaptcha/api/challenge?k=6LfOBd4SAAAAAKJMafi8I7-wMtr6M65wtCVKhD71"></script>
+
+  <noscript>
+            <iframe src="http://api.recaptcha.net/noscript?k=6LfOBd4SAAAAAKJMafi8I7-wMtr6M65wtCVKhD71"
+            height="300" width="500" align="right" rameborder="0"></iframe><br>
+            <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+            </textarea>
+            <input type="hidden" name="recaptcha_response_field"
+            value="manual_challenge">
+            </noscript>
+
+  <input type="submit" value="Send Mail" />
+</form>
+
+{% endblock %}

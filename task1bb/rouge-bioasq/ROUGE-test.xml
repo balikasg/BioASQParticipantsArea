@@ -1,0 +1,28 @@
+<ROUGE-EVAL version="1.0">
+<EVAL ID="1">
+<PEER-ROOT>
+sample-test/SL2003/systems
+</PEER-ROOT>
+<MODEL-ROOT>
+sample-test/SL2003/models
+</MODEL-ROOT>
+<INPUT-FORMAT TYPE="SEE">
+</INPUT-FORMAT>
+<PEERS>
+<P ID="11">SL.P.10.R.11.SL062003-01.html</P>
+<P ID="12">SL.P.10.R.12.SL062003-01.html</P>
+<P ID="13">SL.P.10.R.13.SL062003-01.html</P>
+<P ID="14">SL.P.10.R.14.SL062003-01.html</P>
+<P ID="21">SL.P.10.R.21.SL062003-01.html</P>
+<P ID="22">SL.P.10.R.22.SL062003-01.html</P>
+<P ID="23">SL.P.10.R.23.SL062003-01.html</P>
+<P ID="24">SL.P.10.R.24.SL062003-01.html</P>
+</PEERS>
+<MODELS>
+<M ID="A">SL.P.10.R.A.SL062003-01.html</M>
+<!--<M ID="B">SL.P.10.R.B.SL062003-01.html</M>
+<M ID="C">SL.P.10.R.C.SL062003-01.html</M>
+<M ID="D">SL.P.10.R.D.SL062003-01.html</M>-->
+</MODELS>
+</EVAL>
+</ROUGE-EVAL>

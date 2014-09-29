@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block content %}
+<h1>Send a message to the BioASQ list</h1>
+
+Please fill the following fomr to send the message to the participants:
+<form action="" method="post">
+        {% csrf_token %}
+                {{form.as_p}}
+           <input type="submit" value="Send Message">
+</form>
+{%if message %}
+<p><em>{{message}}</em></p>
+{%endif%}
+{% endblock %}

@@ -1,0 +1,3 @@
+{% load i18n %}
+A new test set is available for Task1A of BioASQ challenge.
+The test set will be available until {{ detail.finished }}.

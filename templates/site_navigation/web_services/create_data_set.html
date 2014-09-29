@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>Create Data Set</h1>
+Welcome here.
+
+{% if user.is_superuser %}
+
+	<form action="" method="post">
+			{{form.as_p}}
+		   <input type="submit" value="Make Data Set">
+	</form>
+	
+{% else %}
+
+More information soon.
+
+{% endif %}	
+
+
+
+{% endblock %}

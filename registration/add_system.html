@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block content %}
+<h1>Add a new system</h1>
+
+{% if systems %}
+	<p>{{user.username}}, <br /> Currently, the following systems are registered in your name. By completing the following form you can add a system in your account.</p>
+	{%for system in systems%}
+	<ul>
+		<li>{{ system.system }} 
+	</ul>
+	{% endfor %}
+{% else %}	
+<p>{{user.username}}, <br /> Currently, there are no systems registered in your account. By completing the following form you can add a system in your account.</p>
+{%endif%}
+
+<form action="" method="post">
+	{% csrf_token %}
+		{{form.as_p}}
+	   <input type="submit" value="Add system">
+</form>
+{%if message %}
+<p><em>{{message}}</em></p>
+{%endif%}
+{% endblock %}

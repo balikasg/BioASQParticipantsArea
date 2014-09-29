@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>Create Test</h1>
+<p>In the below fill in the parameters in order to create a test. Notes:
+<ul>
+	<li>The date format should be yyyy/mm/dd.</li>
+	<li>The test that will be created will have less than the Abstracts that you will define as some entries in PubMed don't have abstracts available</li>
+	<li>After creating the test you will be able to download the data either as a file or via a webservice as a json string</li>
+	<li>All fields are obligatory</li>
+</ul>
+</p>
+<form action="" method="post">
+		{% csrf_token %}
+        {{form.as_p}}
+       <input type="submit" value="Make test">
+ </form>
+ 
+ {% if message %}
+ <p style="color:red;">{{message}}</p>
+ {% endif %}
+
+
+
+<p>In the menu above you can select the Task you are interested in and proceed to download the information and the data you need.</p>
+{% endblock %}

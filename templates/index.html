@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<body id="genInfo1A">
+<p><em>The training sets for Task 2a and 2b are available <a href="/Tasks/2a/" > here</a> and <a href="/Tasks/2b/trainingDataset/" > here</a> respectively.</em></p>
+<h2>Overview</h2>
+<p>The BioASQ Participants Area will enable users during the challenge to:
+<ul>
+<li>Access guidelines for each challenge task</li>
+<li>Register to the challenge</li>
+<li>Download data for each Task</li>
+<li>Upload your answers</li>
+<li>Review your evaluation results</li>
+<li>Participate to the forum for discussion about the challenge</li>
+</ul> 
+<p>You can register <a href="/accounts/login/" style="text-decoration:none; color: blue">here</a>. <br />
+Further information about the BioASQ project can be found at the <a href="http://bioasq.org" style="text-decoration:none; color: blue"> BioASQ's official website</a>.
+</p>
+<h2>Download Sample Data (no registration required)</h2></a>
+
+Click on the buttons below for sample data of the BioASQ challenge. The format of the data is Javascript Object Notation (JSON).<br /><br />
+<a href="/download/sampleData/task1a/" class="Task1aButton">Task 2A Sample Data</a>
+<a href="/download/sampleData/task1b/" class="Task1aButton">Task 2B Sample Data</a>
+<br /><br />More information about the data and the tools available for each task can be found in the online guidelines.
+<br /> 
+<h2>Task 2A Schedule</h2>
+<p>Below you can see the BioASQ Task 1A schedule:</p>
+<img class="displayed"  src="{{ STATIC_URL }}task2a_bioasq.png"  alt="Task1a-Schedule"/>
+</body>
+<h2> Task 2B Schedule</h2>
+<p>Below you can see the BioASQ Task 1B schedule:</p>
+<img class="displayed"  src="{{ STATIC_URL }}task2b_bioasq.png"  alt="Task1b-Schedule"/>
+
+{% endblock %}

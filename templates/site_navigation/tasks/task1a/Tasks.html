@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>Tasks Overview</h1>
+<p>A short description of the tasks that will be organised during the first yaer of the challenge follows:
+
+<ol> 
+	<li><em>Task 1A: Large-scale online biomedical semantic indexing.</em> Large-scale semantic indexing will be evaluated on the whole of MEDLINE. 
+	In particular, participants will be asked to classify incoming documents before the human curators do. BioASQ will distribute new 
+	unclassified MEDLINE documents every week and participants will have a limited responce time to estimate the MeSH terms.</li>
+	
+<img class="displayed"  src="{{ STATIC_URL }}task1a_bioasq.png"  alt="Task1a-Description"/>
+	<li><em>Task 1B: Introductory biomedical semantic QA.</em> Benchmarks containing development and evaluation questions, 
+	as well as golden standard (reference) answers, will be developed. The golden answers will be produced by a team of biomedical experts
+	 from research teams around Europe. Established methodologies from QA, summarisation, and classification will be followed to produce the 
+	 benchmarks and evaluate the participating systems
+		The task will run in two phases: 
+		<ol>
+			<li><em>Phase A:</em> BioASQ will transmit simultaneously questions from the benchmark while participants will have
+			 to respond with concepts, snippets and triples in limited time.</li>
+			<li><em>Phase B:</em> BioASQ will transmit qustions and concepts, snippets ans triples. 
+			Participants will respond with facts, summaries, etc. The evaluation will be based on golden answers while a small 
+			percentage will be evaluated manually from the biomedical experts.</li>
+		</ol>	
+	</li>
+</ol>
+<!--		
+<p>A second version of the challenge will run in the second year of the project. There will be two tasks again with the same objectives:</p>
+<ol>
+	<li><em>Task 2A: Large-scale online biomedical semantic indexing</em></li>
+	<li><em>Task 2B: Biomedical semantic QA</em></li>
+</ol>
+</p>
+-->
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<body id="results1ba">
+<h1> Task 2b: Test Results of Phase A</h1>
+<em>* The scores  presented below are indicative. The final scores based on the assessed data will be announced soon * <br /> </em>
+<em> * The "-" replace the scores of systems that  didn't submit the corresponding annotations. *   </em><br /> 
+
+The test results are presented in seperate tables for each type of annotation. They are sorted based on the scores of MAP. The "System Description" of each system is used.<br /> 
+The evaluation measures that are used are presented <a href="http://bioasq.lip6.fr/Tasks/b/eval_meas/" style="text-decoration:none; color:blue">here </a>.
+
+
+{% for test in tests %}
+    <a onclick ="javascript:ShowHide({{ test.test_id }})" href="javascript:;" style="text-decoration:none">
+    <h2>Test batch {{test.test_id|add:"-3"}}</h2> </a>
+    <div class="mid1" id="{{ test.test_id }}" style="DISPLAY: none">      
+	<h3>Documents</h3>
+        <table class="tablesorter1b">
+                <thead>
+                        <tr>
+                                <th>System Name</th>
+                                <th>Mean precision</th>
+                                <th>Recall</th> 
+                                <th>F-Measure</th> 
+                                <th>MAP</th> 
+                                <th>GMAP</th> 
+                        </tr>
+                </thead>
+                <tbody>
+			{% for eval in evaluation %}
+                                {% if eval.testset == test %}
+                                        {% if eval.mp_art > 0.001 %}
+                                                <tr>
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>{{eval.mp_art|floatformat:4}}</td>
+                                                        <td>{{eval.mr_art|floatformat:4}}</td>
+                                                        <td>{{eval.f_art|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_art|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_art|floatformat:4}}</td>
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+			{% for eval in otherResults %}
+                                {% if eval.testset == test %}
+                                        {% if eval.mp_art > 0.001 %}
+                                                <tr style="background-color: #BA9EB0">
+                                                        <td>{{eval.user.system_description}}</td>
+                                                        <td>{{eval.mp_art|floatformat:4}}</td>
+                                                        <td>{{eval.mr_art|floatformat:4}}</td>
+                                                        <td>{{eval.f_art|floatformat:4}}</td>
+                                                        <td>{{eval.MAP_art|floatformat:4}}</td>
+                                                        <td>{{eval.GMAP_art|floatformat:4}}</td>
+                                                </tr>
+                                        {% endif %}
+                                {% endif %}
+                        {% endfor %}
+
+                </tbody>
+        </table>
+
+
+</div>
+{% endfor %}
+</body>
+
+{% endblock  %}

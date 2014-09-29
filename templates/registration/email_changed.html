@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+{% if message %}
+<p>Thank you!</p>
+<p>Your {{ message }} was successfully changed.</p>
+{% endif %}
+
+
+{% if message2 %}
+<p>You trigerred the evaluation function. Here is the progress: </p>
+<ul>
+{% for m in message2 %}
+<li>{{m}}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+
+
+{% endblock %}

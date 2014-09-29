@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<p>Below you can see the profile details you can change.</p>
+<p>Add a system to your account
+<form action="/add_system/">
+					<input  type="submit" value="Add system">
+					</form></p>
+
+<p>Change E-mail
+<form action="/changeEmail/">
+					<input  type="submit" value="Change Email">
+					</form></p>
+<p>Change Tasks you will participate in
+<form action="/changetasks/">
+					<input  type="submit" value="Change Tasks">
+					</form></p>
+										
+<p>Change Password
+<form action="{% url auth_password_change %}">
+					<input  type="submit" value="Change Password">
+					</form></p>
+					
+					
+
+
+
+
+{% endblock %}

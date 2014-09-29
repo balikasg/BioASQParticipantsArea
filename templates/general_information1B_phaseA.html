@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<h2>Task 1B-Phase A Guidelines</h2>
+For a comprehensive description of the BioASQ tasks please visit <a href="http://bioasq.org/participate/challenges" style="text-decoration:none; color:blue"> bioasq.org</a>. <br />
+Phase A of Task 1B will begin on Monday 3rd of June, 2013. Each week, a new test set will be released. Participants, after downloading the test set will have to 
+respond in limited time with the annotations for the questions of the test set that their systems estimated. 
+<h3 id="training_data">Training Data</h3>
+<p>The training data for both phases of Task 1B can be downloaded from <a href="http://bioasq.lip6.fr/Tasks/1Ba/" style="text-decoration:none; color:blue"> Submitting/Task 1B-Phase A</a>.
+ The training set consists of 30 annotated questions in English. The questions 
+have been created from biomedical experts around Europe. Four types of questions will be available:
+<ol>
+	<li>Yes/no questions (decisive)</li>
+	<li>Factoid questions</li>
+	<li>List questions</li>
+	<li>Summary questions</li>
+</ol>
+
+The annotations for each question include lists of: <ul>
+<li>concepts from the designated ontologies and terminologies</li>
+<li>relevant articles to the question from MEDLINE</li>
+<li>snippets from the articles</li>
+<li>RDF triples</li></ul>
+Finally, an exact and an ideal answer that will be used in Phase B of Task 1B is also included.
+
+</p>
+<p>The training data are served as a JSON string with the following format:
+[Todo describe the fromat when it will be available]
+</p>
+<p><em>ATTENTION: </em>
+<ul>
+	<li>Only registered users can download the training set.</li>
+	<li>Users can use unlimited resources to train their systems.</li>
+</ul>
+</p>
+
+<h3 id="ontologies">Ontologies</h3>
+The ontology sets that are available for Task 1B are:
+<ul>
+	<li>the <a href="http://www.ncbi.nlm.nih.gov/mesh">Medical Subject Headings (MeSH)</a></li>
+	<li>the <a href="http://www.geneontology.org/>">Gene Ontology (GO)</a></li>
+	<li>the <a href="http://www.uniprot.org/">The Universal Protein Resource (UniProt)</a></li>
+	<li>the <a href="http://www.biosemantics.org/index.php?page=Jochem">Joint Chemical Dictionary (Jochem)</a></li>
+	<li>the <a href="http://disease-ontology.org/">Disease Ontology (DO)</a></li>
+</ul>
+The above mentioned sets of ontologies are available for downloading in <a href="http://bioasq.lip6.fr/Tasks/1Ba/" style="text-decoration:none; color:blue"> Submitting/Task 1B-Phase A</a>.
+
+<h3 id="triples">Data Triples</h3>
+<p>The annotations of this phase of the task requires the usage of biomedical data expressed as triples, e.g., subject-
+predicate-object structured facts, extracted from biomedical resources or bibliography. The <a href="http://linkedlifedata.com/" style="text-decoration:none; color:blue">Linked Life Data project</a> provides 
+the LinkedLifeData platform. LinkedLifeData is a data warehouse
+that syndicates large volumes of heterogeneous biomedical knowledge in a common data model. The
+platform uses an extension of the RDF model that is able to track the provenance of each individual fact
+in the repository and thus update the information. It contains currently more than 8 billion statements,
+with almost 2 billion entities involved. The statements are extracted from 26 biomedical resources, such
+as PubMed, UMLS, DrugBank, Diseasome, and Gene Ontology.
+
+[Todo expand more the way they will search them and submit them to us]
+</p>
+
+<h3>Evaluation</h3>
+[Wait for John's description or simply copy some from D 4.1]
+
+<h3>Test set</h3>
+Each test set will consist of non annotated questions in a JSON string. The format of the JSON string that will contain the questions will be the following:
+<pre>
+	{[
+		{"questionId": "0001",
+		 "questionType":"decisive" 			
+		 "questionBody": "Do CpG Islands colocalize with 
+		 transcription start sites"},
+			    .
+			    .      ]}
+</pre>
+where: <ul>
+<li> <code>questionId:</code> is the unique identifier of each question</li>
+<li> <code>questionBody:</code> is the question as it was formulated by the biomedical experts </li>
+<li> <code>questionType:</code> is the type of the question with values: <ul>
+<li> <code>"desicive"</code>, for yes/no questions.
+<li> <code>"factoid"</code>, for factoid questions.
+<li> <code>"list"</code>, for list questions.
+<li> <code>"summary"</code>, for summary questions.</li></ul></li>
+</ul>
+The JSON string represents an array with question objects. Each object has a questionId, a questionType and a questionBody. The questionId is the unique
+ identifier of each question and will also be used during submitting results. 
+
+Only registered users can download the test sets with one of the following ways:
+<ol>
+    <li>Using the web interface. In <a href="http://bioasq.lip6.fr/Tasks/1Ba/" style="text-decoration:none; color:blue"> Submitting/Task 1B-Phase A</a> you can find 
+    the available test sets. By clicking in the test (i.e. Test 1) you can download it as a text file. The test file will contain the json string with the questions.</li>
+    <li>Using an API. By making a GET request in the URi http://bioasq.lip6.fr/tests/1BA/test_number/ along with authentication parameters. In the position of 
+    test_number there should be a number indicating the test set that the user wants to download. 
+    In the following section "Code Snippets" you can find snippets in Python that perform this request. </li>
+</ol>
+
+[Question to be answered: <ul>
+	<li>how many questions per set?</li>
+	<li>How often? Indeed every Monday?</li>
+	<li>Are test sets going to be available after expiration like in task 1A? Take into account George Ts. deliverable about exploitation.</li>
+</ul>]
+
+<h3>Submit Test Results</h3>
+Participants of Phase A of task 1B will have to respond with lists of: <ul>
+	<li>relevant concepts,</li>
+	<li>MEDLINE documents,</li>
+	<li>snippets from the documents and</li>
+	<li>RDF Triples</li>
+</ul>
+for each question. The concepts will come from the ontologies described <a href="http://127.0.0.1:8000/general_information/Task1b/#ontologies" style="text-decoration:none; color:blue">above</a>.
+The documets will be articles published in MEDLINE <em>until 14th of March, 2013</em>. The snippets will be parts of those articles. Finally, the RDF triples will come 
+from the <a href="http://127.0.0.1:8000/general_information/Task1b/#triples" style="text-decoration:none; color:blue"> Linked Life Data platform</a>.
+
+<br />
+[TODO: Describe the two ways of submitting results and the JSON formats.. ORDERING]
+
+
+<h3>Systems</h3>
+<p>Each user will have the opportunity to participate in Task 1B  with a maximum of 5 systems. To enable this, after logging in you have to go to
+<a href="http://bioasq.lip6.fr/profile/" style="text-decoration:none; color:blue"> "Edit Profile Settings" </a>and then click on the "Add System" button. 
+The system name you will fill in the form will be the identifier of
+your system and it will be used in the "Results" section.</p>
+<p><em>ATTENTION:</em> Trying to upload results without selecting a system will result in error while the results will not be saved.</p>
+
+
+
+
+<h3>Cluster</h3>
+A large computer cluster has been made available to BioASQ. Users can run their code to the cluster
+for both Tasks of BioASQ Challenge. Information and details about the procedure can be found in <a href="http://bioasq.lip6.fr/Tasks/1a/" style="text-decoration:none; color:blue"> Submitting/Task 1A</a> section. For more specific details you can also post in the <a href="/forum/" style="text-decoration:none; color:blue">BioASQ Discussion Forum</a>.
+<h3>Code Snippets</h3>
+[Add the snippets as soon as we have the final JSON format. Snippets are really easy.]
+
+{% endblock %}

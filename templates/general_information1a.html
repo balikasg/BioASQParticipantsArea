@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<body id="genInfo1A">
+<h2>Guidelines for Task  2a</h2>
+<p><em>Task 2a has begun!<br /></em></p>
+
+Task 2a will be based on the standard process followed by PubMed to index journal abstracts. The participants will be asked to classify new PubMed documents, written in English, as they become available online, before PubMed curators annotate  them manually. As manual annotations from PubMed become available, they will be used to evaluate the classification performance of participating systems.<br /><br />
+
+
+The rest of the guidelines provide the essential information for participating in the Task 2a of the BioASQ challenge. They are organised in sections, by clicking on the titles you can find the relevant details.
+
+<a onclick ="javascript:ShowHide('rollOut')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Competition roll-out</h3></a>
+<div class="mid" id="rollOut" style="DISPLAY: none">
+Task 2a will begin on Monday, 3rd of February, 2014. Participants, after downloading the released test sets
+will have to submit results within  a limited time window. 
+The evaluation of Task 2a will be based on the MeSH version 2014. Concerning the task: 
+
+<ul>
+        <li>Three batches, of five test sets each (15 tests in total), will be released.</li>
+        <li>New test sets will be available every Monday at 17.00 CET.
+Participants that have checked
+        "Receive Information" during registration will be sent an e-mail
+informing that a new test set is available.</li>
+
+        <li>Participants will have to upload their results, until 14.00 CET
+of Tuesday.</li>
+
+
+        <li>After the expiration of the test set, the evaluation measures will be
+calculated incrementally. The "Results" section will be initialized with
+the systems that participated in the test set.</li>
+        <li>There will be four winning teams in each batch.  Information about the prizes is available <a href="http://bioasq.org/participate/prizes">here</a>. The winners will be decided from the rankings of the <b>4 best</b> attempts of each <b>team</b> for each test batch. For example, if a team participates with 4 different systems, during the calculation of the rankings only the best performance of its systems will be used. In this way, a team can win a maximum of two prizes per batch.
+</ul>
+</div>
+
+<a onclick ="javascript:ShowHide('training')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Download Training Data</h3></a>
+<div class="mid" id="training" style="DISPLAY: none">
+<p>The training data set for this task is available for downloading. It consists of annotated articles from PubMed. Table 1 provides information about the provided datasets. Note that the main difference between the those datasets, apart from the size, is that the MeSH version 2014 datasets contain MeSH tags of the latest version of MeSH. The evaluation of the results during the second year of the challenge will be performed using this version of MeSH, thus their usage is recommended. The training dataset of the first year of the challenge is also available for reference reasons. 
+ Note that not every MeSH of the 2014 version is covered in the datasets. Participants, are allowed to use unlimited  resources to train their systems.
+
+The training set is served as a JSON string with the following format: <br />
+<pre>{"articles": [{"abstractText":"text..", "journal":"journal..", "meshMajor":["mesh1",...,"meshN"],
+"pmid":"PMID", "title":"title..", "year":"YYYY"},..., {..}]</pre>
+
+The JSON string contains the following fields for each article:<br />
+<i>pmid</i> : the unique identifier of each article, <br />
+<i>title</i> : the title of the article, <br /> 
+<i>abstractText</i> : the abstract of the article,<br /> 
+<i>year</i> : the year the article was published, <br />
+<i>journal</i> : the journal the article was published, and<br /> 
+<i>meshMajor</i> : a list with the major MeSH headings of the article.
+<br /><br />
+
+
+<table class="train">
+<tr>
+<td></td><td>Training Set v.2013 (<a href="/raw_training_set/">txt</a>/<a href="/vectorized_training_set/">Lucene</a>)</td><td>Training Set v.2014 (<a href="/Tasks/2a/trainingDataset/raw/allMeSH/">txt</a>/<a href="/Tasks/2a/trainingDataset/lucene/allMeSH/">Lucene</a>)</td> <td>Training Set v.2014b (<a href="/Tasks/2a/trainingDataset/raw/selectionJournals/">txt</a>/<a href="/Tasks/2a/trainingDataset/lucene/selectionJournals/">Lucene</a>)
+
+
+</tr>
+<tr>
+        <td>Number of articles</td>
+        <td>10,876,004</td>
+        <td>12,628,968</td>
+	<td>4,458,300</td>
+</tr>
+<tr>
+        <td>Avrg. MeSH terms per article</td>
+        <td>12.55</td>
+	<td>12.72</td>
+	<td>13.20</td>
+</tr>
+<tr>
+        <td>MeSH terms used</td>
+        <td>26,563</td>
+	<td>26,831</td>
+	<td>26,631</td>
+</tr>
+<tr>
+        <td>Size zip/unzip (txt)</td>
+        <td>5.1Gb/18Gb</td>
+        <td>6.2Gb/20.31Gb</td>
+	<td>1.9Gb/6.4Gb</td>
+</tr>
+<tr>
+        <td>Size zip/unzip (Lucene)</td>
+        <td>4.8Gb/6.2Gb</td>
+        <td>4.4Gb/6.2Gb</td>
+        <td>1.3Gb/1.9Gb</td>
+</tr>
+<caption>Table 1: Task 2a training datasets information.</caption>
+
+</table>
+
+<br />
+<em>Attention:</em> 
+Note that only registered users can download the training set. You can register to the BioASQ challenge <a href="/accounts/register/" style="text-decoration:none; color:blue"> here</a>.  
+Not every MeSH term is covered to the provided datasets. 
+
+</div>
+
+
+<a onclick ="javascript:ShowHide('mesh')" href="javascript:;" style="text-decoration:none" >
+<h3>+ MeSH headings</h3></a>
+<div class="mid" id="mesh" style="DISPLAY: none">
+<p>MeSH is the National Library of Medicine's controlled vocabulary thesaurus.  It is updated every year to include improvements or changes to the scientific domains it covers. 
+It consists of sets of terms naming descriptors in a hierarchical
+ structure. They are used from the human curators in NLM during the manual annotation of the biomedical articles that
+ are uploaded. </p>
+
+<p>There are 27,149 descriptors in MeSH 2014  (available <a href="http://www.nlm.nih.gov/pubs/techbull/so13/so13_2014_mesh_avail.html">here</a>) that will be used during the second year of the challenge. The MeSH 2013 are also available for reference <a href="/MeSH2013/"> here</a>. 
+There are two ways of description of a MeSH in the hierarchy: (i) the humam name e.g. "Female" and (ii) the index e.g. "D005260". In the submission of the results participants should use the <em>index of the MeSH</em>. The mapping between the names and the indexes is available <a href="/Tasks/2a/MeSH/mapping/"> here</a>.
+
+All the nodes in the graph (and not only the leaf nodes) of MeSH are valid as classification answers for the BioASQ challenge. </p>
+
+<p>The hierarchy file, in parent-child format (available <a href="/Tasks/2a/MeSH/parentChild/">here</a>), contains a line 
+ for each relation between the parent and a child node. For example, the line:<br /> <br />
+
+D001570 D000876 <br /><br />
+
+is to be read as node D001570|Benzodiazepinones is a parent of D000876|Anthramycin.</p>
+
+<p>In addition to the MeSH Headings, other kinds of indexing information are available, e.g. Entry Terms and Supplementary Concept Records. 
+Entry Terms are synonyms of the MeSH. Entry Terms should not be provided in the evaluation, only MeSH Headings will be evaluated. 
+<br /> Supplementary Concept Records (SCRs) can be thought as subclasses or instances of MeSH headings. They are used to index chemicals, drugs, and other concepts such as rare diseases for MEDLINE. Each SCR is linked to one or more MeSH Headings and thus they can be helpful during classification. Since MeSH Headings are included in the index, SCRs are not, and they are not valid answers for the evaluation.</p>
+<p>
+Some Headings have a special status as Check Tags, such as heading "Human", and are very frequent. Those are not removed, and will be valid answers during the  evaluation.
+</p>
+</div>
+
+<a onclick ="javascript:ShowHide('evaluation')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Evaluation</h3></a>
+<div class="mid" id="evaluation" style="DISPLAY: none">
+
+In order to measure classification performance, an on-line evaluation system will be maintained. As the true annotations of the articles are not available beforehand, 
+the evaluation procedure will run continuously by providing on-line results. The participating systems will be assessed for their performance based on two measures, 
+one hierarchical and one flat: the <i>Lowest Common Ancestor F-measure (LCA-F)</i> and  the <i>label-based micro F-measure</i> respectively.<br /> 
+For reasons of completeness, we are also going to provide the evaluation measures listed below:<br />
+<ul>
+	<li>Accuracy (Acc.)</li>
+	<li>Example Based Precision (EBP)</li>
+	<li>Example Based Recall (EBR)</li>
+	<li>Example Based F-Measure (EBF)</li>
+	<li>Macro Precision (MaP)</li>
+	<li>Macro Recall (MaR)</li>
+	<li>Macro F-Measure (MaF)</li>
+	<li>Micro Precision (MiP)</li>
+	<li>Micro Recall (MiR)</li>
+	<li>Micro F-Measure (MiF)</li>
+	<li>Hierarchical Precision (HiP)</li>
+	<li>Hierarchical Recall (HiR)</li>
+	<li>Hierarchical F-Measure (HiF)</li>
+	<li>Lowest Common Ancestor Precision (LCA-P)</li>
+	<li>Lowest Common Ancestor Recall (LCA-R)</li>
+	<li>Lowest Common Ancestor F-measure (LCA-F)</li> </ul><br />
+For more information regarding the LCA-F the interested reader is referred to "A. Kosmopoulos, I. Partalas, E. Gaussier, 
+G. Paliouras and I. Androutsopoulos: Evaluation Measures for Hierarchical Classification: a unified view and novel approaches", available <a href="http://arxiv.org/abs/1306.6802" style="text-decoration:none; color:blue">here</a>.
+ 
+ </div>
+<a onclick ="javascript:ShowHide('testsets')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Download test sets</h3></a>
+<div class="mid" id="testsets" style="DISPLAY: none">
+<p>Each test set will consist of non annotated abstracts of articles that have been uploaded in MEDLINE. Due to the fact that journals
+in MEDLINE have different average annotation periods, we have selected journals with small average annotation periods. The list of the selected journals can be found <a href="/journals/">here</a>. </p>
+
+<p>The data of each test set will be served as <a href="http://json.org/" style="text-decoration:none; color:blue">JSON (Java Script Object Notation)</a> strings. JSONs are light
+and can be easily parsed from programming languages. Each programming language offers modules for the interaction with JSON strings. <p>
+<p>The format of the test set data in the JSON string will be the following: <br />
+<pre>
+{"documents": [
+  {"pmid":22511223, "title":"Title",  "abstract":"Abstact.."},
+  {"pmid":22511224, "title":"Title",  "abstract":"Abstact.."},
+           .
+           .
+  {"pmid":22511225, "title":"Title",  "abstract":"Abstact.."}]}
+</pre>
+This JSON string represents an array with document objects. Each object has a <i>pmid</i>, an <i>abstract</i> and a <i>title</i>.
+</p>
+
+<p>Only registered users can download the test sets. There are two ways that a user can download a test set: <ol><li>Using the web interface. In the section <a href="http://bioasq.lip6.fr/Tasks/2a/"> Submitting/Task 2a</a>  you can find the available
+test sets of the current edition of the BioASQ challenge. A repository with every BioASQ test is available in <a href="http://bioasq.lip6.fr/Tasks/A/getData/"> Oracle/Get data</a>. By clicking in the test, you can download it either as a text file or as a lucene index.</li>
+<li>Using an API. By making a GET request in the URL <i>http://bioasq.lip6.fr/tests/test_number/</i> along with authentication parameters.
+In the position of <i>test_number</i> a number should be placed indicating the test set that the user wants to download. For example, for downloading the test set of Week 2, you should make a GET request to  <i>http://bioasq.lip6.fr/tests/2/</i>, while for downloading the 1st test set of the second batch you should make the GET request to  <i>http://bioasq.lip6.fr/tests/6/</i>, provided that each test batch includes 5 test sets. To download the dry-run test set the URL should be <i>http://bioasq.lip6.fr/tests/0/</i>.
+In the following section <a href="#code_snippets" style="text-decoration:none; color:blue"> "Code Snippets" </a>  you can find snippets in Python that perform this request. </li></p></ol>
+</div>
+
+
+<a onclick ="javascript:ShowHide('submitResults')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Submit test results</h3></a>
+<div class="mid" id="submitResults" style="DISPLAY: none">
+<p>There are two ways for a user to submit results of an active test set: 
+<ol>
+<li>Using the web interface. In the section <a href="http://bioasq.lip6.fr/Tasks/2a/"> Submitting/Task 2a</a> you can find 
+a form with a "Browse" field and a system dropdown menu. After selecting the file in your computer that contains the JSON string 
+and selecting the name of the system that corresponds to these results you can submit them.
+</ br>
+The format of the JSON string in this case will be: </ br>
+<pre>{"documents": [{"labels":["label1","label2",...,"labelN"], "pmid": 22511223},
+                      {"labels":["label1", "label2",...,"labelM"],"pmid":22511224},
+                                                .
+                                                .
+                      {"labels":["label1", "label2",...,"labelK"], "pmid":22511225}]}</pre>
+</li>
+where <i>"label1",.."labelN"</i> <em> are the MeSH indicators e.g. "D005260" and <b>not</b> the human annotation i.e. "Female"</em>.
+<li>Using an API. By making a POST request in the URi <i>http://bioasq.lip6.fr/tests/uploadResults/test_number/</i> along with the JSON string.
+In the position of <i>test_number</i> a number indicating the test set that the user wants to upload results for should be placed. For example, for uploading results for the Week 2 test set of the first test batch, you should POST your results in <i>http://bioasq.lip6.fr/tests/uploadResults/2/</i>. To submit results for the dry-run test set you should POST in <i>http://bioasq.lip6.fr/tests/uploadResults/0/</i>. The format of the JSON string in this case will be:
+<pre>
+{"username":"your_username", "password":"your_password", "system":"your_system",
+"documents": [{"labels":["label1", "label2",...,"labelN"], "pmid": 22511223},
+                      {"labels":["label1", "label2",...,"labelM"],"pmid":22511224},
+                                                .
+                                                .
+                      {"labels":["label1", "label2",..., "labelK"], "pmid":22511225}]}
+</pre>
+<em>Again,  <i>"label1",.."labelN"</i> are the MeSH indicators e.g. "D005260"</em>. <br /></li></ol>
+In the following section, <a href="#code_snippets" style="text-decoration:none; color:blue"> "Code Snippets"</a>,  you can find code snippets in Python and terminal commands using <code>curl</code> that perform the POST and GET requests.</p>
+<em>ATTENTION:</em>
+<ul>
+	<li>Users must upload MeSH indexes for <b>every article</b> in the test set.
+	<li>The format of the JSON string <b>is not case sensitive.</b> Thus, trying to upload a JSON with different values (i.e "PMID" instead of "pmid") will result in a 500 error.</li>
+	<li>Users must upload their results before the expiration of the test</li>
+	<li>Users can upload results multiple times for the same system before the expiration of the test set. Each time that a user uploads
+	new results the old ones are erased.</li>
+	<li>The system before saving the results checks that:
+		<ul><li>The system in the JSON string belongs to the user,</li>
+		<li>The PMIDs in the provided JSON belong to the active test set,</li>
+		<li>There are MeSH indexes for every article of the test set,</li>
+		<li>The MeSH indexes exist, and</li>
+		<li>The test set is still active.</li>
+		</ul></li>
+	<li>The system responds with an OK message or an error message depending on the progress of the user request.</li>
+	<li>After uploading results, participants can see some information about their uploads in the "Submit your results" section
+</ul>
+</div>
+
+
+<a onclick ="javascript:ShowHide('addSystem')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Add a system</h3></a>
+<div class="mid" id="addSystem" style="DISPLAY: none">
+<p>Each user will have the opportunity to participate in Task 2a  with a maximum of 5 systems. To register the systems, after logging in you have to visit
+<a href="http://bioasq.lip6.fr/profile/" style="text-decoration:none; color:blue"> "Edit Profile Settings" </a>and follow the available instructions there.</p>
+<p><em>ATTENTION:</em> Trying to upload results without selecting a system will result in error while the results will not be saved.</p>
+</div>
+
+
+
+<a onclick ="javascript:ShowHide('cluster')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Cluster</h3></a>
+<div class="mid" id="cluster" style="DISPLAY: none">
+A large computer cluster of 5,000 cores has been made available to BioASQ. Users can run their code to the cluster 
+for both Tasks of BioASQ Challenge. Information and details about the procedure can be found in <a href="http://bioasq.lip6.fr/Tasks/2a/" style="text-decoration:none; color:blue"> Submitting/Task 2a</a> section. For more specific details you can also post in the <a href="/forum/" style="text-decoration:none; color:blue">BioASQ Discussion Forum</a>.
+</div>
+
+<a onclick ="javascript:ShowHide('snippets')" href="javascript:;" style="text-decoration:none" >
+<h3 id="code_snippets">+ Code snippets and tools</h3></a>
+
+
+
+<div class="mid" id="snippets" style="DISPLAY: none">
+
+<h3>Vectorization Tools</h3>
+You can download tools for vectorizing the data from <a href="/tools/"> here</a>. To use the tools, the <i>lucene-core</i> and <i>lucene-analyzers</i> jars must be included in the classpath. The tools produce a vectorized description as a Lucene Index.
+<h3>Python Snippets</h3>
+In this section you can find some code snippets written in python. The library <code> <a href="http://docs.python-requests.org/en/latest/" style="text-decoration:none; color:blue">"Requests"</a> </code>
+is used to perform the HTTP GET and POST requests.
+<h4>Download Test Sets-Using API</h4>
+<h5>Python Snippet</h5>
+Assuming we want to download the articles of the test set of Week 1:
+<pre>import requests
+import json
+r=requests.get('http://bioasq.lip6.fr/tests/1/', auth=('your_username', 'your_password'))
+#Now the variable r contains the data (can been seen with r.text)
+data=json.loads(r.text)
+#Now the data are in the "data" variable in python native datatypes 
+len(data) # This will give the number of the articles of the test set 1
+</pre>
+<h5>Curl</h5>
+The same could be done from the terminal using a <code>curl</code> command:
+<pre>curl -i --user your_username:your_password http://bioasq.lip6.fr/tests/1/</pre>
+
+<h4>Upload Test Results-Using API</h4>
+<h5>Python Snippet</h5>
+Assuming we want to upload results for the test set of Week 1, we have created a JSON string i.e.
+<pre>{"username": "your_username", "password": "your_password", 
+"documents": [{"pmid": 23476937, "labels": ["D000127", "D000128"]}],
+ "system": "your_system"}</pre>
+In this string apart from your authentication credentials you mention that you have estimated D000127 and D000128 for the article with PMID 23476937.
+To upload this information using Python and <code> <a href="http://docs.python-requests.org/en/latest/" style="text-decoration:none; color:blue">"Requests"</a></code> you execute the following snippet:
+<pre>
+import requests
+import json
+d={"username": "your_username", "password": "your_password", 
+"documents": [{"pmid": 23476937, "labels": ["D000127", "D000128"]}],
+ "system": "your_system"}
+url='http://bioasq.lip6.fr/tests/uploadResults/1/'
+r=requests.post(url, data=json.dumps(d))
+r.status_code #you can see 200 for success
+r.text #you can see the platform's answer
+</pre>
+<h5>Curl</h5>
+The same could be done from the terminal using <code> curl</code>. From the directory you have saved the file with the test resuls, type the following command in a single line, where <code>results.json</code>  is the file that contains the JSON string with your results:<br />
+<pre>
+curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST 
+ --data-binary @test1 http://bioasq.lip6.fr/tests/uploadResults/1/
+</pre>
+</div>
+
+
+
+<a onclick ="javascript:ShowHide('wordvec')" href="javascript:;" style="text-decoration:none" >
+<h3>+ Continuous Space Word Vectors </h3></a>
+<div class="mid" id="wordvec" style="DISPLAY: none">
+The word2vec tool (https://code.google.com/p/word2vec/)  processes a large text corpus and maps the words of the corpus to vectors of a continuous space. The word vectors can then be used, for example, to estimate the relatedness of two words or to perform query expansion. We applied word2vec to a corpus of 10,876,004 English abstracts of biomedical articles from PubMed. The resulting vectors of 1,701,632 distinct words (types) are now publicly available <a href="http://bioasq.lip6.fr/tools/BioASQword2vec/"> here</a>. File size: 1.3GB (compressed), 3.5GB (uncompressed).  More information <a  href="http://bioasq.lip6.fr/info/BioASQword2vec/">here</a>.
+
+
+</div>
+
+
+
+
+{% endblock %}
