@@ -1,0 +1,7 @@
+pip install requests==1.1.0
+pip install decorator==3.4.0
+pip install django-common==0.1.51
+pip install django==1.4.5
+pip install django_widget_tweaks==1.1.2
+pip install djangorestframework==2.2.1
+pip install south==0.7.6
